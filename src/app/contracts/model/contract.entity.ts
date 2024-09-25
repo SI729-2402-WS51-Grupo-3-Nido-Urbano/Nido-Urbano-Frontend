@@ -17,7 +17,6 @@ export class Contract {
   }
 }
 export interface Term {
-  id: number;
   description: string;
   agreed: boolean;
 }

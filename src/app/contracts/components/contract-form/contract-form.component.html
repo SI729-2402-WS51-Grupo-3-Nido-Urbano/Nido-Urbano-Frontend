@@ -22,9 +22,16 @@
       <label for="endDate">Fecha de fin</label>
       <input id="endDate" type="date" class="form-control" formControlName="endDate">
     </div>
+    <div class="form-group">
+      <label>
+        <input type="checkbox" formControlName="termsAgreed" />
+        Acepto los términos y condiciones
+      </label>
+    </div>
+
 
     <div class="form-actions">
-      <button type="submit" class="btn btn-generate" [disabled]="contractForm.invalid">
+      <button type="submit" class="btn btn-generate" (click)="generateContract()">
         Generar Contrato
       </button>
       <button type="button" class="btn btn-cancel" (click)="cancelContract()">

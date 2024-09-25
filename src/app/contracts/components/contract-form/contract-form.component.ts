@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import { jsPDF } from 'jspdf';
 import { Router } from '@angular/router';
 import {HttpClient} from "@angular/common/http";
 import {Location, NgForOf, NgIf} from "@angular/common";
 import {ContractService} from "../../services/contract.service";
-import {Property, Tenant} from "../../model/contract.entity";
+import {Property, Tenant, Term} from "../../model/contract.entity";
 
 @Component({
   selector: 'app-contract-form',
@@ -13,7 +13,8 @@ import {Property, Tenant} from "../../model/contract.entity";
   imports: [
     ReactiveFormsModule,
     NgForOf,
-    NgIf
+    NgIf,
+    FormsModule
   ],
   templateUrl: './contract-form.component.html',
   styleUrl: './contract-form.component.css'
@@ -21,8 +22,10 @@ import {Property, Tenant} from "../../model/contract.entity";
 export class ContractFormComponent implements OnInit{
   contractForm: FormGroup;
   properties: Property[] = [];
+  terms: Term[] = [];  // Define 'terms' como un arreglo de 'Term'
   tenant: Tenant | null = null;
   selectedPropertyType: string | null = null; // Variable para almacenar el tipo de propiedad
+  isRental: boolean = false; // Inicializa la propiedad
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
@@ -34,9 +37,8 @@ export class ContractFormComponent implements OnInit{
       tenant: ['', Validators.required],
       startDate: ['', Validators.required],
       endDate: ['', Validators.required],
-      terms: ['', Validators.required],
+      termsAgreed: [false, Validators.requiredTrue] // Agregar este control
     });
-
     this.loadProperties(); // Cargar propiedades desde el JSON
   }
   ngOnInit() {
@@ -75,17 +77,41 @@ export class ContractFormComponent implements OnInit{
       }
     }
   }
+  propertyChange() {
+    const selectedProperty = this.contractForm.get('property')?.value;
+    this.isRental = selectedProperty?.house_modality === 'rental';
+
+    if (!this.isRental) {
+      this.contractForm.get('startDate')?.clearValidators();
+      this.contractForm.get('endDate')?.clearValidators();
+    } else {
+      this.contractForm.get('startDate')?.setValidators(Validators.required);
+      this.contractForm.get('endDate')?.setValidators(Validators.required);
+    }
+
+    this.contractForm.get('startDate')?.updateValueAndValidity();
+    this.contractForm.get('endDate')?.updateValueAndValidity();
+  }
   generateContract() {
+    console.log("Estado del formulario:", this.contractForm.value);
     console.log("Generando contrato");
 
     if (this.contractForm.invalid) {
-      // Si el formulario es inválido, muestra un mensaje de error
+      console.log("Contrato invalido");
       alert('Por favor complete todos los campos');
       return;
     }
 
     // Obtenemos los datos del formulario
     const contractData = this.contractForm.value;
+    if (this.isRental && (!contractData.startDate || !contractData.endDate)) {
+      alert('Por favor complete las fechas de inicio y fin para contratos de alquiler');
+      return;
+    }
+    if (!this.contractForm.get('termsAgreed')?.value) {
+      alert('Debes aceptar los términos y condiciones');
+      return;
+    }
 
     // Creamos el PDF
     const doc = new jsPDF();
@@ -100,9 +126,16 @@ export class ContractFormComponent implements OnInit{
       doc.text(`Fecha de inicio: ${contractData.startDate}`, 10, 40);
       doc.text(`Fecha de fin: ${contractData.endDate}`, 10, 50);
     } else {
-      // Si es de compra, podemos incluir un mensaje o la información relevante
       doc.text(`Este contrato es para la compra de la propiedad.`, 10, 40);
     }
+
+    // Agregar término al PDF (solo uno)
+    const term: Term = {
+      description: 'null',  // De momento es null
+      agreed: true
+    };
+
+    doc.text(`Término: ${term.description || 'Sin descripción'}, Aceptado: ${term.agreed}`, 10, 60);
 
     // Guardar el PDF con un nombre generado automáticamente
     doc.save(`Contrato-${contractData.property.name}.pdf`);

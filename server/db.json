@@ -1,0 +1,11 @@
+{
+  "contracts": [],
+  "properties": [
+    { "id": 1, "name": "Property A", "house_modality": "rental", "price": 800 },
+    { "id": 2, "name": "Property B", "house_modality": "sale", "price": 120000 }
+  ],
+  "tenants": [
+    { "id": 1, "name": "John Doe" },
+    { "id": 2, "name": "Jane Smith" }
+  ]
+}

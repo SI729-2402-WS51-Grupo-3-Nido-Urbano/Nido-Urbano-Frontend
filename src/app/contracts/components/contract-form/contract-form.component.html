@@ -1,0 +1,33 @@
+<form [formGroup]="contractForm" (ngSubmit)="generateContract()">
+  <div>
+    <label for="property">Property:</label>
+    <select id="property" formControlName="property">
+      <option *ngFor="let property of properties" [value]="property">{{ property.name }}</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="tenant">Tenant:</label>
+    <select id="tenant" formControlName="tenant">
+      <option *ngFor="let tenant of tenants" [value]="tenant">{{ tenant.name }}</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="startDate">Start Date:</label>
+    <input type="date" id="startDate" formControlName="startDate">
+  </div>
+
+  <div>
+    <label for="endDate">End Date:</label>
+    <input type="date" id="endDate" formControlName="endDate">
+  </div>
+
+  <div>
+    <label for="terms">Terms:</label>
+    <textarea id="terms" formControlName="terms"></textarea>
+  </div>
+
+  <button type="submit">Generate Contract</button>
+</form>
+

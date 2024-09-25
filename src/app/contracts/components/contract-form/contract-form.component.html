@@ -1,33 +1,37 @@
-<form [formGroup]="contractForm" (ngSubmit)="generateContract()">
-  <div>
-    <label for="property">Property:</label>
-    <select id="property" formControlName="property">
-      <option *ngFor="let property of properties" [value]="property">{{ property.name }}</option>
-    </select>
-  </div>
+<div class="container">
+  <h2>Datos del Contrato</h2>
+  <form [formGroup]="contractForm" (ngSubmit)="generateContract()">
+    <div class="form-group">
+      <label for="property">Propiedad</label>
+      <select id="property" class="form-control" formControlName="property">
+        <option *ngFor="let property of properties" [ngValue]="property">{{property.name}}</option>
+      </select>
+    </div>
 
-  <div>
-    <label for="tenant">Tenant:</label>
-    <select id="tenant" formControlName="tenant">
-      <option *ngFor="let tenant of tenants" [value]="tenant">{{ tenant.name }}</option>
-    </select>
-  </div>
+    <div class="form-group">
+      <label for="tenant">Inquilino</label>
+      <input id="tenant" type="text" class="form-control" formControlName="tenant" placeholder="Nombre del inquilino" readonly>
+    </div>
 
-  <div>
-    <label for="startDate">Start Date:</label>
-    <input type="date" id="startDate" formControlName="startDate">
-  </div>
+    <div class="form-group" *ngIf="contractForm.get('property')?.value?.house_modality === 'rental'">
+      <label for="startDate">Fecha de inicio</label>
+      <input id="startDate" type="date" class="form-control" formControlName="startDate">
+    </div>
 
-  <div>
-    <label for="endDate">End Date:</label>
-    <input type="date" id="endDate" formControlName="endDate">
-  </div>
+    <div class="form-group" *ngIf="contractForm.get('property')?.value?.house_modality === 'rental'">
+      <label for="endDate">Fecha de fin</label>
+      <input id="endDate" type="date" class="form-control" formControlName="endDate">
+    </div>
 
-  <div>
-    <label for="terms">Terms:</label>
-    <textarea id="terms" formControlName="terms"></textarea>
-  </div>
+    <div class="form-actions">
+      <button type="submit" class="btn btn-generate" [disabled]="contractForm.invalid">
+        Generar Contrato
+      </button>
+      <button type="button" class="btn btn-cancel" (click)="cancelContract()">
+        Cancelar Contrato
+      </button>
+    </div>
+  </form>
+</div>
 
-  <button type="submit">Generate Contract</button>
-</form>
 

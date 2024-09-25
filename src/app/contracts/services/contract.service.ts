@@ -1,17 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Contract} from "../model/contract.entity";
+import {Contract, Property, Tenant} from "../model/contract.entity";
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContractService {
-  private apiUrl = '/api/contracts';
+  private apiUrl = `${environment.serverBasePath}/contracts`;
+  private propertyUrl = `${environment.serverBasePath}/properties`;
+  private tenantUrl = `${environment.serverBasePath}/tenants`;
 
   constructor(private http: HttpClient) {}
-
+  getProperties() {
+    return this.http.get<Property[]>(this.propertyUrl); // Método para obtener propiedades
+  }
   getContracts() {
     return this.http.get<Contract[]>(this.apiUrl);
+  }
+  getTenants() {
+    return this.http.get<Tenant[]>(this.tenantUrl); // Método para obtener inquilinos
   }
 
   createContract(contractData: Contract) {

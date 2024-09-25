@@ -26,6 +26,7 @@ export interface Property {
   name: string;
   house_modality:'rental'| 'sale';
   price: number;
+  landlord_id: number;
 }
 export interface Tenant {
   id: number;

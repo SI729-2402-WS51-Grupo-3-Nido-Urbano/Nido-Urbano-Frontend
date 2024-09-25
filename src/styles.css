@@ -16,3 +16,29 @@ body {
   align-items: center;
   margin: 0 auto;
 }
+.btn-generate {
+  background-color: #FFA500; /* Naranja */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-generate:hover {
+  background-color: #FF8C00; /* Naranja oscuro */
+}
+
+.btn-cancel {
+  background-color: #DC3545; /* Rojo */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-cancel:hover {
+  background-color: #C82333; /* Rojo oscuro */
+}
+

@@ -1,0 +1,28 @@
+{
+  "filter": {
+    "label": "Filter",
+    "placeholder": "Enter text to filter"
+  },
+  "title": {
+    "reservations": "Reservations",
+    "add": "New Reservation",
+    "edit": "Edit Reservation"
+  },
+  "reservation": {
+    "id": "No.",
+    "tenant_name": "Tenant name",
+    "age": "Age",
+    "tenant_address": "Tenant address",
+    "house_name": "House public title",
+    "house_address": "House address",
+    "landlord_name": "House owner",
+    "start_date": "Start date",
+    "end_date": "End date",
+    "actions": "Actions"
+  },
+  "footer": {
+    "rights": "Copyright © 2024 {{ api }}, All rights reserved",
+    "intro": "Developed ",
+    "author": "by {{ team }} Team"
+  }
+}

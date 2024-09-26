@@ -1,0 +1,28 @@
+{
+  "filter": {
+    "label": "Filtrar",
+    "placeholder": "Digite texto a filtrar"
+  },
+  "title": {
+    "reservations": "Reservaciones",
+    "add": "Nueva reserva",
+    "edit": "Editar reserva"
+  },
+  "reservation": {
+    "id": "No.",
+    "tenant_name": "Nombre del arrendatario",
+    "age": "Edad",
+    "tenant_address": "Dirección del arrendatario",
+    "house_name": "Título público de la casa",
+    "house_address": "Dirección de la casa",
+    "landlord_name": "Propietario",
+    "start_date": "Fecha inicial",
+    "end_date": "Fecha de cierre",
+    "actions": "Acciones"
+  },
+  "footer": {
+    "rights": "Copyright © 2024 {{ api }}, All rights reserved",
+    "intro": "Developed ",
+    "author": "by {{ team }} Team"
+  }
+}

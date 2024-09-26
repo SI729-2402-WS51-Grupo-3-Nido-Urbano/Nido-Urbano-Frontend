@@ -1,0 +1,30 @@
+.mat-spacer {
+  flex: 1 1 auto;
+}
+mat-sidenav {
+  width: 200px;
+  border-right: none;
+  padding: 16px 0;
+}
+.content {
+  height: calc(100svh - 98px);
+  padding: 16px;
+  max-width: 1440px;
+  margin: 0 auto;
+  font-size: 16px;
+  background: #EE7B10;
+}
+mat-sidenav-container {
+  height: calc(100svh - 65px);
+}
+img {
+  padding-right: 0.75rem;
+}
+mat-toolbar {
+  background: #EE7B10;
+  color: white;
+}
+.mat-toolbar .mat-mdc-button-base {
+  color: black;
+  font-size: medium;
+}

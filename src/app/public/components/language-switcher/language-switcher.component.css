@@ -1,0 +1,5 @@
+/* Mantén los demás botones con el estilo predeterminado */
+.mat-button-toggle {
+  background-color: white;
+  color: black;
+}

@@ -1,37 +1,3 @@
-<!--<mat-card *ngFor="let feedback of feedbacks">
-  <img mat-card-image ngSrc="feedback.photo" alt="House photo" fill>
-  <mat-card-content>
-    <mat-card-title>{{ feedback.house_name }}</mat-card-title>
-    <mat-card-subtitle>{{ feedback.address }}</mat-card-subtitle>
-    <p>Rating: {{ feedback.score }}</p>
-    <p *ngIf="feedback?.comments">{{ feedback.comments }}</p>
-  </mat-card-content>
-</mat-card>-->
-
-
-<!--<div>
-  <h2>{{ isEditMode ? 'Edit Feedback' : 'Create New Feedback' }}</h2>
-  <form (ngSubmit)="saveFeedback()">
-    <mat-form-field>
-      <input matInput placeholder="House Name" [(ngModel)]="feedback.house_name" name="houseName" required>
-    </mat-form-field>
-
-    <mat-form-field>
-      <input matInput placeholder="Address" [(ngModel)]="feedback.address" name="address" required>
-    </mat-form-field>
-
-    <mat-form-field>
-      <input matInput placeholder="Score" [(ngModel)]="feedback.score" name="score" type="number" required>
-    </mat-form-field>
-
-    <mat-form-field>
-      <textarea matInput placeholder="Comments" [(ngModel)]="feedback.comments" name="comments"></textarea>
-    </mat-form-field>
-
-    <button mat-raised-button color="primary" type="submit">Save</button>
-  </form>
-</div>-->
-
 <div>
   <h2>{{ isEditMode ? ('FEEDBACK.EDIT_FEEDBACK' | translate) : ('FEEDBACK.CREATE_NEW_FEEDBACK' | translate) }}</h2>
   <form (ngSubmit)="saveFeedback()">

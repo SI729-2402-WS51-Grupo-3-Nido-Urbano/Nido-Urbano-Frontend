@@ -73,33 +73,6 @@ import {MatTable} from "@angular/material/table";
   ],
   styleUrls: ['./feedback-create-and-edit.component.css']
 })
-/*export class FeedbackCreateAndEditComponent implements OnInit {
-  feedback: Feedback = new Feedback();
-  isEditMode: boolean = false;
-
-  constructor(private feedbackService: FeedbackService, private route: ActivatedRoute) { }
-
-  ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id) {
-      this.isEditMode = true;
-      // Convierte el id a número si es necesario
-      this.feedbackService.getById(+id).subscribe((data: Feedback) => {
-        this.feedback = data; // Asignamos el objeto feedback que viene del servicio
-      });
-    }
-  }
-
-  saveFeedback(): void {
-    if (this.isEditMode) {
-      this.feedbackService.update(this.feedback.rating_id, this.feedback).subscribe();
-    } else {
-      this.feedbackService.create(this.feedback).subscribe();
-    }
-  }
-}*/
-
-
 export class FeedbackCreateAndEditComponent implements OnInit {
   feedback: Feedback = new Feedback();
   isEditMode: boolean = false;

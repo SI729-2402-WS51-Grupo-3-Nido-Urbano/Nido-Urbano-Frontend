@@ -20,6 +20,6 @@ export const appConfig: ApplicationConfig = {
           deps: [HttpClient]
         }
       })
-    )]
+    ), provideAnimationsAsync()]
 };
 

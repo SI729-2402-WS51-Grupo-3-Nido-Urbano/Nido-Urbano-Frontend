@@ -1,0 +1,54 @@
+{
+  "feedbacks": [
+    {
+      "house_name": "Casa en el centro",
+      "address": "Calle Principal 123",
+      "rating_id": 201,
+      "rated_user_id": 101,
+      "rating_user_id": 301,
+      "score": 5,
+      "comments": "Excelente casa, muy cómoda y bien ubicada.",
+      "rating_date": "2023-09-25"
+    },
+    {
+      "house_name": "Apartamento moderno",
+      "address": "Avenida Secundaria 456",
+      "rating_id": 202,
+      "rated_user_id": 102,
+      "rating_user_id": 302,
+      "score": 4,
+      "comments": "El apartamento está bien, pero el precio es un poco alto.",
+      "rating_date": "2023-09-26"
+    },
+    {
+      "house_name": "Casa con jardín",
+      "address": "Calle Jardín 789",
+      "rating_id": 203,
+      "rated_user_id": 103,
+      "rating_user_id": 303,
+      "score": 5,
+      "comments": "El jardín es hermoso, ideal para la familia.",
+      "rating_date": "2023-09-15"
+    },
+    {
+      "house_name": "Apartamento cerca del parque",
+      "address": "Calle del Parque 321",
+      "rating_id": 204,
+      "rated_user_id": 104,
+      "rating_user_id": 304,
+      "score": 4,
+      "comments": "Bonita vista al parque, pero los vecinos son un poco ruidosos.",
+      "rating_date": "2023-09-10"
+    },
+    {
+      "house_name": "Casa familiar",
+      "address": "Calle Familiar 654",
+      "rating_id": 205,
+      "rated_user_id": 105,
+      "rating_user_id": 305,
+      "score": 5,
+      "comments": "Casa muy espaciosa y cómoda para una familia grande.",
+      "rating_date": "2023-09-05"
+    }
+  ]
+}

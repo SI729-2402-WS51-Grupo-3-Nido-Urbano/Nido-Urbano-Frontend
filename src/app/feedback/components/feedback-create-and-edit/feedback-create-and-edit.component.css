@@ -1,0 +1,28 @@
+table {
+  width: 100%;
+}
+
+.mat-elevation-z8 {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th.mat-header-cell {
+  font-weight: bold;
+}
+
+td.mat-cell {
+  padding: 16px;
+}
+
+button {
+  margin-right: 8px;
+}
+
+h2 {
+  margin-bottom: 16px;
+}
+
+.no-feedback {
+  text-align: center;
+  color: grey;
+}

@@ -1,0 +1,26 @@
+{
+  "FEEDBACK": {
+    "TITLE": "Comentarios",
+    "HOUSE_NAME": "Nombre de la casa",
+    "ADDRESS": "Dirección",
+    "SCORE": "Puntuación",
+    "COMMENTS": "Comentarios",
+    "CREATE_NEW_FEEDBACK": "Crear nuevo comentario",
+    "SAVE_FEEDBACK": "Guardar comentario",
+    "EDIT_FEEDBACK": "Editar comentario",
+    "NO_FEEDBACKS": "No hay comentarios disponibles.",
+    "SUCCESS_CREATE": "¡Comentario creado con éxito!",
+    "SUCCESS_EDIT": "¡Comentario actualizado con éxito!"
+  },
+  "FORM": {
+    "PLACEHOLDER_HOUSE_NAME": "Ingresa la propiedad",
+    "PLACEHOLDER_ADDRESS": "Ingresa la dirección",
+    "PLACEHOLDER_SCORE": "Ingresa la puntuación",
+    "PLACEHOLDER_COMMENTS": "Ingresa los comentarios"
+  },
+  "BUTTONS": {
+    "SAVE": "Guardar",
+    "CANCEL": "Cancelar"
+  }
+}
+

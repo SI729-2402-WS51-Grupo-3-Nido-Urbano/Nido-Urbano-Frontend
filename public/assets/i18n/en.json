@@ -1,0 +1,25 @@
+{
+  "FEEDBACK": {
+    "TITLE": "Feedbacks",
+    "HOUSE_NAME": "House Name",
+    "ADDRESS": "Address",
+    "SCORE": "Score",
+    "COMMENTS": "Comments",
+    "CREATE_NEW_FEEDBACK": "Create New Feedback",
+    "SAVE_FEEDBACK": "Save Feedback",
+    "EDIT_FEEDBACK": "Edit Feedback",
+    "NO_FEEDBACKS": "No feedbacks available.",
+    "SUCCESS_CREATE": "Feedback created successfully!",
+    "SUCCESS_EDIT": "Feedback updated successfully!"
+  },
+  "FORM": {
+    "PLACEHOLDER_HOUSE_NAME": "Enter house name",
+    "PLACEHOLDER_ADDRESS": "Enter address",
+    "PLACEHOLDER_SCORE": "Enter score",
+    "PLACEHOLDER_COMMENTS": "Enter comments"
+  },
+  "BUTTONS": {
+    "SAVE": "Save",
+    "CANCEL": "Cancel"
+  }
+}

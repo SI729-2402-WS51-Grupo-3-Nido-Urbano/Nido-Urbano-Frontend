@@ -1,0 +1,76 @@
+<!--<mat-form-field appearance="fill">
+  <mat-label>Score</mat-label>
+  <input matInput [(ngModel)]="number" placeholder="Enter the score" type="number">
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+  <mat-label>Comments</mat-label>
+  <textarea matInput [(ngModel)]="feedback.comments" placeholder="Enter your comments"></textarea>
+</mat-form-field>-->
+
+
+<!--
+<div>
+  <h2>Feedbacks</h2>
+  <table mat-table [dataSource]="feedbacks" class="mat-elevation-z8">
+    <ng-container matColumnDef="house_name">
+      <th mat-header-cell *matHeaderCellDef> House Name </th>
+      <td mat-cell *matCellDef="let feedback"> {{feedback.house_name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef> Address </th>
+      <td mat-cell *matCellDef="let feedback"> {{feedback.address}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="score">
+      <th mat-header-cell *matHeaderCellDef> Score </th>
+      <td mat-cell *matCellDef="let feedback"> {{feedback.score}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="comments">
+      <th mat-header-cell *matHeaderCellDef> Comments </th>
+      <td mat-cell *matCellDef="let feedback"> {{feedback.comments}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['house_name', 'address', 'score', 'comments']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['house_name', 'address', 'score', 'comments'];"></tr>
+  </table>
+
+  <button mat-raised-button color="primary" (click)="createNewFeedback()"> {{'FEEDBACK.CREATE_NEW_FEEDBACK' | translate }}</button>
+
+</div>-->
+
+
+<div>
+  <h2>{{ 'FEEDBACK.TITLE' | translate }}</h2>
+  <table mat-table [dataSource]="feedbacks" class="mat-elevation-z8">
+    <ng-container matColumnDef="house_name">
+      <th mat-header-cell *matHeaderCellDef> {{ 'FEEDBACK.HOUSE_NAME' | translate }} </th>
+      <td mat-cell *matCellDef="let feedback"> {{ feedback.house_name }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef> {{ 'FEEDBACK.ADDRESS' | translate }} </th>
+      <td mat-cell *matCellDef="let feedback"> {{ feedback.address }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="score">
+      <th mat-header-cell *matHeaderCellDef> {{ 'FEEDBACK.SCORE' | translate }} </th>
+      <td mat-cell *matCellDef="let feedback"> {{ feedback.score }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="comments">
+      <th mat-header-cell *matHeaderCellDef> {{ 'FEEDBACK.COMMENTS' | translate }} </th>
+      <td mat-cell *matCellDef="let feedback"> {{ feedback.comments }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['house_name', 'address', 'score', 'comments']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['house_name', 'address', 'score', 'comments'];"></tr>
+  </table>
+
+  <button mat-raised-button color="primary" (click)="createNewFeedback()">
+    {{ 'FEEDBACK.CREATE_NEW_FEEDBACK' | translate }}
+  </button>
+</div>
+

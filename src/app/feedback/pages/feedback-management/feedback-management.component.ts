@@ -46,14 +46,12 @@ export class FeedbackManagementComponent implements OnInit {
   }
 
   getFeedbacks(): void {
-    // La llamada al servicio ahora espera un array de Feedback
     this.feedbackService.getAll().subscribe((data: Feedback[]) => {
-      this.feedbacks = data;  // Asignamos el array correctamente
+      this.feedbacks = data;
     });
   }
 
   createNewFeedback(): void {
-    // Redirigir a la página de creación de nuevo feedback
     this.router.navigate(['/feedback/create']);
   }
 }

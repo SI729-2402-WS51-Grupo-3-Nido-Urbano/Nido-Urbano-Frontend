@@ -4,7 +4,8 @@ import { FeedbackManagementComponent } from './feedback/pages/feedback-managemen
 import { FeedbackCreateAndEditComponent } from './feedback/components/feedback-create-and-edit/feedback-create-and-edit.component';
 
 export const routes: Routes = [
-  { path: '', component: FeedbackManagementComponent },
+  { path: '', redirectTo: 'feedbacks', pathMatch: 'full' },
+  { path: 'feedbacks', component: FeedbackManagementComponent },
   { path: 'feedback/create', component: FeedbackCreateAndEditComponent },
   { path: 'feedback/edit/:id', component: FeedbackCreateAndEditComponent },
   { path: '**', redirectTo: '' }

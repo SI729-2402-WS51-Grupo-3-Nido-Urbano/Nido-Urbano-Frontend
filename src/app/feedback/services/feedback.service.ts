@@ -7,6 +7,6 @@ import { BaseService } from '../../shared/services/base.services';
   providedIn: 'root'
 })
 export class FeedbackService extends BaseService<Feedback> {
-  override resourceEndpoint = '/feedbacks'; // Define la ruta para los feedbacks
+  override resourceEndpoint = '/feedbacks';
 }
 

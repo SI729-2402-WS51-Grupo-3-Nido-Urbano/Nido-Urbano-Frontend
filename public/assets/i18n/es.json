@@ -6,11 +6,8 @@
     "SCORE": "Puntuación",
     "COMMENTS": "Comentarios",
     "CREATE_NEW_FEEDBACK": "Crear nuevo comentario",
-    "SAVE_FEEDBACK": "Guardar comentario",
     "EDIT_FEEDBACK": "Editar comentario",
-    "NO_FEEDBACKS": "No hay comentarios disponibles.",
-    "SUCCESS_CREATE": "¡Comentario creado con éxito!",
-    "SUCCESS_EDIT": "¡Comentario actualizado con éxito!"
+    "ACTIONS": "Acciones"
   },
   "FORM": {
     "PLACEHOLDER_HOUSE_NAME": "Ingresa la propiedad",
@@ -20,7 +17,11 @@
   },
   "BUTTONS": {
     "SAVE": "Guardar",
-    "CANCEL": "Cancelar"
+    "CANCEL": "Cancelar",
+    "EDIT": "Editar",
+    "DELETE": "Eliminar"
+  },
+  "MESSAGES": {
+    "CONFIRM_DELETE": "¿Estás seguro de que deseas eliminar este comentario?"
   }
 }
-

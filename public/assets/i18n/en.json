@@ -6,11 +6,8 @@
     "SCORE": "Score",
     "COMMENTS": "Comments",
     "CREATE_NEW_FEEDBACK": "Create New Feedback",
-    "SAVE_FEEDBACK": "Save Feedback",
     "EDIT_FEEDBACK": "Edit Feedback",
-    "NO_FEEDBACKS": "No feedbacks available.",
-    "SUCCESS_CREATE": "Feedback created successfully!",
-    "SUCCESS_EDIT": "Feedback updated successfully!"
+    "ACTIONS": "Actions"
   },
   "FORM": {
     "PLACEHOLDER_HOUSE_NAME": "Enter house name",
@@ -20,6 +17,11 @@
   },
   "BUTTONS": {
     "SAVE": "Save",
-    "CANCEL": "Cancel"
+    "CANCEL": "Cancel",
+    "EDIT": "Edit",
+    "DELETE": "Delete"
+  },
+  "MESSAGES": {
+    "CONFIRM_DELETE": "Are you sure you want to delete this feedback?"
   }
 }

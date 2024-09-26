@@ -1,6 +1,7 @@
 <div>
-  <h2>{{ isEditMode ? ('FEEDBACK.EDIT_FEEDBACK' | translate) : ('FEEDBACK.CREATE_NEW_FEEDBACK' | translate) }}</h2>
-  <form (ngSubmit)="saveFeedback()">
+  <h2>{{ editMode ? ('FEEDBACK.EDIT_FEEDBACK' | translate) : ('FEEDBACK.CREATE_NEW_FEEDBACK' | translate) }}</h2>
+
+  <form #feedbackForm="ngForm" (ngSubmit)="onSubmit()">
     <mat-form-field>
       <input matInput [placeholder]="'FORM.PLACEHOLDER_HOUSE_NAME' | translate" [(ngModel)]="feedback.house_name" name="houseName" required>
     </mat-form-field>
@@ -18,7 +19,11 @@
     </mat-form-field>
 
     <button mat-raised-button color="primary" type="submit">
-      {{ isEditMode ? ('BUTTONS.SAVE' | translate) : ('BUTTONS.SAVE' | translate) }}
+      {{ 'BUTTONS.SAVE' | translate }}
+    </button>
+
+    <button mat-button color="warn" type="button" (click)="onCancel()">
+      {{ 'BUTTONS.CANCEL' | translate }}
     </button>
   </form>
 </div>

@@ -1,0 +1,32 @@
+.card-container {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+mat-card-header {
+  background-color: orange;
+  color: white;
+  padding: 20px;
+}
+
+mat-card-image {
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.icon-text {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.icon-text mat-icon {
+  margin-right: 10px;
+}
+
+.payment-options {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+}

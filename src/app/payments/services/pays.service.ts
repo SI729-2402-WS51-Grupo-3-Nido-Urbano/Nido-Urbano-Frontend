@@ -9,6 +9,6 @@ import { Pay } from "../model/pay.entity";
 export class PaysService extends BaseService<Pay>{
   constructor(http: HttpClient) {
     super(http);
-    this.resourceEndpoint = '/students';
+    this.resourceEndpoint = '/payments';
   }
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from "../../../environmets/environment";
 import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
 import { catchError, Observable, retry, throwError } from "rxjs";
+import {House} from "../../payments/model/house.entity";
 
 @Injectable({
   providedIn: 'root'
@@ -51,6 +52,18 @@ export class BaseService<T> {
   getAll(): Observable<T> {
     return this.http.get<T>(this.resourcePath(), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
+  }
+
+  // Get Resource by ID
+  getById(id: any): Observable<T> {
+    return this.http.get<T>(`${this.resourcePath()}/${id}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+  // Método para obtener casas por tipo
+  getHousesByType(type: "comprar" | "alquilar") {
+    return this.http.get<House[]>(`${this.resourcePath()}?type=${type}`, this.httpOptions)
+      .pipe(catchError(this.handleError)); // Manejo de errores como en los otros métodos
   }
 
   private resourcePath(): string {

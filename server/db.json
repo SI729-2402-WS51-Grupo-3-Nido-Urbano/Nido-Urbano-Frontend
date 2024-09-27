@@ -1,5 +1,67 @@
 {
   "houses": [
-    
+    {
+      "ownerId": 1,
+      "amount": 50000,
+      "size": "Es muy grande",
+      "spaces": 4,
+      "nearest": "Esta muy cerca",
+      "description": "Es muy bonita",
+      "type": "comprar",
+      "imageUrl": "https://i.postimg.cc/3NyhYt06/image.png"
+    },
+    {
+      "ownerId": 2,
+      "amount": 40000,
+      "size": "Es muy grande",
+      "spaces": 3,
+      "nearest": "Esta muy cerca",
+      "description": "Es muy bonita",
+      "type": "alquilar",
+      "imageUrl": "https://i.postimg.cc/3NyhYt06/image.png"
+    },
+    {
+      "ownerId": 3,
+      "amount": 30000,
+      "size": "Es muy grande",
+      "spaces": 2,
+      "nearest": "Esta muy cerca",
+      "description": "Es muy bonita",
+      "type": "comprar",
+      "imageUrl": "https://i.postimg.cc/3NyhYt06/image.png"
+    },
+    {
+      "ownerId": 4,
+      "amount": 20000,
+      "size": "Es muy grande",
+      "spaces": 1,
+      "nearest": "Esta muy cerca",
+      "description": "Es muy bonita",
+      "type": "alquilar",
+      "imageUrl": "https://i.postimg.cc/3NyhYt06/image.png"
+    },
+    {
+      "ownerId": 5,
+      "amount": 20000,
+      "size": "Es muy grande",
+      "spaces": 1,
+      "nearest": "Esta muy cerca",
+      "description": "Es muy bonita",
+      "type": "alquilar",
+      "imageUrl": "https://i.postimg.cc/3NyhYt06/image.png"
+    },
+    {
+      "ownerId": 6,
+      "amount": 20000,
+      "size": "Es muy grande",
+      "spaces": 1,
+      "nearest": "Esta muy cerca",
+      "description": "Es muy bonita",
+      "type": "comprar",
+      "imageUrl": "https://i.postimg.cc/3NyhYt06/image.png"
+    }
+  ],
+  "payments": [
+
   ]
 }

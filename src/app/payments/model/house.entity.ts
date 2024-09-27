@@ -1,19 +1,21 @@
 export class House {
   amount: number;
   ownerId: number;
-  size: string;
-  spaces: string;
-  nearest: string;
-  description: string;
-  type: string
+  size: String;
+  spaces: number;
+  nearest: String;
+  description: String;
+  type: String
+  imageUrl: String;
 
   constructor() {
     this.amount = 0;
     this.ownerId = 0;
     this.size = "";
-    this.spaces = "";
+    this.spaces = 0;
     this.nearest = "";
     this.description = "";
     this.type = "";
+    this.imageUrl = "";
   }
 }

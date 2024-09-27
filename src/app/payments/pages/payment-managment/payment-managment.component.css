@@ -1,32 +1,80 @@
-.card-container {
-  max-width: 600px;
-  margin: auto;
+.header-container {
+  background-color: #ff5722; /* Color de fondo */
+  color: white; /* Color del texto */
+  padding: 20px;
+  text-align: center; /* Centrar el texto */
+}
+
+.grid-container {
+  display: flex; /* Hacer que el contenedor sea un flexbox */
+  justify-content: space-between; /* Asegurar que los elementos se distribuyan */
+  align-items: flex-start; /* Alinear al inicio verticalmente */
+  padding: 20px;
+  gap: 20px; /* Espacio entre la imagen y la información */
+}
+
+.house-image-container {
+  flex: 1; /* La imagen ocupará 1 parte del espacio disponible */
+  display: flex;
+  flex-direction: column; /* Colocar elementos (imagen y opciones de pago) en columna */
+  justify-content: flex-start; /* Alinear elementos al inicio */
+  align-items: center; /* Centrar imagen y opciones de pago horizontalmente */
+}
+
+.house-image {
+  width: 100%; /* Imagen ocupa contenedor */
+  max-width: 400px; /* Limitar el ancho máximo */
+  height: auto;
+}
+
+.info-container {
+  flex: 1; /* La información ocupará 2 partes del espacio disponible */
+  display: flex;
+  flex-direction: column; /* Alinear elementos verticalmente */
+  justify-content: space-between;
+}
+
+.info-grid {
+  width: 100%;
+
+}
+
+.grid-item {
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido del grid */
+  padding: 10px; /* Espacio interno */
+  border: 1px solid #ccc; /* Bordes */
+  border-radius: 5px; /* Bordes redondeados */
+  margin: 5px 0; /* Espaciado vertical */
+  font-size: 32px;
   text-align: center;
 }
 
-mat-card-header {
-  background-color: orange;
-  color: white;
-  padding: 20px;
-}
-
-mat-card-image {
-  max-height: 300px;
-  object-fit: cover;
-}
-
-.icon-text {
-  display: flex;
-  align-items: center;
-  margin: 10px 0;
-}
-
-.icon-text mat-icon {
-  margin-right: 10px;
+.actions {
+  margin: 20px 0; /* Espaciado vertical */
 }
 
 .payment-options {
   display: flex;
-  justify-content: space-around;
-  padding: 20px 0;
+  justify-content: center; /* Centrar los logos de pago debajo de la imagen */
+  padding: 10px 0;
+  margin-top: 10px;
+  background-color: grey;
+}
+
+.payment-logo {
+  width: 200px; /* Ajusta el tamaño de los logos de pago */
+  margin: 0 10px; /* Espacio entre los logos */
+}
+
+.buy-button {
+  width: 100%; /* Botón ocupa todo el ancho del contenedor */
+}
+
+mat-icon{
+  width: 60px;
+}
+
+p{
+  text-align: center;
 }

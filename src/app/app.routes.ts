@@ -6,6 +6,6 @@ import {PaymentManagmentComponent} from "./payments/pages/payment-managment/paym
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'payments', component: PaymentManagmentComponent },
+  { path: 'payments/:id', component: PaymentManagmentComponent },
   { path: '**', component: PageNotFoundComponent }
 ];

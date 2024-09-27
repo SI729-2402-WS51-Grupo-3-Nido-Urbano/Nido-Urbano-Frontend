@@ -21,6 +21,6 @@ export class HouseCardComponent {
 
   onBuy(): void {
     this.houseService.setHouse(this.house);
-    this.router.navigate(['/payments', this.house.ownerId]); // Navegar a la ruta de pagos con el ID de la casa
+    this.router.navigate(['/payments', this.house.houseId]); // Navegar a la ruta de pagos con el ID de la casa
   }
 }

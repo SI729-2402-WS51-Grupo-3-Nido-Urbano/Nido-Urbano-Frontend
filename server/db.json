@@ -1,17 +1,19 @@
 {
   "houses": [
     {
-      "ownerId": 1,
+      "houseId": 1,
+      "ownerId": 6,
       "amount": 50000,
       "size": "Es muy grande",
-      "spaces": 4,
+      "spaces": 3,
       "nearest": "Esta muy cerca",
       "description": "Es muy bonita",
       "type": "comprar",
       "imageUrl": "https://i.postimg.cc/3NyhYt06/image.png"
     },
     {
-      "ownerId": 2,
+      "houseId": 2,
+      "ownerId": 5,
       "amount": 40000,
       "size": "Es muy grande",
       "spaces": 3,
@@ -21,7 +23,8 @@
       "imageUrl": "https://i.postimg.cc/3NyhYt06/image.png"
     },
     {
-      "ownerId": 3,
+      "houseId": 3,
+      "ownerId": 4,
       "amount": 30000,
       "size": "Es muy grande",
       "spaces": 2,
@@ -31,7 +34,8 @@
       "imageUrl": "https://i.postimg.cc/3NyhYt06/image.png"
     },
     {
-      "ownerId": 4,
+      "houseId": 4,
+      "ownerId": 3,
       "amount": 20000,
       "size": "Es muy grande",
       "spaces": 1,
@@ -41,7 +45,8 @@
       "imageUrl": "https://i.postimg.cc/3NyhYt06/image.png"
     },
     {
-      "ownerId": 5,
+      "houseId": 5,
+      "ownerId": 2,
       "amount": 20000,
       "size": "Es muy grande",
       "spaces": 1,
@@ -51,7 +56,8 @@
       "imageUrl": "https://i.postimg.cc/3NyhYt06/image.png"
     },
     {
-      "ownerId": 6,
+      "houseId": 6,
+      "ownerId": 1,
       "amount": 20000,
       "size": "Es muy grande",
       "spaces": 1,
@@ -62,6 +68,11 @@
     }
   ],
   "payments": [
-
+    {
+      "paymentId": "1",
+      "buyerName": "Miguel Angel",
+      "documentType": "DNI",
+      "identificationNumber": "74871278"
+    }
   ]
 }

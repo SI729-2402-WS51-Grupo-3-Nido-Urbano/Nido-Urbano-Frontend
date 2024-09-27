@@ -15,7 +15,7 @@ export class HousesService extends BaseService<House>{
   private selectedHouse: House | null = null;
 
   setHouse(house: House): void {
-    this.selectedHouse = house;
+      this.selectedHouse = house;
   }
 
   getHouse(): House | null {

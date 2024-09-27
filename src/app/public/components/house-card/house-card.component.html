@@ -1,5 +1,9 @@
-<mat-card>
+<mat-card *ngIf="house">
   <mat-card-header>
-
+    <mat-card-title>$ {{ house.amount }} DOLARES</mat-card-title>
   </mat-card-header>
+  <img mat-card-image [src]="house.imageUrl" alt="House Image" style="width: 400px">
+  <mat-card-actions>
+    <button mat-button class="mat-button" (click)="onBuy()">Comprar</button>
+  </mat-card-actions>
 </mat-card>

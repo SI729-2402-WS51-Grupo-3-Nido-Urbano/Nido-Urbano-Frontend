@@ -60,7 +60,8 @@ export class BaseService<T> {
       .pipe(retry(2), catchError(this.handleError));
   }
 
-  // Método para obtener casas por tipo
+  /* Filtra casas por tipo*/
+
   getHousesByType(type: "comprar" | "alquilar") {
     return this.http.get<House[]>(`${this.resourcePath()}?type=${type}`, this.httpOptions)
       .pipe(catchError(this.handleError)); // Manejo de errores como en los otros métodos

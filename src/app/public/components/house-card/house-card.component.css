@@ -1,0 +1,34 @@
+/* Contenedor centrado */
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Estilos de la tarjeta */
+.house-card {
+  max-width: 300px;   /* Ajusta el ancho de la tarjeta */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.house-card img {
+  height: 200px;      /* Limita la altura de la imagen */
+  object-fit: cover;  /* Ajuste de imagen para cubrir el espacio */
+}
+
+.mat-card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+}
+
+.buy-button {
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+
+.buy-button:hover {
+  background-color: #333;
+}

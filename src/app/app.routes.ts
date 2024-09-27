@@ -9,5 +9,6 @@ export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'payments/:id', component: PaymentManagmentComponent },
   { path: 'confirm-payment/:id', component: ConfirmationBCPComponent },
+
   { path: '**', component: PageNotFoundComponent }
 ];

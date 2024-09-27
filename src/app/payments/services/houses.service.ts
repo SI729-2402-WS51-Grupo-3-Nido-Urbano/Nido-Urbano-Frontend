@@ -12,13 +12,13 @@ export class HousesService extends BaseService<House>{
     this.resourceEndpoint = '/houses';
   }
 
-  private selectedHouse: House | null = null;
+  private selectedHouse: House | undefined;
 
   setHouse(house: House): void {
       this.selectedHouse = house;
   }
 
-  getHouse(): House | null {
-    return this.selectedHouse;
+  getHouse(): House {
+    return <House>this.selectedHouse;
   }
 }

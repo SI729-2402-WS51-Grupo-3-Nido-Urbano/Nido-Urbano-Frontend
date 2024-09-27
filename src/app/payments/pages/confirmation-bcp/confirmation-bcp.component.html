@@ -17,11 +17,48 @@
       </mat-card-content>
     </mat-card>
   </div>
+
   <!-- Información a la derecha de la imagen -->
   <div class="info-container">
     <mat-grid-list cols="1" rowHeight="auto" class="info-grid">
       <div class="grid-item">
+        <mat-card>
+          <mat-card-title>Detalles del Pago</mat-card-title>
+          <mat-card-content>
+            <form (ngSubmit)="onSubmit()" #payForm="ngForm">
+              <mat-form-field appearance="fill">
+                <input matInput [(ngModel)]="pay.buyerName" name="buyerName" placeholder="Nombre del Comprador" required>
+              </mat-form-field>
 
+              <mat-form-field appearance="fill">
+                <mat-label>Tipo de Documentación</mat-label>
+                <input matInput [(ngModel)]="pay.documentType" name="documentType" placeholder="Tipo de documento" required>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Número de Identificación</mat-label>
+                <input matInput [(ngModel)]="pay.identificationNumber" name="identificationNumber"  placeholder="Numero de identificacion"required>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Número de Teléfono</mat-label>
+                <input matInput [(ngModel)]="pay.phoneNumber" name="phoneNumber" placeholder="Número de telefono" required>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Correo Electrónico</mat-label>
+                <input matInput [(ngModel)]="pay.email" name="email" placeholder="Email" required>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Banco</mat-label>
+                <input matInput [(ngModel)]="pay.bank" name="bank" placeholder="Banco" required>
+              </mat-form-field>
+
+              <button mat-raised-button color="primary" type="submit">Confirmar Pago</button>
+            </form>
+          </mat-card-content>
+        </mat-card>
       </div>
     </mat-grid-list>
   </div>

@@ -69,10 +69,16 @@
   ],
   "payments": [
     {
-      "paymentId": "1",
-      "buyerName": "Miguel Angel",
+      "paymentId": 946,
+      "buyerName": "Miguel",
       "documentType": "DNI",
-      "identificationNumber": "74871278"
+      "identificationNumber": "12345678",
+      "phoneNumber": "922 114 457",
+      "email": "u202220294@upc.edu.pe",
+      "bank": "BCP",
+      "amountSale": 20000,
+      "houseId": 6,
+      "id": 1
     }
   ]
 }

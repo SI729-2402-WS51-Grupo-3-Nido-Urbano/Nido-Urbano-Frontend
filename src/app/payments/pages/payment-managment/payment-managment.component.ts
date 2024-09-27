@@ -40,7 +40,7 @@ export class PaymentManagmentComponent implements OnInit{
   // Metodo que redirige de BCP
   goToPaymentConfirmationBCP(): void {
     if (this.house) {
-      this.router.navigate(['/confirm-payment', this.house.ownerId]); // Redirigir a la ruta de confirmación de pago con el ID de la casa
+      this.router.navigate(['/confirm-payment', this.house.houseId]); // Redirigir a la ruta de confirmación de pago con el ID de la casa
     }
   }
 }

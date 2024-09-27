@@ -1,0 +1,22 @@
+header {
+  display: flex;
+  flex-direction: column;  /* Coloca los elementos uno debajo del otro */
+  justify-content: center; /* Centrado vertical */
+  align-items: center;     /* Centrado horizontal */
+  height: 200px;           /* Ajusta la altura si es necesario */
+}
+
+h1, h2 {
+  color: white;            /* Color de texto blanco */
+  margin: 0;
+}
+
+/* Contenedor para las pestañas */
+.tabs-container {
+  color: white;               /* Texto blanco para las etiquetas */
+}
+
+/* Estilos para el contenido de cada tab */
+.content-container {
+  padding: 20px;
+}

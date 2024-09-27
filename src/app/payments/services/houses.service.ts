@@ -12,7 +12,6 @@ export class HousesService extends BaseService<House>{
     this.resourceEndpoint = '/houses';
   }
 
-
   private selectedHouse: House | null = null;
 
   setHouse(house: House): void {

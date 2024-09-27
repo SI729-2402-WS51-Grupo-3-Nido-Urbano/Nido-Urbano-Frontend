@@ -8,6 +8,11 @@
     <div class="content-container">
       <!-- Aquí puedes agregar el contenido de la sección "Comprar", como las tarjetas de casas -->
       <p>Contenido de la sección Comprar</p>
+      <div class="container">
+        <div class="house-cards"*ngIf="housesSale">
+          <app-house-card *ngFor="let house of housesSale" [house]="house"></app-house-card>
+        </div>
+      </div>
     </div>
   </mat-tab>
 
@@ -15,8 +20,9 @@
     <div class="content-container">
       <!-- Aquí puedes agregar el contenido de la sección "Alquilar" -->
       <p>Contenido de la sección Alquilar</p>
+      <div class="house-cards"*ngIf="housesRent">
+        <app-house-card *ngFor="let house of housesRent" [house]="house"></app-house-card>
+      </div>
     </div>
   </mat-tab>
 </mat-tab-group>
-
-<app-house-card></app-house-card>

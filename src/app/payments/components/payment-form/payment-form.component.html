@@ -1,0 +1,80 @@
+<form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+  <!-- Nombre de Titular -->
+  <mat-form-field appearance="outline">
+    <mat-label>Nombre de Titular</mat-label>
+    <input matInput formControlName="holderName" placeholder="Ej. Juan Pérez">
+    <mat-error *ngIf="paymentForm.controls['holderName'].hasError('required')">
+      El nombre es obligatorio
+    </mat-error>
+    <mat-error *ngIf="paymentForm.controls['holderName'].hasError('minlength')">
+      El nombre debe tener al menos 3 caracteres
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Tipo de Documentación -->
+  <mat-form-field appearance="outline">
+    <mat-label>Tipo de Documentación</mat-label>
+    <mat-select formControlName="documentType">
+      <mat-option *ngFor="let doc of documentTypes" [value]="doc.value">
+        {{ doc.viewValue }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="paymentForm.controls['documentType'].hasError('required')">
+      El tipo de documentación es obligatorio
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Número de Identificación -->
+  <mat-form-field appearance="outline">
+    <mat-label>Número de Identificación</mat-label>
+    <input matInput formControlName="documentNumber" placeholder="Ej. 12345678">
+    <mat-error *ngIf="paymentForm.controls['documentNumber'].hasError('required')">
+      El número de identificación es obligatorio
+    </mat-error>
+    <mat-error *ngIf="paymentForm.controls['documentNumber'].hasError('pattern')">
+      Solo se permiten números
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Número de Teléfono -->
+  <mat-form-field appearance="outline">
+    <mat-label>Número de Teléfono</mat-label>
+    <input matInput formControlName="phoneNumber" placeholder="Ej. 987654321">
+    <mat-error *ngIf="paymentForm.controls['phoneNumber'].hasError('required')">
+      El número de teléfono es obligatorio
+    </mat-error>
+    <mat-error *ngIf="paymentForm.controls['phoneNumber'].hasError('pattern')">
+      El número de teléfono debe tener 9 dígitos
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Correo Electrónico -->
+  <mat-form-field appearance="outline">
+    <mat-label>Correo Electrónico</mat-label>
+    <input matInput formControlName="email" placeholder="Ej. correo@example.com">
+    <mat-error *ngIf="paymentForm.controls['email'].hasError('required')">
+      El correo electrónico es obligatorio
+    </mat-error>
+    <mat-error *ngIf="paymentForm.controls['email'].hasError('email')">
+      El correo no es válido
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Selección de Banco -->
+  <mat-form-field appearance="outline">
+    <mat-label>Seleccione su banco</mat-label>
+    <mat-select formControlName="bank">
+      <mat-option *ngFor="let bank of banks" [value]="bank.value">
+        {{ bank.viewValue }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="paymentForm.controls['bank'].hasError('required')">
+      El banco es obligatorio
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Botón de Envío -->
+  <button mat-raised-button color="primary" type="submit" [disabled]="!paymentForm.valid">
+    Confirmar Pago
+  </button>
+</form>

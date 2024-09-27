@@ -1,7 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import { Feedback } from '../../model/feedback.entity';
-import { FeedbackService } from '../../services/feedback.service';
-import {ActivatedRoute, Router} from '@angular/router';
 import {MatFormField} from "@angular/material/form-field";
 import {FormsModule, NgForm} from "@angular/forms";
 import {MatInput} from "@angular/material/input";

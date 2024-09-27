@@ -3,22 +3,34 @@ import {PaymentFormComponent} from "../../components/payment-form/payment-form.c
 import {House} from "../../model/house.entity";
 import {ActivatedRoute, Router} from "@angular/router";
 import {HousesService} from "../../services/houses.service";
+import {MatCard, MatCardContent} from "@angular/material/card";
+import {MatButton} from "@angular/material/button";
+import {MatGridList} from "@angular/material/grid-list";
+import {MatIcon} from "@angular/material/icon";
+import {MatGridListModule} from "@angular/material/grid-list";
 
 @Component({
   selector: 'app-confirmation-bcp',
   standalone: true,
   imports: [
-    PaymentFormComponent
+    PaymentFormComponent,
+    MatCard,
+    MatButton,
+    MatGridList,
+    MatIcon,
+    MatGridListModule,
+    MatCardContent
   ],
   templateUrl: './confirmation-bcp.component.html',
   styleUrl: './confirmation-bcp.component.css'
 })
 export class ConfirmationBCPComponent implements OnInit{
+
   house: House | null = null;
+
   constructor(
     private route: ActivatedRoute,
     private houseService: HousesService,
-    private router: Router // Importar el Router para navegar entre rutas
   ) {}
 
   ngOnInit(): void {

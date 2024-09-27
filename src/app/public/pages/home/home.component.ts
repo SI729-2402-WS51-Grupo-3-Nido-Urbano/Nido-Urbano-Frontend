@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {NgForOf, NgIf} from "@angular/common";
 import {HouseCardComponent} from "../../components/house-card/house-card.component";
 import { MatTabsModule } from '@angular/material/tabs';
@@ -14,7 +14,7 @@ import {HousesService} from "../../../payments/services/houses.service";
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
   houseData: House;
   housesSale: House[] = [];
   housesRent: House[] = [];
@@ -50,22 +50,4 @@ export class HomeComponent {
         console.error('Error fetching houses', error);
       }
     );}
-
-  /*housesSale = [
-    {ownerId: 1, amount: 30000, size: "5", spaces: 5, nearest: "Muy cerca", type: "compra", imageUrl: "https://i.postimg.cc/3NyhYt06/image.png", description: "Muy bonita"},
-    {ownerId: 2, amount: 10000, size: "5", spaces: 5, nearest: "Muy cerca", type: "compra", imageUrl: "https://i.postimg.cc/3NyhYt06/image.png", description: "Muy bonita"},
-    {ownerId: 3, amount: 20000, size: "5", spaces: 5, nearest: "Muy cerca", type: "compra", imageUrl: "https://i.postimg.cc/3NyhYt06/image.png", description: "Muy bonita"},
-    {ownerId: 3, amount: 20000, size: "5", spaces: 5, nearest: "Muy cerca", type: "compra", imageUrl: "https://i.postimg.cc/3NyhYt06/image.png", description: "Muy bonita"},
-    {ownerId: 3, amount: 20000, size: "5", spaces: 5, nearest: "Muy cerca", type: "compra", imageUrl: "https://i.postimg.cc/3NyhYt06/image.png", description: "Muy bonita"},
-    {ownerId: 3, amount: 20000, size: "5", spaces: 5, nearest: "Muy cerca", type: "compra", imageUrl: "https://i.postimg.cc/3NyhYt06/image.png", description: "Muy bonita"}
-  ];
-
-  housesRent = [
-    {ownerId: 1, amount: 30000, size: "5", spaces: 5, nearest: "Muy cerca", type: "compra", imageUrl: "https://i.postimg.cc/3NyhYt06/image.png", description: "Muy bonita"},
-    {ownerId: 2, amount: 10000, size: "5", spaces: 5, nearest: "Muy cerca", type: "compra", imageUrl: "https://i.postimg.cc/3NyhYt06/image.png", description: "Muy bonita"},
-    {ownerId: 3, amount: 20000, size: "5", spaces: 5, nearest: "Muy cerca", type: "compra", imageUrl: "https://i.postimg.cc/3NyhYt06/image.png", description: "Muy bonita"},
-    {ownerId: 3, amount: 20000, size: "5", spaces: 5, nearest: "Muy cerca", type: "compra", imageUrl: "https://i.postimg.cc/3NyhYt06/image.png", description: "Muy bonita"},
-    {ownerId: 3, amount: 20000, size: "5", spaces: 5, nearest: "Muy cerca", type: "compra", imageUrl: "https://i.postimg.cc/3NyhYt06/image.png", description: "Muy bonita"},
-    {ownerId: 3, amount: 20000, size: "5", spaces: 5, nearest: "Muy cerca", type: "compra", imageUrl: "https://i.postimg.cc/3NyhYt06/image.png", description: "Muy bonita"}
-  ]*/
 }

@@ -21,8 +21,4 @@ export class HousesService extends BaseService<House>{
   getHouse(): House | null {
     return this.selectedHouse;
   }
-
-  clearHouse(): void {
-    this.selectedHouse = null;
-  }
 }

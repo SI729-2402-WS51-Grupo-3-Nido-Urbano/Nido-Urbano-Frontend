@@ -1,2 +1,28 @@
+<div class="header-container">
+  <h1>CONFIRMACION DEL PAGO</h1>
+  <mat-card>
+    <img src="https://i.postimg.cc/15zXzVdc/image.png" alt="BCP" class="payment-logo">
+  </mat-card>
+</div>
 
-<app-payment-form></app-payment-form>
+<div class="grid-container">
+  <div class="house-image-container">
+    <h2>Medio de Pago:</h2>
+    <mat-card>
+      <img src="https://i.postimg.cc/15zXzVdc/image.png" alt="BCP" class="payment-logo">
+      <mat-card-content>
+        <p>
+          El precio de la vivienda es: {{house?.amount}}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <!-- Información a la derecha de la imagen -->
+  <div class="info-container">
+    <mat-grid-list cols="1" rowHeight="auto" class="info-grid">
+      <div class="grid-item">
+
+      </div>
+    </mat-grid-list>
+  </div>
+</div>

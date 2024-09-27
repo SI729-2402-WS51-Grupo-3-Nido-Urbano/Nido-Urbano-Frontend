@@ -1,0 +1,37 @@
+.payment-logo {
+  width: 200px; /* Ajusta el tamaño de los logos de pago */
+  margin: 0 10px; /* Espacio entre los logos */
+}
+
+mat-card{
+  background-color: #cccccc;
+}
+
+.house-image-container {
+  flex: 1; /* La imagen ocupará 1 parte del espacio disponible */
+  display: flex;
+  flex-direction: column; /* Colocar elementos (imagen y opciones de pago) en columna */
+  justify-content: flex-start; /* Alinear elementos al inicio */
+  align-items: center; /* Centrar imagen y opciones de pago horizontalmente */
+  width: 200px;
+}
+
+.grid-container {
+  display: flex; /* Hacer que el contenedor sea un flexbox */
+  justify-content: space-between; /* Asegurar que los elementos se distribuyan */
+  align-items: flex-start; /* Alinear al inicio verticalmente */
+  padding: 20px;
+  gap: 200px; /* Espacio entre la imagen y la información */
+}
+
+.info-container {
+  flex: 1; /* La información ocupará 2 partes del espacio disponible */
+  display: flex;
+  flex-direction: column; /* Alinear elementos verticalmente */
+  justify-content: space-between;
+}
+
+mat-card-content{
+  font-size: 15px;
+  color: black;
+}

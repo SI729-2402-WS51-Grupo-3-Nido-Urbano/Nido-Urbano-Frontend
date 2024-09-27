@@ -6,13 +6,14 @@ import {House} from "../../model/house.entity";
 import {HousesService} from "../../services/houses.service";
 import {ActivatedRoute, Router} from '@angular/router';
 import {MatGridList, MatGridTile} from "@angular/material/grid-list";
+import {MatGridListModule} from "@angular/material/grid-list";
 
 @Component({
   selector: 'app-payment-managment',
   standalone: true,
   imports: [MatCardModule,
     MatButtonModule,
-    MatIconModule, MatGridList, MatGridTile],
+    MatIconModule, MatGridList, MatGridTile, MatGridListModule],
   templateUrl: './payment-managment.component.html',
   styleUrl: './payment-managment.component.css'
 })
@@ -26,14 +27,9 @@ export class PaymentManagmentComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
-    const houseId = this.route.snapshot.paramMap.get('id'); // Obtener el ID de la casa de la ruta
+    const houseId = this.route.snapshot.paramMap.get('id');
     if (houseId) {
-      // Puedes utilizar el servicio para obtener la casa o recuperar desde el servicio que has creado
-      this.house = this.houseService.getHouse(); // Aquí obtienes la casa del servicio
-      // O puedes hacer una llamada a la API para obtener la casa por ID, si no usas el servicio compartido
-      // this.houseService.getById(houseId).subscribe(house => {
-      //   this.house = house;
-      // });
+      this.house = this.houseService.getHouse();
     }
   }
 

@@ -3,7 +3,7 @@ export class Pay {
   buyerName: String;
   documentType: String;
   identificationNumber: String;
-  phoneNumbre: String;
+  phoneNumber: String;
   email: String;
   bank: String;
   amountSale: number;
@@ -14,7 +14,7 @@ export class Pay {
     this.buyerName = "";
     this.documentType = "";
     this.identificationNumber = "";
-    this.phoneNumbre = "";
+    this.phoneNumber = "";
     this.email = "";
     this.bank = "";
     this.amountSale = 0;

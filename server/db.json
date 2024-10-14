@@ -1,7 +1,7 @@
 {
   "houses": [
     {
-      "house_id": 1,
+      "id": 1,
       "user_property_id": 1,
       "house_name": "House 1",
       "address": "1234 Main St",
@@ -18,13 +18,13 @@
       "verification_id": 1
     },
     {
-      "house_id": 2,
+      "id": 2,
       "user_property_id": 2,
       "house_name": "House 2",
       "address": "1234 Main St",
       "house_type": "HOUSE",
       "house_modal": "RENTAL",
-      "price": 1000.40,
+      "price": 1000.4,
       "size": 1000,
       "description": "This is a house",
       "publication_date": "2021-01-01",
@@ -35,7 +35,7 @@
       "verification_id": 2
     },
     {
-      "house_id": 3,
+      "id": 3,
       "user_property_id": 3,
       "house_name": "House 3",
       "address": "1234 Main St",
@@ -51,22 +51,23 @@
       "video": "https://www.youtube.com/watch?v=JGwWNGJdvx8",
       "verification_id": 3
     }
+
   ],
-  "house_titular_verification": [
+  "verification": [
     {
-      "verification_id": 1,
+      "id": 1,
       "verification_type": "DOCUMENT",
       "verification_date": "2021-01-01",
       "verification_status": "PENDING"
     },
     {
-      "verification_id": 2,
+      "id": 2,
       "verification_type": "PHOTO",
       "verification_date": "2021-01-02",
       "verification_status": "COMPLETED"
     },
     {
-      "verification_id": 3,
+      "id": 3,
       "verification_type": "DOCUMENT",
       "verification_date": "2021-01-01",
       "verification_status": "REJECTED"

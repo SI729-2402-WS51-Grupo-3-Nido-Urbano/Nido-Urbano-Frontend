@@ -1,0 +1,5 @@
+<mat-form-field>
+  <mat-label>Upload File</mat-label>
+  <input type="file" (change)="onFileSelected($event)" matInput>
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="onUpload()">Upload</button>

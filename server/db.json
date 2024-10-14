@@ -1,19 +1,19 @@
 {
   "feedbacks": [
     {
+      "id": 1,
       "house_name": "Casa en el centro",
       "address": "Calle Principal 123",
-      "rating_id": 201,
       "rated_user_id": 101,
       "rating_user_id": 301,
-      "score": 5,
+      "score": 4,
       "comments": "Excelente casa, muy cómoda y bien ubicada.",
       "rating_date": "2023-09-25"
     },
     {
+      "id": 2,
       "house_name": "Apartamento moderno",
       "address": "Avenida Secundaria 456",
-      "rating_id": 202,
       "rated_user_id": 102,
       "rating_user_id": 302,
       "score": 4,
@@ -21,9 +21,9 @@
       "rating_date": "2023-09-26"
     },
     {
+      "id": 3,
       "house_name": "Casa con jardín",
       "address": "Calle Jardín 789",
-      "rating_id": 203,
       "rated_user_id": 103,
       "rating_user_id": 303,
       "score": 5,
@@ -31,9 +31,9 @@
       "rating_date": "2023-09-15"
     },
     {
+      "id": 4,
       "house_name": "Apartamento cerca del parque",
       "address": "Calle del Parque 321",
-      "rating_id": 204,
       "rated_user_id": 104,
       "rating_user_id": 304,
       "score": 4,
@@ -41,14 +41,45 @@
       "rating_date": "2023-09-10"
     },
     {
+      "id": 5,
       "house_name": "Casa familiar",
       "address": "Calle Familiar 654",
-      "rating_id": 205,
       "rated_user_id": 105,
       "rating_user_id": 305,
       "score": 5,
       "comments": "Casa muy espaciosa y cómoda para una familia grande.",
       "rating_date": "2023-09-05"
+    },
+    {
+      "id": 6,
+      "house_name": "Frente a la playa",
+      "address": "SAN MIGUEL",
+      "score": 4,
+      "comments": "Vista impresionante."
+    },
+    {
+      "house_name": "Nueva Casa",
+      "address": "Calle Nueva 123",
+      "rated_user_id": 106,
+      "rating_user_id": 306,
+      "score": 5,
+      "comments": "Gran experiencia en esta nueva casa.",
+      "rating_date": "2023-10-07",
+      "id": 7
+    },
+    {
+      "house_name": "Complejo departamental",
+      "address": "San Isidro",
+      "score": 3,
+      "comments": "Excelente organización.",
+      "id": 8
+    },
+    {
+      "house_name": "Casa con jardín",
+      "address": "San Isidro",
+      "score": 3,
+      "comments": "Puede mejorar",
+      "id": 9
     }
   ]
 }

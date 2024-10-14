@@ -1,7 +1,7 @@
 export class Feedback {
   house_name: string;
   address: string;
-  rating_id: number;
+  id: number;
   rated_user_id: number;
   rating_user_id: number;
   score: number;
@@ -11,7 +11,7 @@ export class Feedback {
   constructor() {
     this.house_name = "";
     this.address = "";
-    this.rating_id = 0;
+    this.id = 0;
     this.rated_user_id = 0;
     this.rating_user_id = 0;
     this.score = 0;

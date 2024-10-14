@@ -53,8 +53,8 @@ export class FeedbackManagementComponent implements OnInit {
 
   // Cargar feedbacks desde el servicio
   loadFeedbacks(): void {
-    this.feedbackService.getAll().subscribe((data: Feedback[]) => {
-      this.feedbacks = data;
+    this.feedbackService.getAll().subscribe((response: any) => {
+      this.feedbacks = response;
     });
   }
 
@@ -73,24 +73,39 @@ export class FeedbackManagementComponent implements OnInit {
   // Eliminar feedback
   deleteFeedback(feedback: Feedback): void {
     if (confirm('Are you sure you want to delete this feedback?')) {
-      this.feedbackService.delete(feedback.rating_id).subscribe(() => {
-        this.loadFeedbacks();
+      this.feedbackService.delete(feedback.id).subscribe(() => {
+        this.feedbacks = this.feedbacks.filter((fb: Feedback) => fb.id !== feedback.id);
       });
     }
   }
 
   // Manejar la adición de un nuevo feedback
   onFeedbackAdded(newFeedback: Feedback): void {
-    this.feedbackService.create(newFeedback).subscribe(() => {
-      this.loadFeedbacks();
+    this.feedbackService.create(newFeedback).subscribe((response: Feedback) => {
+      console.log('New Feedback Added:', response);
+
+      this.feedbacks.push({...response});
+      this.feedbacks = this.feedbacks.map((feedback: Feedback) => {
+        return feedback;
+      });
       this.selectedFeedback = null;
     });
   }
 
+
+
   // Manejar la actualización de un feedback existente
   onFeedbackUpdated(updatedFeedback: Feedback): void {
-    this.feedbackService.update(updatedFeedback.rating_id, updatedFeedback).subscribe(() => {
-      this.loadFeedbacks();
+    this.feedbackService.update(updatedFeedback.id, updatedFeedback).subscribe((response: Feedback) => {
+      console.log('Feedback Edited:', response);
+
+      this.feedbacks = this.feedbacks.map((feedback: Feedback) => {
+        if (feedback.id === response.id) {
+          return response;
+        }
+        return feedback;
+      });
+
       this.selectedFeedback = null;
     });
   }

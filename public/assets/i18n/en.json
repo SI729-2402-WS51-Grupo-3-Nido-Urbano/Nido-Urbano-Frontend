@@ -4,12 +4,12 @@
     "placeholder": "Enter text to filter"
   },
   "title": {
-    "reservations": "Reservations",
-    "add": "New Reservation",
+    "reservations": "Housing Reservations Here",
+    "add": "New Appointment Reservation",
     "edit": "Edit Reservation"
   },
   "reservation": {
-    "id": "No.",
+    "id": "ID",
     "tenant_name": "Tenant name",
     "age": "Age",
     "tenant_address": "Tenant address",

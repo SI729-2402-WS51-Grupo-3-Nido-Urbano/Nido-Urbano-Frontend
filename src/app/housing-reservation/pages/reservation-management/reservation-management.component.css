@@ -1,12 +1,70 @@
-.table-wrapper {
-  width: 1024px;
-  margin: 50px auto;
+.cards-wrapper {
+  padding: 20px;
 }
 
-table {
-  width: 100%;
+h3 {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-tr.editable-row {
-  background-color: lightblue;
+.card-grid {
+  padding-top: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 20px;
+}
+
+.reservation-card {
+  width: 300px;
+}
+
+/* Pantallas muy pequeñas (300px - 320px) */
+@media screen and (max-width: 320px) {
+  .reservation-card {
+    width: 100%;
+    max-width: 300px; /* Ocupa todo el ancho disponible en pantallas muy pequeñas */
+  }
+}
+
+/* Pantallas pequeñas (321px - 360px) */
+@media screen and (min-width: 321px) and (max-width: 360px) {
+  .reservation-card {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* Pantallas pequeñas (361px - 400px) */
+@media screen and (min-width: 361px) and (max-width: 400px) {
+  .reservation-card {
+    width: 100%;
+    max-width: 360px;
+  }
+}
+
+/* Pantallas pequeñas a medianas (401px - 768px) */
+@media screen and (min-width: 401px) and (max-width: 768px) {
+  .reservation-card {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .card-grid {
+    justify-content: center;
+  }
+}
+
+/* Pantallas medianas (769px - 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .reservation-card {
+    width: calc(50% - 20px); /* Dos cards por fila en pantallas medianas */
+  }
+}
+
+/* Pantallas grandes (1025px en adelante) */
+@media screen and (min-width: 1025px) {
+  .reservation-card {
+    width: calc(33.33% - 20px); /* Tres cards por fila en pantallas grandes */
+  }
 }

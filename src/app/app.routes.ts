@@ -5,8 +5,8 @@ import { ReservationManagementComponent } from "./housing-reservation/pages/rese
 import { CalendarManagementComponent } from "./housing-reservation/pages/reservation-calendar-management/calendar-management.component"
 
 export const routes: Routes = [
-  { path: 'housing-reservation/calendar', component: CalendarManagementComponent },
   { path: 'housing-reservation/reservations', component: ReservationManagementComponent },
-  { path: '', redirectTo: 'housing-reservation/calendar', pathMatch: 'full' },
+  { path: 'housing-reservation/calendar', component: CalendarManagementComponent },
+  { path: '', redirectTo: 'housing-reservation/reservations', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];

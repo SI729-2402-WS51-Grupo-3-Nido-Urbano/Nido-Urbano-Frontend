@@ -1,43 +1,33 @@
 <!-- Reservation catalogue -->
-<div class="table-wrapper">
+<div class="cards-wrapper">
   <h3>{{ 'title.reservations' | translate }}</h3>
 
-  <!--Add/Edit Form-->
+  <!-- Add/Edit Form -->
   <app-reservation-create-and-edit (editCanceled)="onCancelEdit()"
-                               (reservationAdded)="onReservationAdded($event)"
-                               (reservationUpdated)="onReservationUpdated($event)"
-                               [editMode] = "isEditMode"
-                               [reservation]="reservationData"/>
-  <!-- Data Table -->
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"
-         matSort matSortActive="id" matSortDirection="asc">
+                                   (reservationAdded)="onReservationAdded($event)"
+                                   (reservationUpdated)="onReservationUpdated($event)"
+                                   [editMode]="isEditMode"
+                                   [reservation]="reservationData">
+  </app-reservation-create-and-edit>
 
-    <ng-container matColumnDef="id">
-      <th *matHeaderCellDef mat-header-cell mat-sort-header> {{ 'reservation.id' | translate }} </th>
-      <td *matCellDef="let element" mat-cell>{{ element.id }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="start_date">
-      <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'reservation.start_date' | translate }}</th>
-      <td *matCellDef="let element" mat-cell>{{ element.start_date }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="end_date">
-      <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'reservation.end_date' | translate }}</th>
-      <td *matCellDef="let element" mat-cell>{{ element.end_date }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="actions">
-      <th *matHeaderCellDef mat-header-cell> {{ 'reservation.actions' | translate }}</th>
-      <td *matCellDef="let element" mat-cell>
-        <a (click)="onEditItem(element)" href="javascript:void(0)"><mat-icon>edit</mat-icon></a>
-        <a (click)="onDeleteItem(element)" href="javascript:void(0)"><mat-icon>delete</mat-icon></a>
-      </td>
-    </ng-container>
-
-    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
-    <tr *matRowDef="let row; columns:displayedColumns" [ngClass]="{'editable-row': reservationData.id === row.id }" mat-row></tr>
-  </table>
-  <!-- Paginator child component-->
-  <mat-paginator [pageSizeOptions]="[5, 10, 15]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+  <!-- Cards for each reservation -->
+  <div class="card-grid">
+    <mat-card *ngFor="let reservation of dataSource.data" class="reservation-card">
+      <mat-card-header>
+        <mat-card-title>{{ 'reservation.id' | translate }}: {{ reservation.id }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ 'reservation.start_date' | translate }}: {{ reservation.start_date | date }}</p>
+        <p>{{ 'reservation.end_date' | translate }}: {{ reservation.end_date | date }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-icon-button (click)="onEditItem(reservation)" aria-label="Edit reservation">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="onDeleteItem(reservation)" aria-label="Delete reservation">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
 </div>

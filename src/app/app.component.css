@@ -7,13 +7,15 @@ mat-sidenav {
   padding: 16px 0;
 }
 .content {
-  height: calc(100svh - 98px);
-  padding: 16px;
+  min-height: 100%;
+  max-height: auto;
+  padding: 10px;
   max-width: 1440px;
   margin: 0 auto;
   font-size: 16px;
   background: #EE7B10;
 }
+
 mat-sidenav-container {
   height: calc(100svh - 65px);
 }

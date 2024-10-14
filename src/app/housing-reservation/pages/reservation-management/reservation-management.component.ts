@@ -1,19 +1,21 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator } from "@angular/material/paginator";
+import { MatCardModule } from '@angular/material/card';
 import { MatSort } from "@angular/material/sort";
 import { Reservation } from '../../model/reservation.entity';
 import { ReservationManagementService } from "../../services/reservation-management.service";
 import { MatIconModule } from "@angular/material/icon";
 import { NgClass } from "@angular/common";
 import { TranslateModule } from "@ngx-translate/core";
+import { CommonModule } from '@angular/common';
 import {ReservationEditAndViewComponent} from "../../components/reservation-edit-and-view/reservation-edit-and-view.component";
 
 @Component({
   selector: 'app-reservation-management',
   templateUrl: './reservation-management.component.html',
   standalone: true,
-  imports: [MatPaginator, MatSort, MatIconModule, MatTableModule, NgClass, TranslateModule, ReservationEditAndViewComponent],
+  imports: [MatPaginator, MatCardModule, MatSort, MatIconModule, MatTableModule, NgClass, TranslateModule, CommonModule, ReservationEditAndViewComponent],
   styleUrls: ['./reservation-management.component.css']
 })
 export class ReservationManagementComponent implements OnInit, AfterViewInit {

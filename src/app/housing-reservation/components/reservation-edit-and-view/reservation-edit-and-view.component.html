@@ -1,4 +1,4 @@
-<!-- Create and Edit Form -->
+<!-- Create and Edit Form
 <h4>{{ (editMode ? 'title.edit': 'title.add') | translate }}</h4>
 <div class="form-section">
 
@@ -23,4 +23,28 @@
     </ng-container>
   </form>
 
+</div>-->
+
+<!-- Create and Edit Form -->
+<h4>{{ (editMode ? 'title.edit' : 'title.add') | translate }}</h4>
+<div class="form-section">
+  <form (ngSubmit)="onSubmit()" #reservationForm="ngForm" class="form-row">
+    <mat-form-field>
+      <input matInput type="date" placeholder="Start Date" name="start_date" required [(ngModel)]="reservation.start_date">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="date" placeholder="End Date" name="end_date" required [(ngModel)]="reservation.end_date">
+    </mat-form-field>
+
+    <div *ngIf="reservationForm.errors?.['dateRangeInvalid']" class="error-message">
+      End date must be less than 2 days after start date.
+    </div>
+
+    <ng-container>
+      <button mat-raised-button color="primary" type="submit">
+        {{ editMode ? 'Update' : 'Add' }}
+      </button>
+      <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+    </ng-container>
+  </form>
 </div>

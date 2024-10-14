@@ -26,8 +26,8 @@ export class AppComponent implements OnInit  {
 
   @ViewChild(MatSidenav, {static: true}) sidenav!: MatSidenav;
   options = [
-    { icon: 'event', path: '/housing-reservation/calendar', title: 'Calendar'},
     { icon: 'explore', path: '/housing-reservation/reservations', title: 'Appointments'},
+    { icon: 'event', path: '/housing-reservation/calendar', title: 'Calendar'},
   ];
 
   constructor(private translate: TranslateService, private observer: BreakpointObserver) {

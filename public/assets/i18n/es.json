@@ -4,12 +4,12 @@
     "placeholder": "Digite texto a filtrar"
   },
   "title": {
-    "reservations": "Reservaciones",
-    "add": "Nueva reserva",
-    "edit": "Editar reserva"
+    "reservations": "Agenda una cita para tu hogar",
+    "add": "Reservar cita",
+    "edit": "Editar reservacion"
   },
   "reservation": {
-    "id": "No.",
+    "id": "ID",
     "tenant_name": "Nombre del arrendatario",
     "age": "Edad",
     "tenant_address": "Dirección del arrendatario",

@@ -7,8 +7,8 @@ import {DatePipe, NgIf} from "@angular/common";
 import {ReservationCalendarErrorDialog} from "../../components/reservation-calendar-error-dialog/reservation-calendar-error-dialog";
 import {MatDialog} from "@angular/material/dialog";
 import {Reservation} from "../../model/reservation.entity";
-import { ReservationManagementService } from "../../services/reservation-management.service";
-import { Router } from '@angular/router';
+import {ReservationManagementService} from "../../services/reservation-management.service";
+import {Router} from '@angular/router';
 
 
 // @title Datepicker inline calendar example
@@ -27,10 +27,27 @@ export class CalendarManagementComponent {
   endDate: Date | null = null; // Fecha de fin
   currentDate: Date = new Date(); // Fecha actual
   reservations: Reservation[] = [];
+  reservedDates: { start: Date; end: Date }[] = []; // Store reserved date ranges
+  nextId: number = 1; // Next reservation ID
 
   constructor(private dialog: MatDialog,
               private reservationManagementService: ReservationManagementService,
               private router: Router) {}
+
+  ngOnInit() {
+    this.getNextReservationId(); // Fetch the next available ID on initialization
+  }
+
+  getNextReservationId(): void {
+    this.reservationManagementService.getNextId().subscribe(
+      (nextId) => {
+        this.nextId = nextId; // Set the next available ID
+      },
+      (error) => {
+        console.error('Error fetching next reservation ID:', error);
+      }
+    );
+  }
 
   onDateChange(date: Date | null) {
     if (date && date < this.currentDate) {
@@ -65,12 +82,22 @@ export class CalendarManagementComponent {
       return;
     }
 
+    // Calculate the difference in days between startDate and endDate
+    const diffInTime = this.endDate.getTime() - this.startDate.getTime();
+    const diffInDays = diffInTime / (1000 * 3600 * 24); // Convert milliseconds to days
+
+    // Check if the difference exceeds 2 days
+    if (diffInDays > 2) {
+      this.openErrorDialog(); // Open the error dialog if the difference is more than 2 days
+      return;
+    }
+
     if (this.startDate && this.endDate) {
       console.log(`Start Date: ${this.startDate}, End Date: ${this.endDate}`);
 
       // Crear la cita con las fechas seleccionadas
       const newReservation: Reservation = {
-        id: Math.floor(Math.random() * 100), // Genera un ID temporal
+        id: this.nextId, // Use the calculated next ID
         tenant_name: "Nombre del Inquilino",
         age: 30, // Valor de ejemplo
         tenant_address: "Dirección del Inquilino",

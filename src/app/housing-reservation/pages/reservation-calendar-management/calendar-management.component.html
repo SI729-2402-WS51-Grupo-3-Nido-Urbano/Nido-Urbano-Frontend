@@ -1,34 +1,40 @@
+<div class="container">
+  <div class="column1">
+    <mat-card class="demo-inline-calendar-card">
+      <h2>Select Your Date</h2>
+      <mat-calendar
+        [(selected)]="selectedDate"
+        (selectedChange)="onDateChange($event)">
+      </mat-calendar>
+    </mat-card>
+  </div>
 
+  <div class="column2">
+    <h2>Your Booking Dates</h2>
+    <p>
+      {{ startDate ? (startDate | date) : 'Start Date' }}&nbsp;-&nbsp;
+      {{ endDate ? (endDate | date) : 'End Date' }}
+    </p>
 
-<div class="column1">
-  <mat-card class="demo-inline-calendar-card">
-    <mat-calendar [(selected)]="selectedDate" (selectedChange)="onDateChange($event)"></mat-calendar>
-  </mat-card>
-</div>
-<div class="column2">
-  <p>
-    {{ startDate ? (startDate | date) : 'Start Date' }}&nbsp;-&nbsp;
-    {{ endDate ? (endDate | date) : 'End Date' }}
-  </p>
-
-  <!-- Botón "Continuar"-->
-  <button class="btn-continue" (click)="onContinue()">
-    Continuar
-  </button>
-
-
-  <!--<div *ngIf="condition">Content to render when condition is true.</ div>-->
-
-  <div class="payment-methods">
-    <div class="column">
-      <img src="https://i.postimg.cc/t44s9Z4M/Ads-1.png" alt="PAYPAL"/>
+    <div class="button-container">
+      <button class="btn-continue" (click)="onContinue()">
+        <i class="fas fa-arrow-right"></i> Continuar
+      </button>
     </div>
-    <div class="column">
-      <img src="https://i.postimg.cc/L8Qn59q6/Ads-2.png" alt="BCP"/>
-    </div>
-    <div class="column">
-      <img src="https://i.postimg.cc/L6TqdB2P/Ads-3.png" alt="AMERICAN EXPRESS"/>
+
+    <div class="payment-methods">
+      <h2>Payment Methods</h2>
+      <mat-card class="payment-methods-card">
+        <div class="column">
+          <img src="https://i.postimg.cc/t44s9Z4M/Ads-1.png" alt="PAYPAL" />
+        </div>
+        <div class="column">
+          <img src="https://i.postimg.cc/L8Qn59q6/Ads-2.png" alt="BCP" />
+        </div>
+        <div class="column">
+          <img src="https://i.postimg.cc/L6TqdB2P/Ads-3.png" alt="AMERICAN EXPRESS" />
+        </div>
+      </mat-card>
     </div>
   </div>
 </div>
-

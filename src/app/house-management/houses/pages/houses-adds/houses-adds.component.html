@@ -1,0 +1,225 @@
+<mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+  <!-- Step user Property Id -->
+  <mat-step [stepControl]="userPropertyId">
+    <form [formGroup]="userPropertyId">
+      <ng-template matStepLabel>Fill in the property ID</ng-template>
+      <mat-form-field>
+        <mat-label>Property ID</mat-label>
+        <input matInput type="number" placeholder="User Property ID" formControlName="userPropertyIdCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <!-- Step House Name -->
+  <mat-step [stepControl]="houseName">
+    <form [formGroup]="houseName">
+      <ng-template matStepLabel>Fill in the name of the house</ng-template>
+      <mat-form-field>
+        <mat-label>House Name</mat-label>
+        <input matInput placeholder="House name" formControlName="houseNameCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <!-- Step House Address -->
+  <mat-step [stepControl]="houseAddress">
+    <form [formGroup]="houseAddress">
+      <ng-template matStepLabel>Fill in the address of the house</ng-template>
+      <mat-form-field>
+        <mat-label>Address</mat-label>
+        <input matInput placeholder="Address" formControlName="houseAddressCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <!-- Step House Type -->
+  <mat-step [stepControl]="houseType">
+    <form [formGroup]="houseType">
+      <ng-template matStepLabel>Fill in the type of the house</ng-template>
+      <mat-form-field>
+        <mat-label>House Type</mat-label>
+        <mat-select formControlName="houseTypeControl" required>
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let houseType of houseTyp" [value]="houseType.type">
+            {{ houseType.type }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="houseTypeControl.hasError('required')">
+          House Type is required
+        </mat-error>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <!--- Step House  Modal -->
+  <<mat-step [stepControl]="houseModal">
+  <form [formGroup]="houseModal">
+    <ng-template matStepLabel>Fill in the modal of the house</ng-template>
+    <mat-form-field>
+      <mat-label>House Modal</mat-label>
+      <mat-select formControlName="houseModalControl" required>
+        <mat-option>--</mat-option>
+        <mat-option *ngFor="let houseModal of houseMod" [value]="houseModal.modal">
+          {{ houseModal.modal }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="houseModalControl.hasError('required')">
+        House Modal is required
+      </mat-error>
+    </mat-form-field>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+    </div>
+  </form>
+</mat-step>
+  <!-- Step House Price -->
+  <mat-step [stepControl]="housePrice">
+    <form [formGroup]="housePrice">
+      <ng-template matStepLabel>Fill in the price of the house</ng-template>
+      <mat-form-field>
+        <mat-label>Price</mat-label>
+        <input matInput type="number" placeholder="Price" formControlName="housePriceCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <!-- Step House Size -->
+  <mat-step [stepControl]="houseSize">
+    <form [formGroup]="houseSize">
+      <ng-template matStepLabel>Fill in the size of the house</ng-template>
+      <mat-form-field>
+        <mat-label>Size</mat-label>
+        <input matInput type="number" placeholder="Size" formControlName="houseSizeCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <!-- Step House Description -->
+  <mat-step [stepControl]="houseDescription">
+    <form [formGroup]="houseDescription">
+      <ng-template matStepLabel>Fill in the description of the house</ng-template>
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <textarea matInput placeholder="Description" formControlName="houseDescriptionCtrl" required></textarea>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <!-- Step House Starts Calification -->
+  <mat-step [stepControl]="startsCalification">
+    <form [formGroup]="startsCalification">
+      <ng-template matStepLabel>Fill in the starts calification of the house</ng-template>
+      <mat-form-field>
+        <mat-label>Stars Calification</mat-label>
+        <mat-select formControlName="startsCalificationControl" required>
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let startsCalification of startCalification" [value]="startsCalification.starts">
+            {{ startsCalification.starts }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="startsCalificationControl.hasError('required')">
+          Stars Calification is required
+        </mat-error>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <!-- Step Status Landlord -->
+  <mat-step [stepControl]="statusLandlord">
+    <form [formGroup]="statusLandlord">
+      <ng-template matStepLabel>Fill in the status of the landlord</ng-template>
+      <mat-form-field>
+        <mat-label>Status Landlord</mat-label>
+        <mat-select formControlName="statusLandlordControl" required>
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let statusLandlord of statusLand" [value]="statusLandlord.status">
+            {{ statusLandlord.status }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="statusLandlordControl.hasError('required')">
+          Status Landlord is required
+        </mat-error>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <!-- Step House Image -->
+  <mat-step [stepControl]="houseImage">
+    <form [formGroup]="houseImage">
+      <ng-template matStepLabel>Fill in the image of the house</ng-template>
+      <mat-form-field>
+        <mat-label>Image</mat-label>
+        <input matInput  placeholder="Image" formControlName="houseImageCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <!-- Step House Video -->
+  <mat-step [stepControl]="houseVideo">
+    <form [formGroup]="houseVideo">
+      <ng-template matStepLabel>Fill in the video of the house</ng-template>
+      <mat-form-field>
+        <mat-label>Video</mat-label>
+        <input matInput  placeholder="Video" formControlName="houseVideoCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <!-- Step Verification Id -->
+  <mat-step [stepControl]="verificationId">
+    <form [formGroup]="verificationId">
+      <ng-template matStepLabel>Fill in the verification ID</ng-template>
+      <mat-form-field>
+        <mat-label>Verification ID</mat-label>
+        <input matInput type="number" placeholder="Verification ID" formControlName="verificationIdCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <!-- Step House Add -->
+  <mat-step>
+    <form [formGroup]="houseForm" (ngSubmit)="onSubmit()">
+      <ng-template matStepLabel>Review and Submit</ng-template>
+      <div>
+        <button mat-button matStepperPrevious>Atrás</button>
+        <button mat-button type="submit">Enviar</button>
+      </div>
+    </form>
+  </mat-step>
+</mat-stepper>

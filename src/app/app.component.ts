@@ -11,7 +11,7 @@ import { LanguageSwitcherComponent } from "./public/components/language-switcher
 import { MatToolbar } from "@angular/material/toolbar";
 import { HousesManagementsComponent } from "./house-management/houses/pages/houses-managements/houses-managements.component";
 import {HousesAddComponent} from "./house-management/houses/components/houses-add/houses-add.component";
-import {HousesAddsComponent} from "./house-management/houses/components/houses-adds/houses-adds.component";
+import {HousesAddsComponent} from "./house-management/houses/pages/houses-adds/houses-adds.component";
 
 @Component({
   selector: 'app-root',

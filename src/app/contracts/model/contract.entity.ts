@@ -5,20 +5,23 @@ export class Contract {
   startDate: Date;
   endDate: Date;
   status: 'pending' | 'active' | 'canceled';
-  terms: Term[];
-  constructor(id: number, property: Property, tenant: Tenant, startDate: Date, endDate: Date, status: "pending" | "active" | "canceled", terms: Term[]) {
+  landlord_id: number;
+  terms?: Term;
+  constructor(id: number, property: Property, tenant: Tenant, startDate: Date, endDate: Date,
+              status: "pending" | "active" | "canceled", landlord_id: number, term: Term) {
     this.id = id;
     this.property = property;
     this.tenant = tenant;
     this.startDate = startDate;
     this.endDate = endDate;
     this.status = status;
-    this.terms = terms;
+    this.landlord_id = landlord_id;
+    this.terms = term;
   }
 }
 export interface Term {
   description: string;
-  agreed: boolean;
+  agreed: boolean | null;
 }
 export interface Property {
   id: number;
@@ -30,4 +33,10 @@ export interface Property {
 export interface Tenant {
   id: number;
   name: string;
+}
+export interface Landlord {
+  id: number;
+  name: string;
+  contact_email: string;
+  signature: string;  // URL de la firma en PNG
 }

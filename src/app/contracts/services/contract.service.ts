@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Contract, Property, Tenant} from "../model/contract.entity";
+import {Contract, Landlord, Property, Tenant} from "../model/contract.entity";
 import {environment} from "../../../environments/environment";
 
 @Injectable({
@@ -10,6 +10,7 @@ export class ContractService {
   private apiUrl = `${environment.serverBasePath}/contracts`;
   private propertyUrl = `${environment.serverBasePath}/properties`;
   private tenantUrl = `${environment.serverBasePath}/tenants`;
+  private landlordUrl = `${environment.serverBasePath}/landlords`;
 
   constructor(private http: HttpClient) {}
   getProperties() {
@@ -20,6 +21,9 @@ export class ContractService {
   }
   getTenants() {
     return this.http.get<Tenant[]>(this.tenantUrl); // Método para obtener inquilinos
+  }
+  getLandlords() {
+    return this.http.get<Landlord[]>(this.landlordUrl);  // URL para obtener los landlords
   }
 
   createContract(contractData: Contract) {

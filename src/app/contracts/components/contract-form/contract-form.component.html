@@ -23,13 +23,14 @@
       <input id="endDate" type="date" class="form-control" formControlName="endDate">
     </div>
     <div class="form-group">
+      <label for="signature">Firma electrónica</label>
+      <input type="file" (change)="onFileSelected($event)" class="form-control" accept="image/*" />
+    </div>
+    <div class="form-group">
       <label>
-        <input type="checkbox" formControlName="termsAgreed" />
-        Acepto los términos y condiciones
+        <input type="checkbox" formControlName="termsAgreed" /> Acepto los términos y condiciones
       </label>
     </div>
-
-
     <div class="form-actions">
       <button type="submit" class="btn btn-generate" (click)="generateContract()">
         Generar Contrato

@@ -23,10 +23,11 @@ img {
   padding-right: 0.75rem;
 }
 mat-toolbar {
-  background: #EE7B10;
+  background: linear-gradient(135deg, #2B2B2B, #4B4B4B); /* Ajusta los colores según sea necesario */
   color: white;
 }
+
 .mat-toolbar .mat-mdc-button-base {
-  color: black;
+  color: white;
   font-size: medium;
 }

@@ -6,7 +6,9 @@
   "title": {
     "reservations": "Housing Reservations Here",
     "add": "New Appointment Reservation",
-    "edit": "Edit Reservation"
+    "edit": "Edit Reservation",
+    "available_dates": "View Your Date is Available",
+    "payment_methods": "Our Payment Methods"
   },
   "reservation": {
     "id": "ID",

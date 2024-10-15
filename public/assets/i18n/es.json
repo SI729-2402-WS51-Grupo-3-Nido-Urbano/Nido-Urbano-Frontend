@@ -4,9 +4,11 @@
     "placeholder": "Digite texto a filtrar"
   },
   "title": {
-    "reservations": "Agenda una cita para tu hogar",
-    "add": "Reservar cita",
-    "edit": "Editar reservacion"
+    "reservations": "Agenda una Cita",
+    "add": "Reservar Cita",
+    "edit": "Editar Reservacion",
+    "available_dates": "Encuentra Fechas Disponibles",
+    "payment_methods": "Nuestros Métodos de Pago"
   },
   "reservation": {
     "id": "ID",

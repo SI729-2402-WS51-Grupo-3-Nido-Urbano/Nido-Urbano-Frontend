@@ -35,4 +35,19 @@ export class ReservationManagementService {
       })
     );
   }
+
+  // Validate if the new date range overlaps with any existing reservations
+  isDateRangeAvailable(startDate: Date, endDate: Date): Observable<boolean> {
+    return this.getAllReservations().pipe(
+      map((reservations: Reservation[]) => {
+        return !reservations.some(reservation => {
+          const existingStart = new Date(reservation.start_date);
+          const existingEnd = new Date(reservation.end_date);
+
+          // Check for overlap between the new and existing date ranges
+          return (startDate <= existingEnd && endDate >= existingStart);
+        });
+      })
+    );
+  }
 }

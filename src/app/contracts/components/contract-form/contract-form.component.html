@@ -26,13 +26,18 @@
       <label for="signature">Firma electrónica</label>
       <input type="file" (change)="onFileSelected($event)" class="form-control" accept="image/*" />
     </div>
+    <!-- Vista previa de los Términos y Condiciones -->
+    <div class="form-group">
+      <h4>Términos y Condiciones</h4>
+      <p>{{ contractForm.get('property')?.value?.terms?.description || 'No hay términos disponibles' }}</p>
+    </div>
     <div class="form-group">
       <label>
         <input type="checkbox" formControlName="termsAgreed" /> Acepto los términos y condiciones
       </label>
     </div>
     <div class="form-actions">
-      <button type="submit" class="btn btn-generate" (click)="generateContract()">
+      <button type="submit" class="btn btn-generate" [disabled]="contractForm.invalid">
         Generar Contrato
       </button>
       <button type="button" class="btn btn-cancel" (click)="cancelContract()">
@@ -40,6 +45,13 @@
       </button>
     </div>
   </form>
+</div>
+<div *ngIf="contractSent && !contractConfirmed" class="notification" [ngClass]="{'show': contractSent}">
+  Contrato enviado al propietario. Esperando confirmación...
+</div>
+<!--(simulado) -->
+<div *ngIf="contractSent && !contractConfirmed">
+  <button class="btn-confirm" (click)="confirmContract()">Confirmar Contrato</button>
 </div>
 
 

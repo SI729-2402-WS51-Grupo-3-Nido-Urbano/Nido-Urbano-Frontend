@@ -46,3 +46,115 @@
   display: flex;
   justify-content: flex-end;
 }
+/* Estilo general del contenedor del formulario */
+.container {
+  background-color: white;  /* Fondo blanco para que contraste con el fondo del PDF */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin: 30px auto;
+  z-index: 10;
+  position: relative;
+}
+
+/* Estilos para los botones del formulario */
+.btn {
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.btn-generate {
+  background-color: #007bff;
+  color: white;
+}
+/* Estilo para la notificación de contrato enviado */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(0, 123, 255, 0.85);  /* Fondo azul semitransparente */
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Mostrar la notificación */
+.notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Botón de confirmación simulado */
+.btn-confirm {
+  margin-top: 10px;
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-confirm:hover {
+  background-color: #218838;
+}
+
+.btn-cancel {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Para hacer que el formulario se vea encima del fondo del contrato */
+form {
+  position: relative;
+  z-index: 5;
+}
+
+/* Estilos adicionales para inputs y select */
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* Vista previa de los términos y condiciones */
+h4 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Caja de notificación flotante */
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #28a745; /* Verde para indicar éxito */
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.notification.show {
+  opacity: 1;
+}

@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} fr
 import { jsPDF } from 'jspdf';
 import { Router } from '@angular/router';
 import {HttpClient} from "@angular/common/http";
-import {Location, NgForOf, NgIf} from "@angular/common";
+import {Location, NgClass, NgForOf, NgIf} from "@angular/common";
 import {ContractService} from "../../services/contract.service";
 import {Property, Tenant, Term, Landlord} from "../../model/contract.entity";
 
@@ -14,7 +14,8 @@ import {Property, Tenant, Term, Landlord} from "../../model/contract.entity";
     ReactiveFormsModule,
     NgForOf,
     NgIf,
-    FormsModule
+    FormsModule,
+    NgClass
   ],
   templateUrl: './contract-form.component.html',
   styleUrl: './contract-form.component.css'
@@ -26,6 +27,9 @@ export class ContractFormComponent implements OnInit{
   tenant: Tenant | null = null;
   selectedPropertyType: string | null = null; // Variable para almacenar el tipo de propiedad
   signatureImage: string | ArrayBuffer | null | undefined = null;
+  generatedContract: boolean = false;
+  contractSent: boolean = false;  // Estado de si el contrato ha sido enviado
+  contractConfirmed: boolean = false;  // Estado de si el propietario ha confirmado
 
   isRental: boolean = false; // Inicializa la propiedad
   constructor(
@@ -88,7 +92,10 @@ export class ContractFormComponent implements OnInit{
       }
     }
   }
-
+  sendContractToLandlord() {
+    alert('Contrato enviado al propietario.');  // Aquí puedes integrar la funcionalidad para enviar el contrato por correo o cualquier otro método
+    this.generatedContract = false;  // Reseteamos el estado del contrato generado
+  }
   onFileSelected(event: any) {
     const file = event.target.files[0];
     if (file) {
@@ -251,9 +258,15 @@ export class ContractFormComponent implements OnInit{
     doc.save(`Contrato-${selectedProperty.name}.pdf`);
 
     // Opcional: Navegar a otra página tras la generación
-    this.router.navigate(['/']);
+    //this.router.navigate(['/']);
+    this.generatedContract = true;  // Indicar que el contrato ha sido generado
+    this.contractSent = true;
   }
-
+  confirmContract() {
+    this.contractConfirmed = true;
+    this.contractSent = false;
+    alert('Contrato confirmado por el propietario.');
+  }
   cancelContract() {
     this.location.back(); // Regresa a la pestaña anterior
   }

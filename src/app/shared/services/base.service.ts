@@ -52,6 +52,11 @@ export class BaseService<T>{
     return this.http.get<T>(this.resourcePath(), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
+  // Get All Resources for user_property_id
+  getAllHouseByUserId(user_property_id: number): Observable<any> {
+    return this.http.get<any>(`${this.basePath}${this.resourceEndpoint}?user_property_id=${user_property_id}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
 
   private resourcePath(): string {
     return `${this.basePath}${this.resourceEndpoint}`;

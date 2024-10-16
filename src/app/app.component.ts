@@ -10,8 +10,9 @@ import { MatIcon } from "@angular/material/icon";
 import { LanguageSwitcherComponent } from "./public/components/language-switcher/language-switcher.component";
 import { MatToolbar } from "@angular/material/toolbar";
 import { HousesManagementsComponent } from "./house-management/houses/pages/houses-managements/houses-managements.component";
-import {HousesAddComponent} from "./house-management/houses/components/houses-add/houses-add.component";
 import {HousesAddsComponent} from "./house-management/houses/pages/houses-adds/houses-adds.component";
+import {HouseManagementLessorComponent
+} from "./house-management/houses/pages/house-management-lessor/house-management-lessor.component";
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,7 @@ import {HousesAddsComponent} from "./house-management/houses/pages/houses-adds/h
     MatSidenav, MatSidenavContainer,
     LanguageSwitcherComponent, RouterLink,
     MatToolbar, MatSidenavModule,
-    HousesManagementsComponent, HousesAddComponent, HousesAddsComponent
+    HousesManagementsComponent, HousesAddsComponent, HouseManagementLessorComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

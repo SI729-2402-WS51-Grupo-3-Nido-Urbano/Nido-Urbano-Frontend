@@ -41,6 +41,7 @@ export class ContractFormComponent implements OnInit{
     this.contractForm = this.fb.group({
       property: ['', Validators.required],
       tenant: ['', Validators.required],
+      tenantDni: ['', Validators.required],
       startDate: ['', Validators.required],
       endDate: ['', Validators.required],
       termsAgreed: [false, Validators.requiredTrue] // Agregar este control
@@ -48,7 +49,7 @@ export class ContractFormComponent implements OnInit{
     this.loadProperties(); // Cargar propiedades desde el JSON
   }
   ngOnInit() {
-    this.loadTenant(); // Cargar inquilinos al iniciar
+    this.loadTenant(); // Cargar inquilino o usuario al iniciar
     this.loadLandlords(); // Cargar landlords al iniciar
     this.contractForm.get('property')?.valueChanges.subscribe((selectedProperty) => {
       this.updateDateFields(selectedProperty);
@@ -74,7 +75,10 @@ export class ContractFormComponent implements OnInit{
     this.contractService.getTenants().subscribe((tenants: Tenant[]) => {
       if (tenants.length > 0) {
         this.tenant = tenants[0]; // Asumimos que solo hay un inquilino
-        this.contractForm.patchValue({ tenant: this.tenant.name }); // Rellenar el campo inquilino
+        // Rellenar el campo inquilino con el nombre
+        this.contractForm.patchValue({ tenant: this.tenant.name });
+        // Rellenar el campo DNI del inquilino
+        this.contractForm.patchValue({ tenantDni: this.tenant.dni }); // Asegúrate de que este campo exista en tu formulario
       }
     });
   }
@@ -180,6 +184,8 @@ export class ContractFormComponent implements OnInit{
     // Crear el PDF con jsPDF
     const doc = new jsPDF();
 
+    const totalPages = doc.getNumberOfPages();
+
     // Establecer la fuente y el estilo
     doc.setFont('times', 'normal');  // Fuente profesional (Times New Roman o similar)
 
@@ -189,31 +195,70 @@ export class ContractFormComponent implements OnInit{
     const contractType = selectedProperty.house_modality === 'rental' ? "Contrato de Alquiler" : "Contrato de Compra"; // Título dinámico
     doc.text(contractType, 105, 20, { align: 'center' });
 
+    // Subtítulo
+    doc.setFontSize(12);
+    doc.setFont('times', 'italic');
+    doc.text('Entre los abajo firmantes...', 105, 30, { align: 'center' });
+
     // Espaciado para el resto del contenido
     doc.setFontSize(12);
     doc.setFont('times', 'normal');
     let yPosition = 40;
 
-    // Información de la propiedad e inquilino
-    doc.text('Propiedad:', 20, yPosition);
-    doc.text(selectedProperty.name, 60, yPosition);
+
+    // Información del Inquilino
+    doc.setFont('times', 'bold');
+    doc.text('Datos del Inquilino:', 20, yPosition);
+    yPosition += 10;
+    doc.setFont('times', 'normal');
+    doc.text(`Nombre: ${contractData.tenant}`, 20, yPosition);
+    yPosition += 10;
+    doc.text(`DNI: ${contractData.tenantDni}`, 20, yPosition); // Utiliza tenantDni
     yPosition += 10;
 
-    doc.text('Inquilino:', 20, yPosition);
-    doc.text(contractData.tenant, 60, yPosition);
+    // Información del Propietario
+    doc.setFont('times', 'bold');
+    doc.text('Datos del Propietario:', 20, yPosition);
     yPosition += 10;
+    doc.setFont('times', 'normal');
+    doc.text(`Nombre: ${landlord.name}`, 20, yPosition);
+    yPosition += 10;
+    doc.text(`DNI: ${landlord.dni}`, 20, yPosition); // Suponiendo que tengas este dato en landlord
+    yPosition += 20;
 
-    // Fechas de inicio y fin solo si es alquiler
+    // Fechas del contrato
     if (contractData.property.house_modality === 'rental') {
+      doc.setFont('times', 'bold');
       doc.text('Fecha de inicio:', 20, yPosition);
+      doc.setFont('times', 'normal');
       doc.text(contractData.startDate, 60, yPosition);
       yPosition += 10;
 
+      doc.setFont('times', 'bold');
       doc.text('Fecha de fin:', 20, yPosition);
+      doc.setFont('times', 'normal');
       doc.text(contractData.endDate, 60, yPosition);
       yPosition += 20;
     }
 
+    // Separador
+    doc.setLineWidth(0.2);
+    doc.line(20, yPosition, 190, yPosition);  // Línea más delgada
+    yPosition += 10;
+
+    // Información del contrato
+    if (contractData.property.house_modality === 'rental') {
+      doc.text(`Consta por el presente documento que el arrendatario ${contractData.tenant} alquila la propiedad`, 20, yPosition);
+      yPosition += 10;
+      doc.text(`de nombre: "${selectedProperty.name}", bajo las siguientes condiciones:`, 20, yPosition);
+      yPosition += 10;
+    }
+    else {
+      doc.text(`Consta por el presente documento que el arrendatario ${contractData.tenant} compra la propiedad`, 20, yPosition);
+      yPosition += 10;
+      doc.text(`de nombre: "${selectedProperty.name}", bajo las siguientes condiciones:`, 20, yPosition);
+      yPosition += 10;
+    }
     // Agregar separador
     doc.setLineWidth(0.5);
     doc.line(20, yPosition, 190, yPosition);  // Línea horizontal
@@ -231,28 +276,37 @@ export class ContractFormComponent implements OnInit{
     doc.text(`Estado del Término: ${termStatus}`, 20, yPosition);
     yPosition += 30;
 
-    // Firma del tenant
+    // Establecer una posición base para las firmas
+    const signatureYPosition = yPosition; // Usamos la misma posición Y para ambas firmas
+
+// Firma del Inquilino
+    doc.setFont('times', 'normal');
     if (typeof this.signatureImage === 'string') {
-      doc.addImage(this.signatureImage, 'PNG', 20, yPosition, 50, 25);
-      doc.text('Firma del Inquilino', 20, yPosition + 30);
-      yPosition += 50;
+      doc.addImage(this.signatureImage, 'PNG', 20, signatureYPosition, 50, 25);
+      doc.text('Firma del Inquilino', 20, signatureYPosition + 30);
     } else {
-      doc.text('Firma pendiente', 20, yPosition + 30);
-      yPosition += 20;
+      doc.text('________________________', 20, signatureYPosition);
+      doc.text('Firma del Inquilino', 20, signatureYPosition + 10);
     }
 
-    // Firma del landlord
+// Firma del Propietario
     if (landlord.signature) {
-      doc.addImage(landlord.signature, 'PNG', 20, yPosition, 50, 25);
-      doc.text(`Firma del Propietario: ${landlord.name}`, 20, yPosition + 30);
-      yPosition += 50;
+      doc.addImage(landlord.signature, 'PNG', 120, yPosition, 50, 25);
+      doc.text(`Firma del Propietario: ${landlord.name}`, 120, yPosition + 30);
+    } else {
+      doc.text('________________________', 120, yPosition);
+      doc.text('Firma del Propietario', 120, yPosition + 10);
     }
 
-    // Footer con información adicional
+    // Footer estilizado y numeración de páginas
     doc.setFont('times', 'italic');
     doc.setFontSize(10);
-    doc.text('Nido Urbano - www.nidourbano.com', 105, 290, { align: 'center' });
-    doc.text(`Contrato generado el: ${new Date().toLocaleDateString()}`, 105, 300, { align: 'center' });
+    doc.text('Este contrato ha sido generado automáticamente por Nido Urbano', 105, 280, { align: 'center' });
+    doc.text(`Generado el: ${new Date().toLocaleDateString()}`, 105, 290, { align: 'center' });
+
+    // Agregar número de página
+    //doc.setFont('times', 'normal');
+    //doc.setFontSize(10);
 
     // Guardar el PDF con un nombre basado en la propiedad
     doc.save(`Contrato-${selectedProperty.name}.pdf`);

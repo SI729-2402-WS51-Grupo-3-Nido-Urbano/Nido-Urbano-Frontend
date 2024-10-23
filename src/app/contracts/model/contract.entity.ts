@@ -33,10 +33,12 @@ export interface Property {
 export interface Tenant {
   id: number;
   name: string;
+  dni: number;
 }
 export interface Landlord {
   id: number;
   name: string;
   contact_email: string;
-  signature: string;  // URL de la firma en PNG
+  signature: string;
+  dni: number;
 }

@@ -51,6 +51,7 @@
   background-color: white;  /* Fondo blanco para que contraste con el fondo del PDF */
   padding: 30px;
   border-radius: 10px;
+  border: 2px solid black;  /* Borde azul alrededor del formulario */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   max-width: 800px;
   margin: 30px auto;

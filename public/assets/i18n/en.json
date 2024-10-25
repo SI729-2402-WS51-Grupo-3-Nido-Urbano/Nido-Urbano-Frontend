@@ -7,8 +7,11 @@
     "reservations": "Housing Reservations Here",
     "add": "New Appointment Reservation",
     "edit": "Edit Reservation",
-    "available_dates": "View Your Date is Available",
+    "available_dates": "View Dates Available",
     "payment_methods": "Our Payment Methods"
+  },
+  "subtitle": {
+    "available_dates": "We Are Waiting For You"
   },
   "reservation": {
     "id": "ID",

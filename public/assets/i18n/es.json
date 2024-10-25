@@ -4,11 +4,14 @@
     "placeholder": "Digite texto a filtrar"
   },
   "title": {
-    "reservations": "Agenda una Cita",
-    "add": "Reservar Cita",
-    "edit": "Editar Reservacion",
+    "reservations": "Agendar Cita",
+    "add": "Nueva Reservación",
+    "edit": "Editar Reservación",
     "available_dates": "Encuentra Fechas Disponibles",
     "payment_methods": "Nuestros Métodos de Pago"
+  },
+  "subtitle": {
+    "available_dates": "Te Estaremos Esperando"
   },
   "reservation": {
     "id": "ID",

@@ -1,79 +1,113 @@
 /* General Styles */
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f5f5f5;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5a623; /* Color de fondo naranja */
   margin: 0;
+  padding: 0;
 }
 
-h1 {
+/* Title Styling */
+h2 {
   text-align: center;
-  margin-bottom: 20px; /* Espacio entre el título y el calendario */
+  padding-top: 20px;
+  color: white; /* Texto blanco */
+  font-family: 'Roboto', sans-serif; /* Fuente Roboto */
+}
+
+/* Subtitle Styling */
+.subtitle {
+  text-align: center;
+  color: #F3F3F3; /* Color del subtítulo */
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif; /* Fuente Roboto */
 }
 
 button.unavailable-dates {
   background-color: rgba(255, 0, 0, 0.5); /* Color para fechas reservadas (rojo) */
-  border-radius: 100%;
+  border-radius: 50%;
 }
 
-button.available-dates {
-  background-color: rgba(0, 255, 0, 0.5); /* Color para fechas no reservadas (verde) */
-  border-radius: 100%;
+/* ------------------------------------------------ */
+/* Centering the Calendar Container */
+/* ------------------------------------------------ */
+.calendar-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;     /* Center vertically */
+  margin-top: 20px;        /* Space above the calendar */
 }
 
+mat-calendar {
+  background-color: #f4d4b2; /* Fondo similar a la imagen */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade sombra para efecto 3D */
+  width: 100%;          /* 100% de su contenedor */
+  max-width: 500px;     /* Máximo ancho para pantallas grandes */
+  height: auto;         /* Ajuste automático de altura */
+}
 
 /* ------------------------------------------------ */
 /* Styles for payment methods */
 /* ------------------------------------------------ */
-
 .payment-methods {
-  padding-top: 30%;
+  padding-top: 5%;
   text-align: center;
+  color: white;
+}
+
+.payment-methods h2 {
+  margin-bottom: 20px;
+  color: white;
 }
 
 .payment-methods-card {
-  display: flex; /* Hacer que las columnas se alineen horizontalmente */
-  justify-content: space-around; /* Espacio entre las columnas */
-  padding: 20px; /* Espacio interno de la tarjeta */
-  border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidad */
-  margin: 20px; /* Espacio externo alrededor de la tarjeta */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
 .column {
-  flex: 1; /* Cada columna toma el mismo espacio */
-  display: flex; /* Usar flexbox dentro de la columna */
-  justify-content: center; /* Centrar el contenido dentro de la columna */
-  align-items: center; /* Centrar verticalmente el contenido */
-  margin: 0 10px; /* Espacio horizontal entre columnas */
-  padding: 10px; /* Espacio interno dentro de cada columna */
-  transition: transform 0.2s; /* Transición suave para efectos al pasar el mouse */
-}
-
-.column:hover {
-  transform: scale(1.05); /* Aumentar el tamaño al pasar el mouse */
+  flex: 1; /* Make columns flexible */
+  margin: 10px;
+  max-width: 150px; /* Set a maximum width for each column */
 }
 
 .column img {
-  max-width: 100%; /* Hacer que las imágenes sean responsivas */
-  height: auto; /* Mantener la proporción de las imágenes */
-  border-radius: 5px; /* Bordes redondeados para las imágenes */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil para las imágenes */
+  height: 100px;
+  width: auto; /* Keep the aspect ratio */
 }
-
 
 /* ------------------------------------------------ */
-/* Centering the Datepicker Container */
+/* Responsive Design */
 /* ------------------------------------------------ */
+@media (min-width: 1024px) {
+  .calendar-container {
+    max-width: 80%; /* Ocupa el 80% del ancho de la pantalla */
+    margin: 0 auto;
+  }
 
-.datepicker-container {
-  display: flex;                /* Use Flexbox for alignment */
-  justify-content: center;      /* Center horizontally */
-  margin-top: 20px;            /* Optional: Add space above the date picker */
-  width: 100%;                  /* Optional: Full width for the container */
+  mat-calendar {
+    width: 80%;
+    height: auto;
+  }
+
+  .payment-methods {
+    padding-top: 2%;
+  }
 }
 
-mat-form-field {
-  max-width: 300px;            /* Set a max width for the form field */
-  width: 100%;                 /* Full width for the form field */
-}
+@media (max-width: 768px) {
+  .payment-methods-card {
+    flex-direction: column; /* Stack columns vertically on smaller screens */
+  }
 
+  .column {
+    max-width: 100%; /* Make each column take full width on small screens */
+  }
+
+  .calendar-container {
+    margin-top: 10px;
+  }
+}

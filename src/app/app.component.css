@@ -2,18 +2,20 @@
   flex: 1 1 auto;
 }
 mat-sidenav {
-  width: 200px;
+  width: auto;
   border-right: none;
   padding: 16px 0;
 }
 .content {
   min-height: 100%;
   max-height: auto;
-  padding: 10px;
-  max-width: 1440px;
-  margin: 0 auto;
+  max-width: 100%;
   font-size: 16px;
   background: #EE7B10;
+  background-image: url('https://i.postimg.cc/xCy5x0T5/Group-2608877.png'); /* URL de la imagen de fondo */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-blend-mode: normal; /* Mezcla la imagen con el color de fondo */
 }
 
 mat-sidenav-container {
@@ -31,3 +33,5 @@ mat-toolbar {
   color: white;
   font-size: medium;
 }
+
+

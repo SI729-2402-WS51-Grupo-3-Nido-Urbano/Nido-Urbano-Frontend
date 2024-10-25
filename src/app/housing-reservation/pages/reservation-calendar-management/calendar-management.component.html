@@ -1,72 +1,24 @@
-<!--
-<div class="container">
-  <div class="column1">
-    <mat-card class="demo-inline-calendar-card">
-      <h2>Select Your Date</h2>
-      <mat-calendar
-        [(selected)]="selectedDate"
-        (selectedChange)="onDateChange($event)">
-      </mat-calendar>
-    </mat-card>
-  </div>
+<h2>{{ 'title.available_dates' | translate }}</h2>
+<h5 class="subtitle">{{ 'subtitle.available_dates' | translate }}</h5>
 
-
-
-  <div class="column2">
-
-    <h2>Your Booking Dates</h2>
-    <p>
-      {{ startDate ? (startDate | date) : 'Start Date' }}&nbsp;-&nbsp;
-      {{ endDate ? (endDate | date) : 'End Date' }}
-    </p>-->
-
-    <!--
-    <div class="button-container">
-      <button class="btn-continue" (click)="onContinue()">
-        <i class="fas fa-arrow-right"></i> Continuar
-      </button>
-    </div>
-
-    <div class="payment-methods">
-      <h2>Payment Methods</h2>
-      <mat-card class="payment-methods-card">
-        <div class="column">
-          <img src="https://i.postimg.cc/t44s9Z4M/Ads-1.png" alt="PAYPAL" />
-        </div>
-        <div class="column">
-          <img src="https://i.postimg.cc/L8Qn59q6/Ads-2.png" alt="BCP" />
-        </div>
-        <div class="column">
-          <img src="https://i.postimg.cc/L6TqdB2P/Ads-3.png" alt="AMERICAN EXPRESS" />
-        </div>
-      </mat-card>
-    </div>
-  </div>
-</div>-->
-
-<h1>{{ 'title.available_dates' | translate }}</h1>
-
-<div class="datepicker-container">
-  <mat-form-field class="example-full-width">
-    <mat-label>Choose a date</mat-label>
-    <input matInput [matDatepicker]="picker">
-    <mat-hint>MM/DD/YYYY</mat-hint>
-    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker [dateClass]="dateClass" #picker></mat-datepicker>
-  </mat-form-field>
+<div class="calendar-container">
+  <!-- Inline mat-calendar with custom date classes -->
+  <mat-calendar [dateClass]="dateClass"></mat-calendar>
 </div>
+
 
 <div class="payment-methods">
   <h2>{{ 'title.payment_methods' | translate }}</h2>
-  <mat-card class="payment-methods-card">
+  <div class="payment-methods-card">
     <div class="column">
-      <img src="https://i.postimg.cc/t44s9Z4M/Ads-1.png" alt="PAYPAL" />
+      <img src="https://i.postimg.cc/28HkprLH/logo-bcp-colores-100.png" alt="BCP" />
     </div>
     <div class="column">
-      <img src="https://i.postimg.cc/L8Qn59q6/Ads-2.png" alt="BCP" />
+      <img src="https://i.postimg.cc/8PkpnjcJ/Old-Pay-Pal.jpg" alt="PAYPAL"/>
     </div>
     <div class="column">
-      <img src="https://i.postimg.cc/L6TqdB2P/Ads-3.png" alt="AMERICAN EXPRESS" />
+      <img src="https://i.postimg.cc/Twww51bW/americanexpress.png" alt="AMERICAN EXPRESS" />
     </div>
-  </mat-card>
+  </div>
 </div>
+

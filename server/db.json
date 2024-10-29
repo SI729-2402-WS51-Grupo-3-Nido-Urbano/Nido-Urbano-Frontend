@@ -1,0 +1,84 @@
+{
+  "houses": [
+    {
+      "houseId": 1,
+      "ownerId": 6,
+      "amount": 50000,
+      "size": "Es muy grande",
+      "spaces": 3,
+      "nearest": "Esta muy cerca",
+      "description": "Es muy bonita",
+      "type": "comprar",
+      "imageUrl": "https://i.postimg.cc/3NyhYt06/image.png"
+    },
+    {
+      "houseId": 2,
+      "ownerId": 5,
+      "amount": 40000,
+      "size": "Es muy grande",
+      "spaces": 3,
+      "nearest": "Esta muy cerca",
+      "description": "Es muy bonita",
+      "type": "alquilar",
+      "imageUrl": "https://i.postimg.cc/3NyhYt06/image.png"
+    },
+    {
+      "houseId": 3,
+      "ownerId": 4,
+      "amount": 30000,
+      "size": "Es muy grande",
+      "spaces": 2,
+      "nearest": "Esta muy cerca",
+      "description": "Es muy bonita",
+      "type": "comprar",
+      "imageUrl": "https://i.postimg.cc/3NyhYt06/image.png"
+    },
+    {
+      "houseId": 4,
+      "ownerId": 3,
+      "amount": 20000,
+      "size": "Es muy grande",
+      "spaces": 1,
+      "nearest": "Esta muy cerca",
+      "description": "Es muy bonita",
+      "type": "alquilar",
+      "imageUrl": "https://i.postimg.cc/3NyhYt06/image.png"
+    },
+    {
+      "houseId": 5,
+      "ownerId": 2,
+      "amount": 20000,
+      "size": "Es muy grande",
+      "spaces": 1,
+      "nearest": "Esta muy cerca",
+      "description": "Es muy bonita",
+      "type": "alquilar",
+      "imageUrl": "https://i.postimg.cc/3NyhYt06/image.png"
+    },
+    {
+      "houseId": 6,
+      "ownerId": 1,
+      "amount": 20000,
+      "size": "Es muy grande",
+      "spaces": 1,
+      "nearest": "Esta muy cerca",
+      "description": "Es muy bonita",
+      "type": "comprar",
+      "imageUrl": "https://i.postimg.cc/3NyhYt06/image.png"
+    }
+  ],
+  "payments": [
+    {
+      "paymentId": 946,
+      "buyerName": "Miguel",
+      "documentType": "DNI",
+      "identificationNumber": "12345678",
+      "phoneNumber": "922 114 457",
+      "email": "u202220294@upc.edu.pe",
+      "bank": "BCP",
+      "amountSale": 20000,
+      "houseId": 6,
+      "id": 1
+    }
+  ]
+}

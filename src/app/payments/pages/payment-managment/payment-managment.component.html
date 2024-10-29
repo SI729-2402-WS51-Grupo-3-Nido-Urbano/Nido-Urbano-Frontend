@@ -1,0 +1,39 @@
+<div class="header-container">
+  <h1>CASA DE VERANO FAMILIAR</h1>
+  <h2>{{house?.description}}</h2>
+</div>
+
+<div class="grid-container">
+  <!-- Imagen de la casa a la izquierda -->
+  <div class="house-image-container">
+    <img [src]="house?.imageUrl" alt="Casa de verano" class="house-image"/>
+
+    <div class="payment-options">
+      <img src="https://i.postimg.cc/pVCyxJsL/image.png" alt="PayPal" class="payment-logo" >
+      <img src="https://i.postimg.cc/15zXzVdc/image.png" alt="BCP" class="payment-logo"
+           (click)="goToPaymentConfirmationBCP()" style="cursor: pointer;" >
+    </div>
+  </div>
+
+  <!-- Información a la derecha de la imagen -->
+  <div class="info-container">
+    <mat-grid-list cols="1" rowHeight="auto" class="info-grid">
+      <div class="grid-item">
+        <mat-icon>home</mat-icon>
+        <p> {{house?.size}}</p>
+      </div>
+      <div class="grid-item">
+        <mat-icon>bed</mat-icon>
+        <p><strong>{{house?.spaces}} DORMITORIOS</strong></p>
+      </div>
+      <div class="grid-item">
+        <mat-icon>school</mat-icon>
+        <p>{{house?.nearest}}</p>
+      </div>
+    </mat-grid-list>
+
+    <div class="actions">
+      <button mat-raised-button color="primary" class="buy-button">COMPRAR</button>
+    </div>
+  </div>
+</div>

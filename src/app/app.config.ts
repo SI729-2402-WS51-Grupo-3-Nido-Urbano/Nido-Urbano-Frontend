@@ -10,8 +10,10 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
+
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideAnimationsAsync(),provideHttpClient(),
+  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes),
+    provideAnimationsAsync(), provideHttpClient(),
     importProvidersFrom(
       TranslateModule.forRoot({
         loader: {
@@ -22,4 +24,3 @@ export const appConfig: ApplicationConfig = {
       })
     )]
 };
-

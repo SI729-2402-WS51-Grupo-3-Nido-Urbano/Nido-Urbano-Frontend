@@ -1,0 +1,23 @@
+<mat-tab-group class="tabs-container">
+  <mat-tab label="SALE" class="mat-tab" style="font-size: 5em;">
+    <div class="content-container">
+      <p>Contenido de la seccion de COMPRA</p>
+      <div class="container">
+        <div class="house-card" *ngIf="houseSale">
+          <app-house-card *ngFor="let house of houseSale" [house]="house"></app-house-card>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+
+
+  <mat-tab label="RENTAL" class="mat-tab">
+    <div class="content-container">
+      <p>Contenido de la seccion de RENTA</p>
+      <div class="house-card" *ngIf="houseRent">
+        <app-house-card *ngFor="let house of houseRent" [house]="house"></app-house-card>
+      </div>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+

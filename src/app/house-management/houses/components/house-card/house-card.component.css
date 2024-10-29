@@ -1,0 +1,93 @@
+/* Contenedor principal de la tarjeta */
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las tarjetas se ajusten a la siguiente fila si no caben en la misma */
+  gap: 1rem; /* Espacio entre tarjetas */
+  justify-content: center; /* Centra las tarjetas si hay espacio libre */
+  padding: 1rem;
+}
+
+/* Tarjeta individual */
+mat-card {
+  flex: 1 1 600px; /* Ancho máximo de 600px pero flexible en pantallas más pequeñas */
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+mat-card img {
+  max-height: 250px;
+  object-fit: cover;
+  width: 100%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* Estilos de título y subtítulo */
+mat-card-title,
+mat-card-subtitle {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Contenido de la tarjeta */
+.details-house-container {
+  margin-top: 1rem;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+/* Tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: rgba(245, 245, 245, 0.14);
+  text-align: left;
+  padding: 8px;
+  font-weight: bold;
+}
+
+td {
+  padding: 8px;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.11);
+}
+
+tr:nth-child(even) td {
+  background-color: rgba(249, 249, 249, 0.12);
+}
+
+/* Acciones */
+mat-card-actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Estilos responsivos */
+@media (max-width: 1024px) {
+  .card-container {
+    gap: 0.5rem;
+  }
+
+  mat-card {
+    flex: 1 1 calc(50% - 1rem); /* Muestra dos tarjetas por fila en pantallas medianas */
+  }
+}
+
+@media (max-width: 768px) {
+  mat-card {
+    flex: 1 1 calc(100% - 1rem); /* Una tarjeta por fila en pantallas pequeñas */
+  }
+
+  mat-card-actions {
+    flex-direction: column;
+  }
+
+  mat-card-actions button {
+    width: 100%;
+    margin: 0.25rem 0;
+  }
+}

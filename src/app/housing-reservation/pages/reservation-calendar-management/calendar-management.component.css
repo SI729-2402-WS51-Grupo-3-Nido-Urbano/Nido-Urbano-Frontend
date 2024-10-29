@@ -1,0 +1,113 @@
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5a623; /* Color de fondo naranja */
+  margin: 0;
+  padding: 0;
+}
+
+/* Title Styling */
+h2 {
+  text-align: center;
+  padding-top: 20px;
+  color: white; /* Texto blanco */
+  font-family: 'Roboto', sans-serif; /* Fuente Roboto */
+}
+
+/* Subtitle Styling */
+.subtitle {
+  text-align: center;
+  color: #F3F3F3; /* Color del subtítulo */
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif; /* Fuente Roboto */
+}
+
+button.unavailable-dates {
+  background-color: rgba(255, 0, 0, 0.5); /* Color para fechas reservadas (rojo) */
+  border-radius: 50%;
+}
+
+/* ------------------------------------------------ */
+/* Centering the Calendar Container */
+/* ------------------------------------------------ */
+.calendar-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;     /* Center vertically */
+  margin-top: 20px;        /* Space above the calendar */
+}
+
+mat-calendar {
+  background-color: #f4d4b2; /* Fondo similar a la imagen */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade sombra para efecto 3D */
+  width: 100%;          /* 100% de su contenedor */
+  max-width: 500px;     /* Máximo ancho para pantallas grandes */
+  height: auto;         /* Ajuste automático de altura */
+}
+
+/* ------------------------------------------------ */
+/* Styles for payment methods */
+/* ------------------------------------------------ */
+.payment-methods {
+  padding-top: 5%;
+  text-align: center;
+  color: white;
+}
+
+.payment-methods h2 {
+  margin-bottom: 20px;
+  color: white;
+}
+
+.payment-methods-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.column {
+  flex: 1; /* Make columns flexible */
+  margin: 10px;
+  max-width: 150px; /* Set a maximum width for each column */
+}
+
+.column img {
+  height: 100px;
+  width: auto; /* Keep the aspect ratio */
+}
+
+/* ------------------------------------------------ */
+/* Responsive Design */
+/* ------------------------------------------------ */
+@media (min-width: 1024px) {
+  .calendar-container {
+    max-width: 80%; /* Ocupa el 80% del ancho de la pantalla */
+    margin: 0 auto;
+  }
+
+  mat-calendar {
+    width: 80%;
+    height: auto;
+  }
+
+  .payment-methods {
+    padding-top: 2%;
+  }
+}
+
+@media (max-width: 768px) {
+  .payment-methods-card {
+    flex-direction: column; /* Stack columns vertically on smaller screens */
+  }
+
+  .column {
+    max-width: 100%; /* Make each column take full width on small screens */
+  }
+
+  .calendar-container {
+    margin-top: 10px;
+  }
+}

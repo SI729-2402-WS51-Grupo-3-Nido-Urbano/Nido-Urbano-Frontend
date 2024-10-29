@@ -1,0 +1,24 @@
+<h2>{{ 'title.available_dates' | translate }}</h2>
+<h5 class="subtitle">{{ 'subtitle.available_dates' | translate }}</h5>
+
+<div class="calendar-container">
+  <!-- Inline mat-calendar with custom date classes -->
+  <mat-calendar [dateClass]="dateClass"></mat-calendar>
+</div>
+
+
+<div class="payment-methods">
+  <h2>{{ 'title.payment_methods' | translate }}</h2>
+  <div class="payment-methods-card">
+    <div class="column">
+      <img src="https://i.postimg.cc/28HkprLH/logo-bcp-colores-100.png" alt="BCP" />
+    </div>
+    <div class="column">
+      <img src="https://i.postimg.cc/8PkpnjcJ/Old-Pay-Pal.jpg" alt="PAYPAL"/>
+    </div>
+    <div class="column">
+      <img src="https://i.postimg.cc/Twww51bW/americanexpress.png" alt="AMERICAN EXPRESS" />
+    </div>
+  </div>
+</div>
+

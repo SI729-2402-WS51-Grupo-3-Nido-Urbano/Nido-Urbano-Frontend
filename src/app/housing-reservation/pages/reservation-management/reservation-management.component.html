@@ -1,0 +1,33 @@
+<!-- Reservation catalogue -->
+<div class="cards-wrapper">
+  <h3>{{ 'title.reservations' | translate }}</h3>
+
+  <!-- Add/Edit Form -->
+  <app-reservation-create-and-edit (editCanceled)="onCancelEdit()"
+                                   (reservationAdded)="onReservationAdded($event)"
+                                   (reservationUpdated)="onReservationUpdated($event)"
+                                   [editMode]="isEditMode"
+                                   [reservation]="reservationData">
+  </app-reservation-create-and-edit>
+
+  <!-- Cards for each reservation -->
+  <div class="card-grid">
+    <mat-card *ngFor="let reservation of dataSource.data" class="reservation-card">
+      <mat-card-header>
+        <mat-card-title>{{ 'reservation.id' | translate }}: {{ reservation.id }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ 'reservation.start_date' | translate }}: {{ reservation.start_date | date }}</p>
+        <p>{{ 'reservation.end_date' | translate }}: {{ reservation.end_date | date }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-icon-button (click)="onEditItem(reservation)" aria-label="Edit reservation">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="onDeleteItem(reservation)" aria-label="Delete reservation">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div *ngIf="house">
+  <h2>Edit House</h2>
+  <mat-form-field>
+    <mat-label>House Name</mat-label>
+    <input matInput [(ngModel)]="house.house_name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Address</mat-label>
+    <input matInput [(ngModel)]="house.address">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>House Type</mat-label>
+    <input matInput [(ngModel)]="house.house_type">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>House Modal</mat-label>
+    <input matInput [(ngModel)]="house.house_modal">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Price</mat-label>
+    <input matInput [(ngModel)]="house.price" type="number">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Size</mat-label>
+    <input matInput [(ngModel)]="house.size" type="number">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <textarea matInput [(ngModel)]="house.description"></textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Status</mat-label>
+    <input matInput [(ngModel)]="house.status_landlord">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="onSave()">Save</button>
+  <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+</div>

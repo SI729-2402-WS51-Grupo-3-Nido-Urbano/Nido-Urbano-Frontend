@@ -20,4 +20,10 @@ export class LanguageSwitcherComponent {
   useLanguage(language: string) : void {
     this.translate.use(language);
   }
+
+  /*
+  changeLanguage(lang: string): void {
+    this.translate.use(lang);
+    this.currentLang = lang;  // Actualizar el valor actual
+  }*/
 }

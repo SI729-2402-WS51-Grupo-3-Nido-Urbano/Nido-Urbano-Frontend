@@ -1,3 +1,27 @@
 {
-
+  "FEEDBACK": {
+    "TITLE": "Comentarios",
+    "HOUSE_NAME": "Nombre de la casa",
+    "ADDRESS": "Dirección",
+    "SCORE": "Puntuación",
+    "COMMENTS": "Comentarios",
+    "CREATE_NEW_FEEDBACK": "Crear nuevo comentario",
+    "EDIT_FEEDBACK": "Editar comentario",
+    "ACTIONS": "Acciones"
+  },
+  "FORM": {
+    "PLACEHOLDER_HOUSE_NAME": "Ingresa la propiedad",
+    "PLACEHOLDER_ADDRESS": "Ingresa la dirección",
+    "PLACEHOLDER_SCORE": "Ingresa la puntuación",
+    "PLACEHOLDER_COMMENTS": "Ingresa los comentarios"
+  },
+  "BUTTONS": {
+    "SAVE": "Guardar",
+    "CANCEL": "Cancelar",
+    "EDIT": "Editar",
+    "DELETE": "Eliminar"
+  },
+  "MESSAGES": {
+    "CONFIRM_DELETE": "¿Estás seguro de que deseas eliminar este comentario?"
+  }
 }

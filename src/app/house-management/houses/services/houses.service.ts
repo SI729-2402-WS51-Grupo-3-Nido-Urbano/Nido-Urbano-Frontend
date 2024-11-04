@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BaseService } from "../../../shared/services/base.services";
 import { HttpClient } from "@angular/common/http";
 import { House} from "../model/house.entity";
-import {catchError} from "rxjs";
+import {catchError, Observable, retry} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -24,4 +24,10 @@ export class HousesService extends BaseService<House>{
     return this.http.get<House[]>(`${this.basePath}${this.resourceEndpoint}?house_modal=${house_modal}`, this.httpOptions)
       .pipe(catchError(this.handleError));
   }
+  // Get All Resources for user_property_id
+  getAllHouseByUserId(user_property_id: number): Observable<any> {
+    return this.http.get<any>(`${this.basePath}${this.resourceEndpoint}?user_property_id=${user_property_id}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
 }

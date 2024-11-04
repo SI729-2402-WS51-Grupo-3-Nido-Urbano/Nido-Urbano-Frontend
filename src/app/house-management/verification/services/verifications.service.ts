@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BaseService } from "../../../shared/services/base.service";
+import { BaseService } from "../../../shared/services/base.services";
 import { HttpClient } from "@angular/common/http";
 import { Verification} from "../model/verification.entity";
 

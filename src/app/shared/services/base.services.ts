@@ -8,6 +8,10 @@ import { inject } from "@angular/core";
   providedIn: 'root'
 })
 export class BaseService<T> {
+  constructor(http: HttpClient) {
+
+  }
+
 
   basePath: string = `${environment.serverBasePath}`;
   resourceEndpoint: string = '/resources';

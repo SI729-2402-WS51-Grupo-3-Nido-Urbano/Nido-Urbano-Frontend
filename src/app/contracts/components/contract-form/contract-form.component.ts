@@ -50,6 +50,7 @@ export class ContractFormComponent implements OnInit{
     this.loadProperties(); // Cargar propiedades desde el JSON
   }
   ngOnInit() {
+    /* Carga de Datos */
     this.loadTenant(); // Cargar inquilino o usuario al iniciar
     this.loadLandlords(); // Cargar landlords al iniciar
     this.contractForm.get('property')?.valueChanges.subscribe((selectedProperty) => {

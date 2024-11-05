@@ -1,1 +1,35 @@
-<app-contract-form></app-contract-form>
+<div *ngIf="isLoading" class="loading-screen">
+  <!-- Contenido de la pantalla de carga -->
+  <div class="container">
+    <!---->
+    <div class="cube">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <!---->
+    <div class="loading">
+      <div>
+        <h1>Loading</h1>
+        <p>. . .</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!isLoading">
+  <h1 class="main-title">Contract Agreement</h1>
+  <app-contract-form></app-contract-form>
+  <div class="section-container">
+    <h2 class="question-title">Are you not sure about proceeding?</h2>
+    <h3 class="subtitle">Don't Worry</h3>
+    <p class="description">
+      Schedule an appointment to visit the house and see it in person. <br>
+      With us, your reservation will be saved quickly, so time will be not wasted.
+    </p>
+    <button mat-raised-button color="primary" class="appointment-button" (click)="goToHousingReservation()">Make an Appointment</button>
+  </div>
+</div>

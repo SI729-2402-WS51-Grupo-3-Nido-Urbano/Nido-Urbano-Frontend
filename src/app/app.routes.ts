@@ -8,6 +8,12 @@ import {HousesManagementsComponent} from "./house-management/houses/pages/houses
 
 import { FeedbackManagementComponent } from './feedback/pages/feedback-management/feedback-management.component';
 import { FeedbackCreateAndEditComponent } from './feedback/components/feedback-create-and-edit/feedback-create-and-edit.component';
+import {
+  ReservationManagementComponent
+} from "./housing-reservation/pages/reservation-management/reservation-management.component";
+import {
+  CalendarManagementComponent
+} from "./housing-reservation/pages/reservation-calendar-management/calendar-management.component";
 
 export const routes: Routes = [
   { path: 'home', component: HousesManagementsComponent },
@@ -15,8 +21,9 @@ export const routes: Routes = [
   { path: 'payments/:id', component: PaymentManagmentComponent },
   { path: 'confirm-payment/:id', component: ConfirmationBCPComponent },
   { path: 'generate', component: ContractFormPageComponent },
+  { path: 'reserve-appointments', component: ReservationManagementComponent},
+  { path: 'view-available-dates', component: CalendarManagementComponent},
   { path: 'feedbacks', component: FeedbackManagementComponent },
   { path: 'feedbacks/${Id}', component: FeedbackCreateAndEditComponent },
-
   { path: '**', component: PageNotFoundComponent }
 ];

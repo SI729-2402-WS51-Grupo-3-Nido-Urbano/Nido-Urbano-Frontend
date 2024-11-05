@@ -68,3 +68,10 @@ h3 {
     width: calc(33.33% - 20px); /* Tres cards por fila en pantallas grandes */
   }
 }
+
+
+/* */
+
+.section-container {
+  text-align: center;
+}

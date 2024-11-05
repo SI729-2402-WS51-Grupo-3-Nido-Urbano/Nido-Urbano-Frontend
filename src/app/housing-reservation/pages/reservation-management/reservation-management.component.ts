@@ -10,12 +10,14 @@ import { NgClass } from "@angular/common";
 import { TranslateModule } from "@ngx-translate/core";
 import { CommonModule } from '@angular/common';
 import {ReservationEditAndViewComponent} from "../../components/reservation-edit-and-view/reservation-edit-and-view.component";
+import {MatButton, MatIconButton} from "@angular/material/button";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-reservation-management',
   templateUrl: './reservation-management.component.html',
   standalone: true,
-  imports: [MatPaginator, MatCardModule, MatSort, MatIconModule, MatTableModule, NgClass, TranslateModule, CommonModule, ReservationEditAndViewComponent],
+  imports: [MatPaginator, MatCardModule, MatSort, MatIconModule, MatTableModule, NgClass, TranslateModule, CommonModule, ReservationEditAndViewComponent, MatIconButton, MatButton],
   styleUrls: ['./reservation-management.component.css']
 })
 export class ReservationManagementComponent implements OnInit, AfterViewInit {
@@ -27,7 +29,8 @@ export class ReservationManagementComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private reservationService: ReservationManagementService) {
+  constructor(private reservationService: ReservationManagementService,
+              private router: Router) {
     this.reservationData = {} as Reservation;
     this.dataSource = new MatTableDataSource<any>();
   }
@@ -101,5 +104,10 @@ export class ReservationManagementComponent implements OnInit, AfterViewInit {
       .subscribe(() => {
         this.dataSource.data = this.dataSource.data.filter(reservation => reservation.id !== reservationId);
       });
+  }
+
+  goToAvailableDates(): void {
+    this.router.navigate(['/view-available-dates']); //
+
   }
 }

@@ -120,137 +120,7 @@
       "imageUrl": "https://i.postimg.cc/3NyhYt06/image.png"
     }
   ],
-  "payments": [
-    {
-      "paymentId": 946,
-      "buyerName": "Miguel",
-      "documentType": "DNI",
-      "identificationNumber": "12345678",
-      "phoneNumber": "922 114 457",
-      "email": "u202220294@upc.edu.pe",
-      "bank": "BCP",
-      "amountSale": 20000,
-      "houseId": 6,
-      "id": 1
-    },
-    {
-      "paymentId": 392,
-      "buyerName": "",
-      "documentType": "",
-      "identificationNumber": "",
-      "phoneNumber": "",
-      "email": "",
-      "bank": "",
-      "amountSale": 100000,
-      "houseId": 1,
-      "apiId": "v1",
-      "id": 2
-    },
-    {
-      "paymentId": 9567,
-      "buyerName": "",
-      "documentType": "",
-      "identificationNumber": "asdd",
-      "phoneNumber": "",
-      "email": "fsdf",
-      "bank": "",
-      "amountSale": 100000,
-      "houseId": 1,
-      "apiId": "v1",
-      "id": 3
-    },
-    {
-      "paymentId": 4556,
-      "buyerName": "adsadad",
-      "documentType": "adasd",
-      "identificationNumber": "asdd",
-      "phoneNumber": "asdsasd",
-      "email": "fsdf",
-      "bank": "sadsad",
-      "amountSale": 100000,
-      "houseId": 1,
-      "apiId": "v1",
-      "id": 4
-    },
-    {
-      "paymentId": 9405,
-      "buyerName": "adsadad",
-      "documentType": "adasd",
-      "identificationNumber": "asdd",
-      "phoneNumber": "asdsasd",
-      "email": "fsdf",
-      "bank": "sadsad",
-      "amountSale": 100000,
-      "houseId": 1,
-      "apiId": "v1",
-      "id": 5
-    },
-    {
-      "paymentId": 6570,
-      "buyerName": "adsadad",
-      "documentType": "adasd",
-      "identificationNumber": "asdd",
-      "phoneNumber": "asdsasd",
-      "email": "fsdf",
-      "bank": "sadsad",
-      "amountSale": 100000,
-      "houseId": 1,
-      "apiId": "v1",
-      "id": 6
-    },
-    {
-      "paymentId": 8240,
-      "buyerName": "adsadad",
-      "documentType": "adasd",
-      "identificationNumber": "asdd",
-      "phoneNumber": "asdsasd",
-      "email": "fsdf",
-      "bank": "sadsad",
-      "amountSale": 100000,
-      "houseId": 1,
-      "apiId": "v1",
-      "id": 7
-    },
-    {
-      "paymentId": 8882,
-      "buyerName": "adsadad",
-      "documentType": "adasd",
-      "identificationNumber": "asdd",
-      "phoneNumber": "asdsasd",
-      "email": "fsdf",
-      "bank": "sadsad",
-      "amountSale": 100000,
-      "houseId": 1,
-      "apiId": "v1",
-      "id": 8
-    },
-    {
-      "paymentId": 1709,
-      "buyerName": "",
-      "documentType": "",
-      "identificationNumber": "........",
-      "phoneNumber": "",
-      "email": "",
-      "bank": "",
-      "amountSale": 100000,
-      "houseId": 1,
-      "apiId": "v1",
-      "id": 9
-    },
-    {
-      "paymentId": 5771,
-      "buyerName": "",
-      "documentType": "",
-      "identificationNumber": "........",
-      "phoneNumber": "",
-      "email": "",
-      "bank": "",
-      "amountSale": 100000,
-      "houseId": 1,
-      "apiId": "v1",
-      "id": 10
-    }
-  ],
+  "payments": [],
   "verification": [
     {
       "id": 1,
@@ -405,6 +275,23 @@
       "score": 3,
       "comments": "Puede mejorar",
       "id": 9
+    }
+  ],
+  "reservations": [
+    {
+      "start_date": "2024-10-15",
+      "end_date": "2024-10-16",
+      "id": 1
+    },
+    {
+      "start_date": "2024-10-20",
+      "end_date": "2024-10-21",
+      "id": 3
+    },
+    {
+      "start_date": "2024-11-22",
+      "end_date": "2024-11-23",
+      "id": 4
     }
   ]
 }

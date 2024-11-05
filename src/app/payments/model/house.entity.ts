@@ -1,5 +1,5 @@
 export class House {
-  houseId: number;
+  id: number;
   amount: number;
   ownerId: number;
   size: String;
@@ -10,7 +10,7 @@ export class House {
   imageUrl: String;
 
   constructor() {
-    this.houseId = 0;
+    this.id = 0;
     this.amount = 0;
     this.ownerId = 0;
     this.size = "";

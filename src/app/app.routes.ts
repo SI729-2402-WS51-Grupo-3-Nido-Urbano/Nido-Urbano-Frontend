@@ -10,12 +10,11 @@ import { FeedbackManagementComponent } from './feedback/pages/feedback-managemen
 import { FeedbackCreateAndEditComponent } from './feedback/components/feedback-create-and-edit/feedback-create-and-edit.component';
 
 export const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HousesManagementsComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'payments/:id', component: PaymentManagmentComponent },
   { path: 'confirm-payment/:id', component: ConfirmationBCPComponent },
   { path: 'generate', component: ContractFormPageComponent },
-  { path: 'houses', component: HousesManagementsComponent },
   { path: 'feedbacks', component: FeedbackManagementComponent },
   { path: 'feedbacks/${Id}', component: FeedbackCreateAndEditComponent },
 

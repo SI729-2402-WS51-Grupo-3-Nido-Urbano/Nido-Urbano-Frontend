@@ -11,12 +11,15 @@ import { MatListModule } from "@angular/material/list";
 import { BreakpointObserver } from "@angular/cdk/layout";
 import { TranslateService } from "@ngx-translate/core";
 import { LanguageSwitcherComponent } from "./public/components/language-switcher/language-switcher.component";
+import {
+  HousesManagementsComponent
+} from "./house-management/houses/pages/houses-managements/houses-managements.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, RouterLink, MatToolbarModule, MatButtonModule, MatIconModule,
-    MatSidenavModule, MatDividerModule, MatListModule, LanguageSwitcherComponent],
+    MatSidenavModule, MatDividerModule, MatListModule, LanguageSwitcherComponent, HousesManagementsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -27,7 +30,8 @@ export class AppComponent implements OnInit {
   @ViewChild(MatSidenav, {static: true}) sidenav!: MatSidenav;
   options = [
     { icon: 'home', path: '/home', title: 'Home'},
-    { icon: 'person', path: '/payments', title: 'Pays'}
+    { icon: 'person', path: '/payments', title: 'Pays'},
+
   ];
 
   constructor(private translate: TranslateService, private observer: BreakpointObserver) {

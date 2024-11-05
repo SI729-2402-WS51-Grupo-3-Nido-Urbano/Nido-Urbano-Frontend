@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {House} from "../../model/house.entity";
+//import {House} from "../../model/house.entity";
+import {House} from "../../../house-management/houses/model/house.entity";
 import {Pay} from "../../model/pay.entity";
 import {MatCard, MatCardContent, MatCardTitle} from "@angular/material/card";
 import {FormsModule} from "@angular/forms";
@@ -10,7 +11,8 @@ import {MatButton} from "@angular/material/button";
 import {NgForOf} from "@angular/common";
 import {MatLabel} from "@angular/material/form-field";
 import {Router} from "@angular/router";
-import {HousesService} from "../../services/houses.service";
+//import {HousesService} from "../../services/houses.service";
+import {HousesService} from "../../../house-management/houses/services/houses.service";
 
 @Component({
   selector: 'app-payment-form',
@@ -42,6 +44,6 @@ export class PaymentFormComponent implements OnInit{
 
   ngOnInit(): void {
     this.houseService.setHouse(this.house);
-    this.router.navigate(['/confirm-payment', this.house.houseId]); // Navegar a la ruta de pagos con el ID de la casa
+    this.router.navigate(['/confirm-payment', this.house.id]); // Navegar a la ruta de pagos con el ID de la casa
   }
 }

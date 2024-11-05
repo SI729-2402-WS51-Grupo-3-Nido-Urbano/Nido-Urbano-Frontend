@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {PaymentFormComponent} from "../../components/payment-form/payment-form.component";
-import {House} from "../../model/house.entity";
+//import {House} from "../../model/house.entity";
+import {House} from "../../../house-management/houses/model/house.entity";
 import {ActivatedRoute, Router} from "@angular/router";
-import {HousesService} from "../../services/houses.service";
+//import {HousesService} from "../../services/houses.service";
+import {HousesService} from "../../../house-management/houses/services/houses.service";
 import {MatCard, MatCardContent, MatCardTitle} from "@angular/material/card";
 import {MatButton} from "@angular/material/button";
 import {MatGridList} from "@angular/material/grid-list";
@@ -69,10 +71,10 @@ export class ConfirmationBCPComponent implements OnInit{
 
   onSubmit(): void {
     this.pay.paymentId = Math.floor(Math.random() * 10000);
-    this.pay.houseId = this.house?.houseId;
-    this.pay.amountSale = this.house?.amount;
-    this.pay.houseId = this.house?.houseId;
-    this.pay.amountSale = this.house?.amount;
+    this.pay.houseId = this.house?.id;
+    this.pay.amountSale = this.house?.price;
+    this.pay.houseId = this.house?.id;
+    this.pay.amountSale = this.house?.price;
     console.log('Información del Pago:', this.pay);
     // Aquí puedes manejar el envío del objeto pay a tu base de datos o servicio
     // Por ejemplo, puedes hacer una llamada a un servicio para guardar en db.json

@@ -1,12 +1,11 @@
 <div class="header-container">
-  <h1>CASA DE VERANO FAMILIAR</h1>
-  <h2>{{house?.description}}</h2>
+  <h2>{{house?.house_name}}</h2>
 </div>
 
 <div class="grid-container">
   <!-- Imagen de la casa a la izquierda -->
   <div class="house-image-container">
-    <img [src]="house?.imageUrl" alt="Casa de verano" class="house-image"/>
+    <img [src]="house?.photo" alt="Casa de verano" class="house-image"/>
 
     <div class="payment-options">
       <img src="https://i.postimg.cc/pVCyxJsL/image.png" alt="PayPal" class="payment-logo" >
@@ -20,15 +19,15 @@
     <mat-grid-list cols="1" rowHeight="auto" class="info-grid">
       <div class="grid-item">
         <mat-icon>home</mat-icon>
-        <p> {{house?.size}}</p>
+        <p> {{house?.price}}</p>
       </div>
       <div class="grid-item">
         <mat-icon>bed</mat-icon>
-        <p><strong>{{house?.spaces}} DORMITORIOS</strong></p>
+        <p><strong>{{house?.size}} DORMITORIOS</strong></p>
       </div>
       <div class="grid-item">
         <mat-icon>school</mat-icon>
-        <p>{{house?.nearest}}</p>
+        <p>{{house?.description}}</p>
       </div>
     </mat-grid-list>
 

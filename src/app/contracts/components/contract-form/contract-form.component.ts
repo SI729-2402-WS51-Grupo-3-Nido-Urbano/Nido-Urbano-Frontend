@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
-import { jsPDF } from 'jspdf';
+//import { jsPDF } from 'jspdf';
+import {jsPDF}from 'jspdf';
 import { Router } from '@angular/router';
 import {HttpClient} from "@angular/common/http";
 import {Location, NgClass, NgForOf, NgIf} from "@angular/common";

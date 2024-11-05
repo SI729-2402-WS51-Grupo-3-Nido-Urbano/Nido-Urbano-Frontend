@@ -26,6 +26,11 @@ export class HousesManagementsComponent implements OnInit{
   constructor(private houseService: HousesService) {
     this.houseData = {} as House;
   }
+  ngOnInit() {
+    this.loadHouseSale();
+    this.loadHouseRent();
+  }
+
   loadHouseSale(){
     this.houseService.getHouseByHouseModal('SALE').subscribe((data)=>{
       this.houseSale = data;
@@ -46,9 +51,6 @@ export class HousesManagementsComponent implements OnInit{
       }
     );
   }
-  ngOnInit() {
-    this.loadHouseSale();
-    this.loadHouseRent();
-  }
+
 
 }

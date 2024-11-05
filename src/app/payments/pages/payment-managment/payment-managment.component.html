@@ -6,12 +6,6 @@
   <!-- Imagen de la casa a la izquierda -->
   <div class="house-image-container">
     <img [src]="house?.photo" alt="Casa de verano" class="house-image"/>
-
-    <div class="payment-options">
-      <img src="https://i.postimg.cc/pVCyxJsL/image.png" alt="PayPal" class="payment-logo" >
-      <img src="https://i.postimg.cc/15zXzVdc/image.png" alt="BCP" class="payment-logo"
-           (click)="goToPaymentConfirmationBCP()" style="cursor: pointer;" >
-    </div>
   </div>
 
   <!-- Información a la derecha de la imagen -->
@@ -31,8 +25,15 @@
       </div>
     </mat-grid-list>
 
+    <!-- BUTTON TO SHOW PAYMENT OPTIONS -->
     <div class="actions">
-      <button mat-raised-button color="primary" class="buy-button">COMPRAR</button>
+      <button mat-raised-button color="primary" class="buy-button" (click)="onBuyButtonClick()">BUY</button>
+    </div>
+
+    <!-- PAYMENT OPTIONS - Visible only if showPaymentOptions is true -->
+    <div *ngIf="showPaymentOptions" class="payment-options">
+      <img src="https://i.postimg.cc/pVCyxJsL/image.png" alt="PayPal" class="payment-logo">
+      <img src="https://i.postimg.cc/15zXzVdc/image.png" alt="BCP" class="payment-logo" (click)="goToPaymentConfirmationBCP()" style="cursor: pointer;">
     </div>
   </div>
 </div>

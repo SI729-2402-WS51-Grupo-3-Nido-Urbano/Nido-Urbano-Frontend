@@ -55,7 +55,7 @@
                 <input matInput [(ngModel)]="pay.bank" name="bank" placeholder="Banco" required>
               </mat-form-field>
 
-              <button mat-raised-button color="primary" type="submit">Confirmar Pago</button>
+              <button mat-raised-button color="primary" type="submit" (click)="goToContractPage()">Confirmar Pago</button>
             </form>
           </mat-card-content>
         </mat-card>

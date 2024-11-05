@@ -10,18 +10,20 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {MatGridList, MatGridTile} from "@angular/material/grid-list";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {HousesService} from "../../../house-management/houses/services/houses.service";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-payment-managment',
   standalone: true,
   imports: [MatCardModule,
     MatButtonModule,
-    MatIconModule, MatGridList, MatGridTile, MatGridListModule],
+    MatIconModule, MatGridList, MatGridTile, MatGridListModule, NgIf],
   templateUrl: './payment-managment.component.html',
   styleUrl: './payment-managment.component.css'
 })
 export class PaymentManagmentComponent implements OnInit{
   house: House | null = null;
+  showPaymentOptions: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -34,6 +36,10 @@ export class PaymentManagmentComponent implements OnInit{
     if (houseId) {
       this.house = this.houseService.getHouse();
     }
+  }
+
+  onBuyButtonClick() {
+    this.showPaymentOptions = true;
   }
 
   // Metodo que redirige de BCP

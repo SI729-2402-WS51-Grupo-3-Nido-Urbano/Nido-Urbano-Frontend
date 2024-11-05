@@ -42,12 +42,12 @@ export class ConfirmationBCPComponent implements OnInit{
   house: House;
   pay: Pay; // Objeto para almacenar la información del pago
 
-  constructor(
-    private route: ActivatedRoute,
-    private houseService: HousesService,
-    private paysService: PaysService,
-  ) {this.pay = new Pay();
-    this.house = new House();}
+  constructor(private route: ActivatedRoute, private houseService: HousesService,
+    private paysService: PaysService, private router: Router)
+  {
+    this.pay = new Pay();
+    this.house = new House();
+  }
 
   ngOnInit(): void {
     const houseId = this.route.snapshot.paramMap.get('id'); // Obtener el ID de la casa de la ruta
@@ -80,5 +80,10 @@ export class ConfirmationBCPComponent implements OnInit{
     // Por ejemplo, puedes hacer una llamada a un servicio para guardar en db.json
 
     this.createPayment();
+  }
+
+  // Metodo que redirige
+  goToContractPage(): void {
+    this.router.navigate(['/generate']); // Redirigir a la ruta de generación de contrato con el ID de la casa
   }
 }

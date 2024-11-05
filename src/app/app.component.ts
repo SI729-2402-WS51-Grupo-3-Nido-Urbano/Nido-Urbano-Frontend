@@ -25,7 +25,7 @@ import {
 })
 
 export class AppComponent implements OnInit {
-  title = 'nido-urbano-frontend';
+  title = 'nido-urbano';
 
   @ViewChild(MatSidenav, {static: true}) sidenav!: MatSidenav;
   options = [

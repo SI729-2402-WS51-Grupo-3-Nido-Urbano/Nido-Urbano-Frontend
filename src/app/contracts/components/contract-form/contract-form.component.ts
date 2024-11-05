@@ -318,9 +318,13 @@ export class ContractFormComponent implements OnInit{
     this.contractSent = true;
   }
   confirmContract() {
-    this.contractConfirmed = true;
-    this.contractSent = false;
-    alert('Contrato confirmado por el propietario.');
+    // Activa el botón de confirmación
+    this.contractSent = true;
+    this.contractConfirmed = false;
+    // Desactiva el botón después de 2 segundos
+    setTimeout(() => {
+      alert('Contrato confirmado por el propietario.');
+    }, 2000);
   }
   cancelContract() {
     this.location.back(); // Regresa a la pestaña anterior

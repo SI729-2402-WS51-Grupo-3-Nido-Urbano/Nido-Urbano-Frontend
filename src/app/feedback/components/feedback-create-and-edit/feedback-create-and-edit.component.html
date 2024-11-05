@@ -1,14 +1,14 @@
-<div>
+<!--<div>
   <h2>{{ editMode ? ('FEEDBACK.EDIT_FEEDBACK' | translate) : ('FEEDBACK.CREATE_NEW_FEEDBACK' | translate) }}</h2>
 
   <form #feedbackForm="ngForm" (ngSubmit)="onSubmit()">
-    <mat-form-field>
+    //<mat-form-field>
       <input matInput [placeholder]="'FORM.PLACEHOLDER_HOUSE_NAME' | translate" [(ngModel)]="feedback.house_name" name="houseName" required>
     </mat-form-field>
 
     <mat-form-field>
       <input matInput [placeholder]="'FORM.PLACEHOLDER_ADDRESS' | translate" [(ngModel)]="feedback.address" name="address" required>
-    </mat-form-field>
+    </mat-form-field>//
 
     <mat-form-field>
       <input matInput [placeholder]="'FORM.PLACEHOLDER_SCORE' | translate" [(ngModel)]="feedback.score" name="score" type="number" required>
@@ -26,5 +26,53 @@
       {{ 'BUTTONS.CANCEL' | translate }}
     </button>
   </form>
-</div>
+</div>-->
 
+<div class="feedback-form-container">
+  <h2 class="feedback-form-title">
+    {{ editMode ? ('FEEDBACK.EDIT_FEEDBACK' | translate) : ('FEEDBACK.CREATE_NEW_FEEDBACK' | translate) }}
+  </h2>
+  <form #feedbackForm="ngForm" (ngSubmit)="onSubmit()" class="feedback-form">
+
+    <mat-form-field class="feedback-field">
+      <input
+        matInput
+        [placeholder]="'FORM.PLACEHOLDER_USER_NAME' | translate"
+        [(ngModel)]="feedback.user_name"
+        name="user_name"
+        type="string"
+        required>
+    </mat-form-field>
+
+    <!-- Campo de puntuación -->
+    <mat-form-field class="feedback-field">
+      <input
+        matInput
+        [placeholder]="'FORM.PLACEHOLDER_SCORE' | translate"
+        [(ngModel)]="feedback.score"
+        name="score"
+        type="number"
+        required>
+    </mat-form-field>
+
+    <!-- Campo de comentarios -->
+    <mat-form-field class="feedback-field">
+      <textarea
+        matInput
+        [placeholder]="'FORM.PLACEHOLDER_COMMENTS' | translate"
+        [(ngModel)]="feedback.comments"
+        name="comments">
+      </textarea>
+    </mat-form-field>
+
+    <!-- Botones de acción -->
+    <div class="form-buttons">
+      <button mat-raised-button type="submit">
+        {{ 'BUTTONS.SAVE' | translate }}
+      </button>
+      <button mat-button type="button" (click)="onCancel()">
+        {{ 'BUTTONS.CANCEL' | translate }}
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,28 +1,32 @@
-table {
+.feedback-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.feedback-form-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+}
+
+.feedback-field {
   width: 100%;
 }
 
-.mat-elevation-z8 {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-th.mat-header-cell {
-  font-weight: bold;
-}
-
-td.mat-cell {
-  padding: 16px;
-}
-
-button {
-  margin-right: 8px;
-}
-
-h2 {
-  margin-bottom: 16px;
-}
-
-.no-feedback {
-  text-align: center;
-  color: grey;
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
 }

@@ -1,8 +1,7 @@
 {
   "FEEDBACK": {
     "TITLE": "Feedbacks",
-    "HOUSE_NAME": "House Name",
-    "ADDRESS": "Address",
+    "USER_NAME": "User Name",
     "SCORE": "Score",
     "COMMENTS": "Comments",
     "CREATE_NEW_FEEDBACK": "Create New Feedback",
@@ -10,7 +9,7 @@
     "ACTIONS": "Actions"
   },
   "FORM": {
-    "PLACEHOLDER_HOUSE_NAME": "Enter house name",
+    "PLACEHOLDER_USER_NAME": "Enter user name",
     "PLACEHOLDER_ADDRESS": "Enter address",
     "PLACEHOLDER_SCORE": "Enter score",
     "PLACEHOLDER_COMMENTS": "Enter comments"

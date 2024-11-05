@@ -29,4 +29,12 @@ export class HouseCardComponent {
     this.houseService.setSelectedHouse(this.house);
     this.router.navigate(['/payments', this.house.id]);
   }
+
+  /*seeFeedbacks(): void {
+  this.router.navigate(['/feedbacks', this.house.id]);
+  }*/
+  seeFeedbacks(): void {
+    this.router.navigate(['/feedbacks']);
+  }
+
 }

@@ -11,12 +11,13 @@ import {
   MatHeaderRow, MatHeaderRowDef, MatRow, MatRowDef,
   MatTable
 } from "@angular/material/table";
-import {MatButton} from "@angular/material/button";
+import {MatButton, MatIconButton} from "@angular/material/button";
 import { Router } from '@angular/router';
 import {TranslateModule} from "@ngx-translate/core";
 import {
   FeedbackCreateAndEditComponent
 } from "../../components/feedback-create-and-edit/feedback-create-and-edit.component";
+import {MatIcon} from "@angular/material/icon";
 
 @Component({
   selector: 'app-feedback-management',
@@ -36,7 +37,9 @@ import {
     MatRowDef,
     CommonModule,
     TranslateModule,
-    FeedbackCreateAndEditComponent
+    FeedbackCreateAndEditComponent,
+    MatIcon,
+    MatIconButton
   ],
   styleUrls: ['./feedback-management.component.css']
 })
@@ -54,6 +57,7 @@ export class FeedbackManagementComponent implements OnInit {
   // Cargar feedbacks desde el servicio
   loadFeedbacks(): void {
     this.feedbackService.getAll().subscribe((response: any) => {
+      console.log(response);
       this.feedbacks = response;
     });
   }
@@ -94,6 +98,7 @@ export class FeedbackManagementComponent implements OnInit {
 
 
 
+
   // Manejar la actualización de un feedback existente
   onFeedbackUpdated(updatedFeedback: Feedback): void {
     this.feedbackService.update(updatedFeedback.id, updatedFeedback).subscribe((response: Feedback) => {
@@ -109,6 +114,7 @@ export class FeedbackManagementComponent implements OnInit {
       this.selectedFeedback = null;
     });
   }
+
 
   // Cancelar la edición o creación
   onEditCanceled(): void {

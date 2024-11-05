@@ -1,7 +1,7 @@
 {
   "FEEDBACK": {
     "TITLE": "Comentarios",
-    "HOUSE_NAME": "Nombre de la casa",
+    "USER_NAME": "Nombre del usuario",
     "ADDRESS": "Dirección",
     "SCORE": "Puntuación",
     "COMMENTS": "Comentarios",
@@ -10,10 +10,10 @@
     "ACTIONS": "Acciones"
   },
   "FORM": {
-    "PLACEHOLDER_HOUSE_NAME": "Ingresa la propiedad",
-    "PLACEHOLDER_ADDRESS": "Ingresa la dirección",
-    "PLACEHOLDER_SCORE": "Ingresa la puntuación",
-    "PLACEHOLDER_COMMENTS": "Ingresa los comentarios"
+    "PLACEHOLDER_USER_NAME": "Ingrese su nombre",
+    "PLACEHOLDER_ADDRESS": "Ingrese la dirección",
+    "PLACEHOLDER_SCORE": "Ingrese la puntuación",
+    "PLACEHOLDER_COMMENTS": "Ingrese los comentarios"
   },
   "BUTTONS": {
     "SAVE": "Guardar",

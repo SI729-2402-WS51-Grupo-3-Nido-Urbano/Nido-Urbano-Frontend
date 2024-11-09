@@ -2,7 +2,6 @@ export class Feedback {
   id: number;
   property_id: number;
   user_id: number;
-  user_name: string;
   score: number;
   comments: string;
   rating_date: Date;

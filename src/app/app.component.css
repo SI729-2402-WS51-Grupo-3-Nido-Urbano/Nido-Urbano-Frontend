@@ -13,9 +13,9 @@ mat-sidenav {
   max-width: 1520px;
   margin: 0 auto;
   font-size: 16px;
-  /*/
-  background-color: #EE7B10;*/
-  background-color: #121212;
+
+  background-color: #EE7B10;
+  /*background-color: #f16c6c;*/
   max-height: max-content;
 }
 mat-sidenav-container {

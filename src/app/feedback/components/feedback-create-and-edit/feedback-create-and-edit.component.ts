@@ -7,6 +7,17 @@ import {MatButton} from "@angular/material/button";
 import {TranslateModule} from "@ngx-translate/core";
 import {MatTable} from "@angular/material/table";
 
+
+// Define un tipo para los datos transformados
+type BackendFeedback = {
+  propertyId: number;
+  userId: number;
+  userName: string;
+  score: number;
+  comments: string;
+};
+
+
 @Component({
   selector: 'app-feedback-create-and-edit',
   templateUrl: './feedback-create-and-edit.component.html',
@@ -51,7 +62,6 @@ export class FeedbackCreateAndEditComponent {
       console.error('Invalid data in form');
     }
   }
-
 
   // Event handler for cancel button
   onCancel(): void {

@@ -9,6 +9,8 @@
     "ACTIONS": "Actions"
   },
   "FORM": {
+    "PLACEHOLDER_PROPERTY_ID": "Enter property id",
+    "PLACEHOLDER_USER_ID": "Enter user id",
     "PLACEHOLDER_USER_NAME": "Enter user name",
     "PLACEHOLDER_ADDRESS": "Enter address",
     "PLACEHOLDER_SCORE": "Enter score",

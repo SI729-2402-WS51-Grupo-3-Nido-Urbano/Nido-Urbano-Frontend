@@ -214,36 +214,41 @@
   "feedbacks": [
     {
       "id": 1,
-      "user_name": "Manuel Perez",
-      "property_id": 1,
+      "propertyId": 1,
+      "userId": 5,
+      "userName": "Manuel Perez",
       "score": 4,
       "comments": "Excelente casa, muy cómoda y bien ubicada."
     },
     {
       "id": 2,
-      "user_name": "Juan Fernandez",
-      "property_id": 5,
+      "propertyId": 5,
+      "userId": 3,
+      "userName": "Juan Fernandez",
       "score": 4,
       "comments": "El apartamento está bien, pero el precio es un poco alto."
     },
     {
       "id": 3,
-      "user_name": "María Manrique",
-      "property_id": 3,
+      "propertyId": 3,
+      "userId": 2,
+      "userName": "María Manrique",
       "score": 5,
       "comments": "El jardín es hermoso, ideal para la familia."
     },
     {
       "id": 4,
-      "user_name": "Fernando Lopez",
-      "property_id": 1,
+      "propertyId": 1,
+      "userId": 7,
+      "userName": "Fernando Lopez",
       "score": 4,
       "comments": "Bonita vista al parque, pero los vecinos son un poco ruidosos."
     },
     {
       "id": 5,
-      "user_name": "Ana Espinoza",
-      "property_id": 1,
+      "propertyId": 1,
+      "userId": 10,
+      "userName": "Ana Espinoza",
       "score": 5,
       "comments": "Casa muy espaciosa y cómoda para una familia grande."
     }

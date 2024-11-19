@@ -1,16 +1,16 @@
 export class Feedback {
   id: number;
-  property_id: number;
-  user_id: number;
-  user_name: string;
+  propertyId: number;
+  userId: number;
+  userName: string;
   score: number;
   comments: string;
 
   constructor() {
     this.id = 0;
-    this.property_id = 0;
-    this.user_id = 0;
-    this.user_name = "";
+    this.propertyId = 0;
+    this.userId = 0;
+    this.userName = "";
     this.score = 0;
     this.comments = ""
   }

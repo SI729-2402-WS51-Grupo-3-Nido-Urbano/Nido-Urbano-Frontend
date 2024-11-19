@@ -10,6 +10,8 @@
     "ACTIONS": "Acciones"
   },
   "FORM": {
+    "PLACEHOLDER_PROPERTY_ID": "Ingrese property id",
+    "PLACEHOLDER_USER_ID": "Ingrese user id",
     "PLACEHOLDER_USER_NAME": "Ingrese su nombre",
     "PLACEHOLDER_ADDRESS": "Ingrese la dirección",
     "PLACEHOLDER_SCORE": "Ingrese la puntuación",

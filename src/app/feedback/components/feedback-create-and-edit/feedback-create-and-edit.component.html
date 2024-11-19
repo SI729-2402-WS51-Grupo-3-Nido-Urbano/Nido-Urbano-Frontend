@@ -3,12 +3,31 @@
     {{ editMode ? ('FEEDBACK.EDIT_FEEDBACK' | translate) : ('FEEDBACK.CREATE_NEW_FEEDBACK' | translate) }}
   </h2>
   <form #feedbackForm="ngForm" (ngSubmit)="onSubmit()" class="feedback-form">
+    <mat-form-field class="feedback-field">
+      <input
+        matInput
+        [placeholder]="'FORM.PLACEHOLDER_PROPERTY_ID' | translate"
+        [(ngModel)]="feedback.propertyId"
+        name="property_id"
+        type="int"
+        required>
+    </mat-form-field>
+
+    <mat-form-field class="feedback-field">
+      <input
+        matInput
+        [placeholder]="'FORM.PLACEHOLDER_USER_ID' | translate"
+        [(ngModel)]="feedback.userId"
+        name="user_id"
+        type="int"
+        required>
+    </mat-form-field>
 
     <mat-form-field class="feedback-field">
       <input
         matInput
         [placeholder]="'FORM.PLACEHOLDER_USER_NAME' | translate"
-        [(ngModel)]="feedback.user_name"
+        [(ngModel)]="feedback.userName"
         name="user_name"
         type="string"
         required>

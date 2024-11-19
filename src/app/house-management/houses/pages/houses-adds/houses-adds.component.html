@@ -174,12 +174,12 @@
       </div>
       </mat-step>
       <!-- Step : Verification ID -->
-      <mat-step [stepControl]="houseForm.get('verificationIdCtrl')!">
-        <ng-template matStepLabel>Verification ID</ng-template>
+      <mat-step [stepControl]="houseForm.get('termsConditionsCtrl')!">
+        <ng-template matStepLabel>Terms and Conditions</ng-template>
 
         <mat-form-field appearance="fill">
-          <mat-label>ID </mat-label>
-          <input matInput formControlName="verificationIdCtrl" required />
+          <mat-label>Terms and conditions</mat-label>
+          <input matInput formControlName="termsConditionsCtrl" required />
         </mat-form-field>
 
         <div>

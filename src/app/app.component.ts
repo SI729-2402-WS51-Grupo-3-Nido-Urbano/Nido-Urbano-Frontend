@@ -30,6 +30,8 @@ export class AppComponent implements OnInit {
   @ViewChild(MatSidenav, {static: true}) sidenav!: MatSidenav;
   options = [
     { icon: 'home', path: '/home', title: 'Home'},
+    {icon: 'person', path: '/property', title: 'Propertys'},
+    {icon: 'tools', path: '/propertyTools', title: 'PropertyTools'},
     { icon: 'person', path: '/payments', title: 'Pays'},
 
   ];

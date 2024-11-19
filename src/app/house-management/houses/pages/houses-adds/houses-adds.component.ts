@@ -54,7 +54,7 @@ export class HousesAddsComponent {
     statusLandlordControl: ['', Validators.required],
     houseImageCtrl: ['', [Validators.required, Validators.pattern('https?://.+')]],
     houseVideoCtrl: ['', [Validators.required, Validators.pattern('https?://.+')]],
-    verificationIdCtrl: ['', Validators.required],
+    termsConditionsCtrl: ['', Validators.required],
   });
 
   houseTyp: Type[] = [
@@ -94,7 +94,7 @@ export class HousesAddsComponent {
         status_landlord: this.houseForm.value.statusLandlordControl,
         photo: this.houseForm.value.houseImageCtrl,
         video: this.houseForm.value.houseVideoCtrl,
-        verification_id: this.houseForm.value.verificationIdCtrl,
+        termsConditions: this.houseForm.value.termsConditionsCtrl,
       };
 
       console.log(houseData);

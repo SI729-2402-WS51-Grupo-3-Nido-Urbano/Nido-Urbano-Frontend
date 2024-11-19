@@ -13,7 +13,7 @@ export class House {
   status_landlord: string;
   photo: string;
   video: string;
-  verification_id: number;
+  termsConditions: string;
   constructor() {
     this.id = 0;
     this.user_property_id = 0;
@@ -29,6 +29,6 @@ export class House {
     this.status_landlord = '';
     this.photo = '';
     this.video = '';
-    this.verification_id = 0;
+    this.termsConditions = '';
   }
 }

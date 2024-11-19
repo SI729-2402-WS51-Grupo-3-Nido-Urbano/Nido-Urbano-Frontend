@@ -14,9 +14,15 @@ import {
 import {
   CalendarManagementComponent
 } from "./housing-reservation/pages/reservation-calendar-management/calendar-management.component";
+import {
+  HouseManagementLessorComponent
+} from "./house-management/houses/pages/house-management-lessor/house-management-lessor.component";
+import {HousesAddsComponent} from "./house-management/houses/pages/houses-adds/houses-adds.component";
 
 export const routes: Routes = [
   { path: 'home', component: HousesManagementsComponent },
+  {path: 'property', component: HouseManagementLessorComponent},
+  {path: 'propertyTools', component: HousesAddsComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'payments/:id', component: PaymentManagmentComponent },
   { path: 'confirm-payment/:id', component: ConfirmationBCPComponent },

@@ -10,7 +10,7 @@ import {catchError, Observable, retry} from "rxjs";
 export class HousesService extends BaseService<House>{
   constructor(http: HttpClient) {
     super(http);
-    this.resourceEndpoint = '/houses_managers';
+    this.resourceEndpoint = '/houses';
   }
   private selectedHouse: House | undefined;
   setSelectedHouse(house: House): void {
@@ -28,7 +28,7 @@ export class HousesService extends BaseService<House>{
     return this.http.get<House[]>(`${this.basePath}${this.resourceEndpoint}?house_modal=${house_modal}`, this.httpOptions)
       .pipe(catchError(this.handleError));
   }
-  // Get All Resources for user_property_id
+  // Get All Resources for userPropertyId
   getAllHouseByUserId(user_property_id: number): Observable<any> {
     return this.http.get<any>(`${this.basePath}${this.resourceEndpoint}?user_property_id=${user_property_id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));

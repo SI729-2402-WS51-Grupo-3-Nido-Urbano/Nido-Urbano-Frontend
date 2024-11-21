@@ -82,7 +82,7 @@ export class HousesAddsComponent {
     if (this.houseForm.valid) {
       const houseData = {
         user_property_id: this.houseForm.value.userPropertyIdCtrl,
-        house_name: this.houseForm.value.houseNameCtrl,
+        houseName: this.houseForm.value.houseNameCtrl,
         address: this.houseForm.value.houseAddressCtrl,
         house_type: this.houseForm.value.houseTypeControl,
         house_modal: this.houseForm.value.houseModalControl,

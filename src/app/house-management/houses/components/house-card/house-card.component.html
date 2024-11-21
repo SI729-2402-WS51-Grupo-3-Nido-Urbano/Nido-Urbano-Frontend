@@ -2,7 +2,7 @@
 <mat-card *ngIf="house">
   <mat-card-header>
     <mat-card-title>{{ house.price }}</mat-card-title>
-    <mat-card-subtitle>{{ house.house_name }}-{{ house.house_type }}</mat-card-subtitle>
+    <mat-card-subtitle>{{ house.houseName }}-{{ house.houseType }}</mat-card-subtitle>
   </mat-card-header>
   <img mat-card-image [src]="house.photo" alt="Photo of a House">
   <!--Seccion de detalles-->
@@ -10,17 +10,17 @@
     <section class="details-house-container">
         <table mat-table [dataSource]="[
           { Attributes: 'house_id', Values: house.id },
-          { Attributes: 'user_property_id', Values: house.user_property_id },
-          { Attributes: 'house_name', Values: house.house_name },
+          { Attributes: 'userPropertyId', Values: house.userPropertyId },
+          { Attributes: 'houseName', Values: house.houseName },
           { Attributes: 'address', Values: house.address },
-          { Attributes: 'house_type', Values: house.house_type },
-          { Attributes: 'house_modal', Values: house.house_modal },
+          { Attributes: 'houseType', Values: house.houseType },
+          { Attributes: 'houseModal', Values: house.houseModal },
           { Attributes: 'price', Values: house.price },
           { Attributes: 'size', Values: house.size },
           { Attributes: 'description', Values: house.description },
           { Attributes: 'publication_date', Values: house.publication_date },
-          { Attributes: 'starts_calification', Values: house.starts_calification },
-          { Attributes: 'status_landlord', Values: house.status_landlord }
+          { Attributes: 'startsCalification', Values: house.startsCalification },
+          { Attributes: 'statusLandlord', Values: house.statusLandlord }
         ]" class="mat-elevation-z8">
           <ng-container matColumnDef="Attributes">
             <th mat-header-cell *matHeaderCellDef>Attributes</th>

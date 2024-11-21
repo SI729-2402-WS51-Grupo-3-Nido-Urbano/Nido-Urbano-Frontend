@@ -9,6 +9,7 @@ import {Contract, Landlord, Property, Tenant} from "../model/contract.entity";
 export class ContractService {
   private apiUrl = `https://my-json-server.typicode.com/AlexlmL/dbserver/contracts`;
   private propertyUrl = `https://my-json-server.typicode.com/AlexlmL/dbserver/properties`;
+  /*private propertyUrl = 'http://localhost:8090/api/v1/houses'*/
   private tenantUrl = `https://my-json-server.typicode.com/AlexlmL/dbserver/tenants`;
   private landlordUrl = `https://my-json-server.typicode.com/AlexlmL/dbserver/landlords`;
 

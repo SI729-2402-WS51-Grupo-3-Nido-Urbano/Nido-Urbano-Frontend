@@ -3,7 +3,7 @@
     {
       "id": 1,
       "user_property_id": 1,
-      "house_name": "House 1",
+      "houseName": "House 1",
       "address": "1234 Main St",
       "house_type": "APARTMENT",
       "house_modal": "SALE",
@@ -20,7 +20,7 @@
     {
       "id": 2,
       "user_property_id": 2,
-      "house_name": "House 2",
+      "houseName": "House 2",
       "address": "1234 Main St",
       "house_type": "HOUSE",
       "house_modal": "RENTAL",
@@ -37,7 +37,7 @@
     {
       "id": 3,
       "user_property_id": 3,
-      "house_name": "House 3",
+      "houseName": "House 3",
       "address": "1234 Main St",
       "house_type": "APARTMENT",
       "house_modal": "SALE",
@@ -145,7 +145,7 @@
     {
       "id": 1,
       "user_property_id": 1,
-      "house_name": "House 1",
+      "houseName": "House 1",
       "address": "1234 Main St",
       "house_type": "APARTMENT",
       "house_modal": "SALE",
@@ -162,7 +162,7 @@
     {
       "id": 2,
       "user_property_id": 2,
-      "house_name": "House 2",
+      "houseName": "House 2",
       "address": "1234 Main St",
       "house_type": "HOUSE",
       "house_modal": "RENTAL",
@@ -179,7 +179,7 @@
     {
       "id": 3,
       "user_property_id": 3,
-      "house_name": "House 3",
+      "houseName": "House 3",
       "address": "1234 Main St",
       "house_type": "APARTMENT",
       "house_modal": "SALE",
@@ -195,7 +195,7 @@
     },
     {
       "user_property_id": "1",
-      "house_name": "a",
+      "houseName": "a",
       "address": "as",
       "house_type": "HOUSE",
       "house_modal": "RENTAL",

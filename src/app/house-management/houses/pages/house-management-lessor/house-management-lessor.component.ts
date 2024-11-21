@@ -38,7 +38,7 @@ import {HousesAddsComponent} from "../houses-adds/houses-adds.component";
   styleUrl: './house-management-lessor.component.css'
 })
 export class HouseManagementLessorComponent  {
-  displayedColumns: string[] = ['house_name', 'address', 'house_type', 'house_modal', 'price', 'size', 'description', 'status_landlord', 'actions'];
+  displayedColumns: string[] = ['houseName', 'address', 'houseType', 'houseModal', 'price', 'size', 'description', 'statusLandlord', 'actions'];
   dataSource: MatTableDataSource<House> = new MatTableDataSource<House>();
   userPropertyId: string = '';
   isEditing: boolean = false;

@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from "./public/pages/home/home.component";
 import { PageNotFoundComponent } from "./public/pages/page-not-found/page-not-found.component";
 import { PaymentManagmentComponent } from "./payments/pages/payment-managment/payment-managment.component";
 import { ConfirmationBCPComponent } from "./payments/pages/confirmation-bcp/confirmation-bcp.component";

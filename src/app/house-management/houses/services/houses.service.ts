@@ -24,8 +24,10 @@ export class HousesService extends BaseService<House>{
     return <House>this.selectedHouse;
   }
   /*Filtra House por House_Modal*/
-  getHouseByHouseModal(house_modal: "SALE" | "RENTAL") {
-    return this.http.get<House[]>(`${this.basePath}${this.resourceEndpoint}?house_modal=${house_modal}`, this.httpOptions)
+  getHouseByHouseModal(housemodal: string): Observable<House[]> {
+    const url = `${this.basePath}${this.resourceEndpoint}/houseModal/${housemodal}`;
+    console.log('Request URL:', url); // Depuración
+    return this.http.get<House[]>(url, this.httpOptions)
       .pipe(catchError(this.handleError));
   }
   // Get All Resources for userPropertyId

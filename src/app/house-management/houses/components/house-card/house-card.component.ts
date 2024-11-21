@@ -30,9 +30,7 @@ export class HouseCardComponent {
     this.router.navigate(['/payments', this.house.id]);
   }
 
-  /*seeFeedbacks(): void {
-  this.router.navigate(['/feedbacks', this.house.id]);
-  }*/
+
   seeFeedbacks(): void {
     this.router.navigate(['/feedbacks']);
   }

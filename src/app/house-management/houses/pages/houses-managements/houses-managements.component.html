@@ -1,23 +1,25 @@
-<mat-tab-group class="tabs-container">
+<mat-tab-group class="tabs-container" (selectedIndexChange)="onTabChange($event)">
   <mat-tab label="SALE" class="mat-tab" style="font-size: 5em;">
     <div class="content-container">
-      <p>Contenido de la seccion de COMPRA</p>
+      <p>Contenido de la sección de COMPRA</p>
       <div class="container">
-        <div class="house-card" *ngIf="houseSale">
+        <div class="house-card" *ngIf="houseSale.length > 0">
           <app-house-card *ngFor="let house of houseSale" [house]="house"></app-house-card>
         </div>
+        <p *ngIf="houseSale.length === 0">No houses available for sale.</p>
       </div>
     </div>
   </mat-tab>
 
-
   <mat-tab label="RENTAL" class="mat-tab">
     <div class="content-container">
-      <p>Contenido de la seccion de RENTA</p>
-      <div class="house-card" *ngIf="houseRent">
-        <app-house-card *ngFor="let house of houseRent" [house]="house"></app-house-card>
+      <p>Contenido de la sección de RENTA</p>
+      <div class="container">
+        <div class="house-card" *ngIf="houseRent.length > 0">
+          <app-house-card *ngFor="let house of houseRent" [house]="house"></app-house-card>
+        </div>
+        <p *ngIf="houseRent.length === 0">No houses available for rent.</p>
       </div>
     </div>
   </mat-tab>
 </mat-tab-group>
-

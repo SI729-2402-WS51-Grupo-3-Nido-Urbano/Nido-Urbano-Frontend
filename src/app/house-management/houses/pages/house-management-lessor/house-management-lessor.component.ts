@@ -40,7 +40,7 @@ import {HousesAddsComponent} from "../houses-adds/houses-adds.component";
 export class HouseManagementLessorComponent  {
   displayedColumns: string[] = ['houseName', 'address', 'houseType', 'houseModal', 'price', 'size', 'description', 'statusLandlord', 'actions'];
   dataSource: MatTableDataSource<House> = new MatTableDataSource<House>();
-  userPropertyId: string = '';
+  userPropertyID: string = '';
   isEditing: boolean = false;
   selectedHouse!: House;
 
@@ -74,10 +74,13 @@ export class HouseManagementLessorComponent  {
   }
 
   filterHousesByUserId(): void {
-    if (this.userPropertyId) {
-      this.housesService.getAllHouseByUserId(+this.userPropertyId).subscribe(
+    console.log('Antes del if Filtering houses by user property ID:', this.userPropertyID);
+    if (this.userPropertyID) {
+      console.log('Filtering houses by user property ID:', this.userPropertyID);
+      this.housesService.getAllHouseByUserId(+this.userPropertyID).subscribe(
         (houses: House[]) => {
           this.dataSource.data = houses;
+          console.log('Houses by user property ID:', houses);
         },
         (error) => {
           console.error('Error fetching houses by user property ID', error);

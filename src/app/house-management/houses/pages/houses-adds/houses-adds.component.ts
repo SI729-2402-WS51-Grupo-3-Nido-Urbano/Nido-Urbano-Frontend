@@ -73,31 +73,31 @@ export class HousesAddsComponent {
     { starts: 5 },
   ];
   statusLand: Status[] = [
-    { status: 'NO REQUEST' },
-    { status: 'IN PROGRESS' },
+    { status: 'NO_REQUEST' },
+    { status: 'IN_PROGRESS' },
     { status: 'LEASED' },
   ];
 
   onSubmit() {
     if (this.houseForm.valid) {
       const houseData = {
-        user_property_id: this.houseForm.value.userPropertyIdCtrl,
+        userPropertyID: this.houseForm.value.userPropertyIdCtrl,
         houseName: this.houseForm.value.houseNameCtrl,
         address: this.houseForm.value.houseAddressCtrl,
-        house_type: this.houseForm.value.houseTypeControl,
-        house_modal: this.houseForm.value.houseModalControl,
+        houseType: this.houseForm.value.houseTypeControl,
+        houseModal: this.houseForm.value.houseModalControl,
         price: this.houseForm.value.housePriceCtrl,
         size: this.houseForm.value.houseSizeCtrl,
         description: this.houseForm.value.houseDescriptionCtrl,
-        publication_date: new Date().toLocaleDateString('en-CA'), // Formato ISO: yyyy-mm-dd
-        starts_calification: this.houseForm.value.startsCalificationControl,
-        status_landlord: this.houseForm.value.statusLandlordControl,
+        publicationDate: new Date().toISOString(), // Formato ISO: yyyy-mm-dd
+        startsCalification: this.houseForm.value.startsCalificationControl,
+        statusLandlord: this.houseForm.value.statusLandlordControl,
         photo: this.houseForm.value.houseImageCtrl,
         video: this.houseForm.value.houseVideoCtrl,
         termsConditions: this.houseForm.value.termsConditionsCtrl,
       };
 
-      console.log(houseData);
+      console.log('Datos que se enviarán al backend:', houseData);
 
       this.housesService.create(houseData).subscribe(
         (response) => {

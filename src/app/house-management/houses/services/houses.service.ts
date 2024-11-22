@@ -32,7 +32,7 @@ export class HousesService extends BaseService<House>{
   }
   // Get All Resources for userPropertyId
   getAllHouseByUserId(user_property_id: number): Observable<any> {
-    return this.http.get<any>(`${this.basePath}${this.resourceEndpoint}?user_property_id=${user_property_id}`, this.httpOptions)
+    return this.http.get<any>(`${this.basePath}${this.resourceEndpoint}/userPropertyID/${user_property_id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
   getHouse(): House {

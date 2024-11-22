@@ -1,8 +1,75 @@
-<h2>{{ 'title.available_dates' | translate }}</h2>
-<h5 class="subtitle">{{ 'subtitle.available_dates' | translate }}</h5>
-
 <div class="calendar-container">
-  <!-- Inline mat-calendar with custom date classes -->
+  <h2>{{ 'title.add_reservation' | translate }}</h2>
+
+  <mat-form-field appearance="fill">
+    <mat-label>{{ 'label.start_date' | translate }}</mat-label>
+    <input matInput [matDatepicker]="startPicker" [(ngModel)]="startDate" />
+    <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+    <mat-datepicker #startPicker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>{{ 'label.end_date' | translate }}</mat-label>
+    <input matInput [matDatepicker]="endPicker" [(ngModel)]="endDate" />
+    <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+    <mat-datepicker #endPicker></mat-datepicker>
+  </mat-form-field>
+
+  <!-- Campos adicionales para la reserva -->
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="{{ 'label.house_address' | translate }}"
+      [(ngModel)]="reservation.houseAddress"
+      name="houseAddress"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="{{ 'label.house_name' | translate }}"
+      [(ngModel)]="reservation.houseName"
+      name="houseName"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="{{ 'label.tenant_name' | translate }}"
+      [(ngModel)]="reservation.tenantName"
+      name="tenantName"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="{{ 'label.tenant_address' | translate }}"
+      [(ngModel)]="reservation.tenantAddress"
+      name="tenantAddress"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      type="number"
+      placeholder="{{ 'label.house_id' | translate }}"
+      [(ngModel)]="reservation.houseId"
+      name="houseId"
+      required
+    />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="saveReservation()">
+    {{ 'button.save_reservation' | translate }}
+  </button>
+</div>
+
+<!-- Existing inline calendar to display reservations -->
+<div class="calendar-container">
   <mat-calendar [dateClass]="dateClass"></mat-calendar>
 </div>
 
@@ -19,6 +86,9 @@
     <div class="column">
       <img src="https://i.postimg.cc/Twww51bW/americanexpress.png" alt="AMERICAN EXPRESS" />
     </div>
+  </div>
+  <div class="section-container">
+    <button mat-raised-button color="primary" class="appointment-button" (click)="goToAvailableDates()">View Available Dates</button>
   </div>
 </div>
 

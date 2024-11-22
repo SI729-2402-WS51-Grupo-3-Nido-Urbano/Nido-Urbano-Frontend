@@ -1,22 +1,20 @@
 export class Reservation {
   id: number;
-  tenant_name: string;
-  //age: number;
-  tenant_address: string;
-  //houseName: string;
-  //house_address: string;
-  //landlord_name: string;
-  start_date: Date;
-  end_date: Date;
+  tenantName: string;
+  tenantAddress: string;
+  houseName: string;
+  houseAddress: string;
+  houseId: number;
+  startDate: Date;
+  endDate: Date;
   constructor() {
     this.id = 0;
-    this.tenant_name = "";
-    //this.age = 0;
-    this.tenant_address = "";
-    //this.houseName = "";
-    //this.house_address = "";
-    //this.landlord_name = "";
-    this.start_date = new Date();
-    this.end_date = new Date();
+    this.tenantName = "";
+    this.tenantAddress = "";
+    this.houseName = "";
+    this.houseAddress = "";
+    this.houseId = 1;
+    this.startDate = new Date();
+    this.endDate = new Date();
   }
 }

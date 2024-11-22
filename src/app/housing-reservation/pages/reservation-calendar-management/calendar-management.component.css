@@ -27,6 +27,30 @@ button.unavailable-dates {
   border-radius: 50%;
 }
 
+
+/* Calendar Container */
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  padding-top: 20px;
+  font-weight: 700;
+}
+
+/* Mat-form-field Styling */
+mat-form-field {
+  padding-top: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin: 10px 0;
+}
+
 /* ------------------------------------------------ */
 /* Centering the Calendar Container */
 /* ------------------------------------------------ */
@@ -77,6 +101,10 @@ mat-calendar {
 .column img {
   height: 100px;
   width: auto; /* Keep the aspect ratio */
+}
+
+.section-container {
+  padding-top: 80px;
 }
 
 /* ------------------------------------------------ */

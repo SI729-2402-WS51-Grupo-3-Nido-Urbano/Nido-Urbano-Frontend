@@ -3,11 +3,13 @@
   <h3>{{ 'title.reservations' | translate }}</h3>
 
   <!-- Add/Edit Form -->
-  <app-reservation-create-and-edit (editCanceled)="onCancelEdit()"
-                                   (reservationAdded)="onReservationAdded($event)"
-                                   (reservationUpdated)="onReservationUpdated($event)"
-                                   [editMode]="isEditMode"
-                                   [reservation]="reservationData">
+  <app-reservation-create-and-edit
+    *ngIf="selectedReservation"
+    (editCanceled)="onEditCanceled()"
+    (reservationAdded)="onReservationAdded($event)"
+    (reservationUpdated)="onReservationUpdated($event)"
+    [editMode]="isEditMode"
+    [reservation]="selectedReservation">
   </app-reservation-create-and-edit>
 
   <!-- Cards for each reservation -->
@@ -17,21 +19,23 @@
         <mat-card-title>{{ 'reservation.id' | translate }}: {{ reservation.id }}</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <p>{{ 'reservation.start_date' | translate }}: {{ reservation.start_date | date }}</p>
-        <p>{{ 'reservation.end_date' | translate }}: {{ reservation.end_date | date }}</p>
+        <p>{{ 'reservation.startDate' | translate }}: {{ reservation.startDate }}</p>
+        <p>{{ 'reservation.endDate' | translate }}: {{ reservation.endDate }}</p>
+        <p>{{ 'reservation.houseAddress' | translate }} : {{ reservation.houseAddress }} </p>
+        <p>{{ 'reservation.houseName' | translate }} : {{ reservation.houseName }}</p>
+        <p>{{ 'reservation.TenantName'| translate }} : {{ reservation.tenantName }}</p>
+        <p>{{ 'reservation.tenantAddress' | translate }} : {{ reservation.tenantAddress }}</p>
+        <p>{{ 'reservation.houseId' | translate }} : {{ reservation.houseId }}</p>
+
       </mat-card-content>
       <mat-card-actions>
-        <button mat-icon-button (click)="onEditItem(reservation)" aria-label="Edit reservation">
+        <button mat-icon-button (click)="editReservation(reservation)" aria-label="Edit reservation">
           <mat-icon>edit</mat-icon>
         </button>
-        <button mat-icon-button (click)="onDeleteItem(reservation)" aria-label="Delete reservation">
+        <button mat-icon-button (click)="deleteReservations(reservation)" aria-label="Delete reservation">
           <mat-icon>delete</mat-icon>
         </button>
       </mat-card-actions>
     </mat-card>
   </div>
-</div>
-
-<div class="section-container">
-  <button mat-raised-button color="primary" class="appointment-button" (click)="goToAvailableDates()">View Available Dates</button>
 </div>

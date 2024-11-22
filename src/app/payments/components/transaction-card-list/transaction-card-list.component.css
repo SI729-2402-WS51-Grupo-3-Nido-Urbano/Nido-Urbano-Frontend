@@ -1,0 +1,27 @@
+.transaction-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* Espaciado entre las tarjetas */
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.transaction-list .transaction-card {
+  flex: 1 1 300px; /* Permite que las tarjetas se ajusten al tamaño disponible */
+  max-width: 350px; /* Máximo ancho de la tarjeta */
+  min-width: 300px; /* Ancho mínimo para asegurar que las tarjetas no se colapsen */
+  margin-bottom: 20px; /* Espaciado entre las filas de tarjetas */
+}
+
+@media (max-width: 768px) {
+  .transaction-list {
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .transaction-list .transaction-card {
+    max-width: 100%;
+    min-width: 100%;
+  }
+}

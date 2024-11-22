@@ -1,0 +1,9 @@
+.payment-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+app-payment-card {
+  margin-bottom: 20px;
+}

@@ -1,0 +1,18 @@
+<mat-card class="payment-card" [ngClass]="getPaymentStatusClass(payment.paymentStatus)">
+  <mat-card-header>
+    <mat-card-title>Payment ID: {{ payment.paymentId }}</mat-card-title>
+    <mat-card-subtitle>{{ payment.paymentStatus }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="payment-details">
+      <p><strong>Payment Amount:</strong> {{ payment.paymentAmount | currency }}</p>
+      <p><strong>Remaining Amount:</strong> {{ payment.remainingAmount | currency }}</p>
+      <p><strong>Payment Date:</strong> {{ payment.paymentDate | date: 'medium' }}</p>
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-button color="primary" (click)="viewTransactions()">View Transactions</button>
+  </mat-card-actions>
+</mat-card>

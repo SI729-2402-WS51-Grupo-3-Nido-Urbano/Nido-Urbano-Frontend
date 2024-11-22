@@ -1,0 +1,78 @@
+/* Estilo general del contenedor del formulario */
+.transaction-form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f5f5f5; /* Fondo claro */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  font-family: Arial, sans-serif;
+}
+
+/* Estilo del título del formulario */
+.transaction-form h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333; /* Texto oscuro */
+  text-align: center;
+}
+
+/* Estilo del campo de formulario */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Estilo del input */
+mat-form-field input {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Estilo del mensaje de error */
+mat-error {
+  font-size: 0.9rem;
+  color: #d32f2f; /* Rojo para errores */
+  font-weight: bold;
+}
+
+/* Estilo del botón */
+button[type="submit"] {
+  width: 100%; /* Botón de ancho completo */
+  padding: 12px 20px; /* Espaciado interno */
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px; /* Espaciado entre letras */
+  border-radius: 4px;
+  background-color: #00796b; /* Verde oscuro */
+  color: white;
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #004d40; /* Verde más oscuro al hacer hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra en hover */
+}
+
+button[type="submit"]:disabled {
+  background-color: #9e9e9e; /* Gris para el estado deshabilitado */
+  cursor: not-allowed; /* Cambia el cursor para indicar que no es clicable */
+  box-shadow: none;
+}
+
+/* Responsividad */
+@media (max-width: 480px) {
+  .transaction-form {
+    padding: 15px;
+  }
+
+  .transaction-form h2 {
+    font-size: 1.2rem;
+  }
+
+  button[type="submit"] {
+    font-size: 0.9rem;
+  }
+}

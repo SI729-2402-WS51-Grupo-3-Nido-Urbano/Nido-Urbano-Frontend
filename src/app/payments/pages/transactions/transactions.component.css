@@ -1,0 +1,9 @@
+.snack-bar-success {
+  background-color: #4caf50; /* Verde para éxito */
+  color: #ffffff;
+}
+
+.snack-bar-error {
+  background-color: #f44336; /* Rojo para errores */
+  color: #ffffff;
+}

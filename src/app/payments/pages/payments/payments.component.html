@@ -1,0 +1,7 @@
+<div class="payment-list">
+  <div *ngIf="isLoading">Loading...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+  <div *ngIf="!isLoading && !error">
+    <app-payment-card-list [payments]="payments"></app-payment-card-list>
+  </div>
+</div>

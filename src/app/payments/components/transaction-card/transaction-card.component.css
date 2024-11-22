@@ -1,0 +1,93 @@
+/* Estilos generales para la tarjeta de transacción */
+.transaction-card {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.transaction-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el header de la tarjeta */
+.mat-card-header {
+  background-color: #f5f5f5;
+  border-radius: 8px 8px 0 0;
+  padding: 16px;
+  text-align: center;
+  border-bottom: 2px solid #ccc;
+}
+
+.mat-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.mat-card-subtitle {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Estilo para el contenido de la tarjeta */
+.mat-card-content {
+  margin: 16px;
+  font-size: 1rem;
+  color: #444;
+}
+
+.mat-card-content strong {
+  color: #00796b;
+}
+
+/* Estilo de las tarjetas con estado SUCCESS */
+.transaction-card-success {
+  border-left: 6px solid #388e3c; /* Borde verde para el estado SUCCESS */
+  background-color: #e8f5e9; /* Fondo verde claro */
+}
+
+.transaction-card-success .mat-card-header {
+  background-color: #c8e6c9; /* Fondo de encabezado verde claro */
+}
+
+.transaction-card-success .mat-card-title {
+  color: #388e3c; /* Texto verde */
+}
+
+.transaction-card-success .mat-card-subtitle {
+  color: #43a047; /* Subtítulo verde más oscuro */
+}
+
+.transaction-card-success .mat-card-content {
+  background-color: #e8f5e9; /* Fondo verde claro */
+}
+
+/* Estilo de las tarjetas con estado ERROR */
+.transaction-card-error {
+  border-left: 6px solid #d32f2f; /* Borde rojo para el estado ERROR */
+  background-color: #ffebee; /* Fondo rojo claro */
+}
+
+.transaction-card-error .mat-card-header {
+  background-color: #ffcdd2; /* Fondo de encabezado rojo claro */
+}
+
+.transaction-card-error .mat-card-title {
+  color: #d32f2f; /* Texto rojo */
+}
+
+.transaction-card-error .mat-card-subtitle {
+  color: #f44336; /* Subtítulo rojo más oscuro */
+}
+
+.transaction-card-error .mat-card-content {
+  background-color: #ffebee; /* Fondo rojo claro */
+}
+
+/* Transiciones suaves */
+.transaction-card-success, .transaction-card-error {
+  transition: all 0.3s ease;
+}

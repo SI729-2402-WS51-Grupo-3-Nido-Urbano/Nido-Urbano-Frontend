@@ -1,0 +1,18 @@
+<mat-card class="payment-management-card" [ngClass]="getPaymentManagementStatusClass(paymentManagement.paymentStatus)">
+  <mat-card-header>
+    <mat-card-title>Payment Management</mat-card-title>
+    <mat-card-subtitle>Contract ID: {{ paymentManagement.contractId }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p><strong>Next Payment:</strong> {{ paymentManagement.nextPayment | date: 'medium' }}</p>
+    <p><strong>Schedule:</strong> {{ paymentManagement.schedule }}</p>
+    <p><strong>Payment Status:</strong> {{ paymentManagement.paymentStatus }}</p>
+    <p><strong>Total Amount:</strong> {{ paymentManagement.totalAmount | currency }}</p>
+    <p><strong>Reminder Sent:</strong> {{ paymentManagement.reminderSent ? 'Yes' : 'No' }}</p>
+    <p><strong>First Payment:</strong> {{ paymentManagement.firstPayment | currency }}</p>
+    <p><strong>Type:</strong> {{ paymentManagement.type }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button color="primary" (click)="viewPayments()">View Payments</button>
+  </mat-card-actions>
+</mat-card>

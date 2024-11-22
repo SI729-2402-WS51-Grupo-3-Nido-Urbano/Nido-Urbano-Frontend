@@ -1,0 +1,9 @@
+<div class="transaction-list">
+  <div *ngIf="isLoading">Loading...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+  <div *ngIf="!isLoading && !error">
+    <app-transaction-card-list [transactions]="transactions"></app-transaction-card-list>
+  </div>
+</div>
+
+<app-transaction-form [paymentId]="paymentId" (transactionCreated)="createTransaction($event)"></app-transaction-form>

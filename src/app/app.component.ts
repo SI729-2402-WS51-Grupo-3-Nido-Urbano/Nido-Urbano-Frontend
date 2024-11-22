@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
     { icon: 'home', path: '/home', title: 'Home'},
     {icon: 'person', path: '/property', title: 'Propertys'},
     {icon: 'tools', path: '/propertyTools', title: 'PropertyTools'},
-    { icon: 'person', path: '/payments', title: 'Pays'},
+    { icon: 'person', path: '/paymentManagements', title: 'Pays'},
 
   ];
 

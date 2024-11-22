@@ -20,6 +20,8 @@ import {HousesAddsComponent} from "./house-management/houses/pages/houses-adds/h
 import {PaymentManagementsComponent} from "./payments/pages/payment-managements/payment-managements.component";
 import {PaymentsComponent} from "./payments/pages/payments/payments.component";
 import {TransactionsComponent} from "./payments/pages/transactions/transactions.component";
+import {SignInComponent} from "./iam/pages/sign-in/sign-in.component";
+import {SignUpComponent} from "./iam/pages/sign-up/sign-up.component";
 
 export const routes: Routes = [
   { path: 'home', component: HousesManagementsComponent },
@@ -37,6 +39,10 @@ export const routes: Routes = [
   { path: 'paymentManagements', component: PaymentManagementsComponent },
   { path: 'payments/paymentManagement/:id', component: PaymentsComponent },
   { path: 'transactions/payment/:id', component: TransactionsComponent },
+
+  {path: 'sign-in', component: SignInComponent},
+  {path: 'sign-up', component: SignUpComponent},
+  //{ path: 'learning/students', component: StudentManagementComponent, canActivate: [authenticationGuard] },
 
 
   //{ path: 'properties/:houseId/feedbacks', component: FeedbackCreateAndEditComponent },

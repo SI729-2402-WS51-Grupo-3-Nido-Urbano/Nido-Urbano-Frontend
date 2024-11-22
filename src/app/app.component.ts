@@ -14,12 +14,12 @@ import { LanguageSwitcherComponent } from "./public/components/language-switcher
 import {
   HousesManagementsComponent
 } from "./house-management/houses/pages/houses-managements/houses-managements.component";
-
+import { AuthenticationSectionComponent } from "./iam/components/authentication-section/authentication-section.component";
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, RouterLink, MatToolbarModule, MatButtonModule, MatIconModule,
-    MatSidenavModule, MatDividerModule, MatListModule, LanguageSwitcherComponent, HousesManagementsComponent],
+    MatSidenavModule, MatDividerModule, MatListModule, LanguageSwitcherComponent, HousesManagementsComponent,AuthenticationSectionComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

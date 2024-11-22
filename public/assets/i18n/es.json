@@ -42,5 +42,11 @@
     "photo": "Foto",
     "video": "Video",
     "termsConditions": "Términos y Condiciones"
+  },
+  "RESOURCES": {
+    "Home": "Inicio",
+    "Propertys": "Propiedades",
+    "PropertyTools": "Herramientas de Propiedades",
+    "Pays": "Pagos"
   }
 }

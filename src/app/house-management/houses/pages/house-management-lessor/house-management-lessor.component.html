@@ -1,9 +1,11 @@
 <div class="container">
-  <mat-form-field appearance="fill">
-    <mat-label>Enter User Property ID</mat-label>
-    <input matInput placeholder="User Property ID" [(ngModel)]="userPropertyID">
-  </mat-form-field>
-  <button mat-raised-button color="primary" (click)="filterHousesByUserId()">Search</button>
+  <div style="display: flex; align-items: center;">
+    <mat-form-field appearance="fill" style="margin-right: 8px;">
+      <mat-label>Enter User Property ID</mat-label>
+      <input matInput placeholder="User Property ID" [(ngModel)]="userPropertyID">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="filterHousesByUserId()">Search</button>
+  </div>
   <button mat-raised-button (click)="openAddHouseDialog()">Add New House</button>
   <app-house-edit
     *ngIf="isEditing"

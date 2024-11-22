@@ -23,7 +23,7 @@ h2 {
 }
 
 button.unavailable-dates {
-  background-color: rgba(255, 0, 0, 0.5); /* Color para fechas reservadas (rojo) */
+  background: orange;
   border-radius: 50%;
 }
 

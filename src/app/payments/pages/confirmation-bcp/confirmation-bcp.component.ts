@@ -84,6 +84,6 @@ export class ConfirmationBCPComponent implements OnInit{
 
   // Metodo que redirige
   goToContractPage(): void {
-    this.router.navigate(['/generate']); // Redirigir a la ruta de generación de contrato
+    this.router.navigate(['/view-available-dates']); // Redirigir a la ruta de generación de contrato
   }
 }

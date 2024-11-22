@@ -13,7 +13,7 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 import {MatInput} from "@angular/material/input";
 
 @Component({
-  selector: 'calendar-management',
+  selector: 'datepicker-inline-calendar-example',
   templateUrl: 'calendar-management.component.html',
   styleUrls: ['calendar-management.component.css'],
   encapsulation: ViewEncapsulation.None,
@@ -53,14 +53,16 @@ export class CalendarManagementComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Obtener las reservas previas si es necesario
     this.reservationService.getAllReservations().subscribe({
       next: (reservations: Reservation[]) => {
-        // Procesar las reservas obtenidas
+        this.reservedDates = reservations.map(reservation => ({
+          start: new Date(reservation.startDate),
+          end: new Date(reservation.endDate),
+        }));
       },
       error: (err) => {
-        console.error('Error al obtener reservas:', err);
-        alert('No se pudo cargar la información de las reservas.');
+        console.error('Error fetching reservations:', err);
+        alert('No se pudo cargar las reservas.');
       }
     });
   }
@@ -121,9 +123,11 @@ export class CalendarManagementComponent implements OnInit {
   };
 
   isDateInRange(date: Date): boolean {
-    return this.reservedDates.some(range =>
+    const inRange = this.reservedDates.some(range =>
       date >= range.start && date <= range.end
     );
+    console.log(`Date: ${date}, In Range: ${inRange}`);
+    return inRange;
   }
 
   goToAvailableDates(): void {

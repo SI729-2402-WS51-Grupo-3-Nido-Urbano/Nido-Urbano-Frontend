@@ -1,0 +1,21 @@
+<div class="transaction-form">
+  <h2>Create Transaction</h2>
+  <form (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Transaction Amount</mat-label>
+      <input
+        matInput
+        type="number"
+        [(ngModel)]="transactionAmount"
+        name="transactionAmount"
+        required
+        placeholder="Enter amount"
+      />
+      <mat-error *ngIf="transactionAmount <= 0">Amount must be greater than zero</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="transactionAmount <= 0">
+      Submit
+    </button>
+  </form>
+</div>

@@ -1,0 +1,17 @@
+<mat-card *ngIf="transaction" class="transaction-card" [ngClass]="{
+    'transaction-card-success': transaction?.transactionStatus === 'SUCCESS',
+    'transaction-card-error': transaction?.transactionStatus === 'ERROR'
+  }">
+  <mat-card-header>
+    <mat-card-title>Transaction ID: {{ transaction?.transactionId }}</mat-card-title>
+    <mat-card-subtitle>Status: {{ transaction?.transactionStatus }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div>
+      <strong>Date:</strong> {{ transaction?.transactionDate | date:'medium' }}
+    </div>
+    <div>
+      <strong>Amount:</strong> ${{ transaction?.transactionAmount }}
+    </div>
+  </mat-card-content>
+</mat-card>

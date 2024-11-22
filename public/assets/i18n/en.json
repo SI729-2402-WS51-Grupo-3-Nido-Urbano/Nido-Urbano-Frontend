@@ -24,5 +24,22 @@
   },
   "MESSAGES": {
     "CONFIRM_DELETE": "Are you sure you want to delete this feedback?"
+  },
+  "HOMES": {
+    "id": "ID",
+    "userPropertyId": "User Property ID",
+    "houseName": "House Name",
+    "address": "Address",
+    "houseType": "House Type",
+    "houseModal": "House Modal",
+    "price": "Price",
+    "size": "Size",
+    "description": "Description",
+    "publication_date": "Publication Date",
+    "startsCalification": "Stars Calification",
+    "statusLandlord": "Landlord Status",
+    "photo": "Photo",
+    "video": "Video",
+    "termsConditions": "Terms & Conditions"
   }
 }

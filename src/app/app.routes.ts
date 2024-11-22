@@ -17,6 +17,9 @@ import {
   HouseManagementLessorComponent
 } from "./house-management/houses/pages/house-management-lessor/house-management-lessor.component";
 import {HousesAddsComponent} from "./house-management/houses/pages/houses-adds/houses-adds.component";
+import {PaymentManagementsComponent} from "./payments/pages/payment-managements/payment-managements.component";
+import {PaymentsComponent} from "./payments/pages/payments/payments.component";
+import {TransactionsComponent} from "./payments/pages/transactions/transactions.component";
 
 export const routes: Routes = [
   { path: 'home', component: HousesManagementsComponent },
@@ -30,6 +33,12 @@ export const routes: Routes = [
   { path: 'view-available-dates', component: CalendarManagementComponent},
   { path: 'feedbacks', component: FeedbackManagementComponent },
   { path: 'properties/:houseId/feedbacks', component: FeedbackManagementComponent },
+
+  { path: 'paymentManagements', component: PaymentManagementsComponent },
+  { path: 'payments/paymentManagement/:id', component: PaymentsComponent },
+  { path: 'transactions/payment/:id', component: TransactionsComponent },
+
+
   //{ path: 'properties/:houseId/feedbacks', component: FeedbackCreateAndEditComponent },
   { path: '**', component: PageNotFoundComponent }
 ];

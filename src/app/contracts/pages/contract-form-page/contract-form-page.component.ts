@@ -30,6 +30,6 @@ export class ContractFormPageComponent implements OnInit {
 
   // Metodo que redirige
   goToHousingReservation(): void {
-    this.router.navigate(['/reserve-appointments']); // Redirigir a la ruta de reservations
+    this.router.navigate(['/view-available-dates']); // Redirigir a la ruta de reservations
   }
 }

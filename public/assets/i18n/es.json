@@ -25,5 +25,22 @@
   },
   "MESSAGES": {
     "CONFIRM_DELETE": "¿Estás seguro de que deseas eliminar este comentario?"
+  },
+  "HOMES": {
+    "id": "ID",
+    "userPropertyId": "ID de Propiedad del Usuario",
+    "houseName": "Nombre de la Casa",
+    "address": "Dirección",
+    "houseType": "Tipo de Casa",
+    "houseModal": "Modalidad de la Casa",
+    "price": "Precio",
+    "size": "Tamaño",
+    "description": "Descripción",
+    "publication_date": "Fecha de Publicación",
+    "startsCalification": "Calificación en Estrellas",
+    "statusLandlord": "Estado del Propietario",
+    "photo": "Foto",
+    "video": "Video",
+    "termsConditions": "Términos y Condiciones"
   }
 }

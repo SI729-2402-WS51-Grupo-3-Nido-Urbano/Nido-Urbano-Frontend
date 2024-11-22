@@ -114,7 +114,6 @@ export class CalendarManagementComponent implements OnInit {
     };
   }
 
-
   dateClass: MatCalendarCellClassFunction<Date> = (cellDate, view) => {
     if (view === 'month') {
       return this.isDateInRange(cellDate) ? 'unavailable-dates' : '';
@@ -131,6 +130,6 @@ export class CalendarManagementComponent implements OnInit {
   }
 
   goToAvailableDates(): void {
-    this.router.navigate(['/view-available-dates']);
+    this.router.navigate(['/reserve-appointments']);
   }
 }

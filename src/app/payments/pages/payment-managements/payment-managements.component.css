@@ -1,0 +1,12 @@
+.payment-management-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.error {
+  color: red;
+  font-size: 1.2em;
+  text-align: center;
+}

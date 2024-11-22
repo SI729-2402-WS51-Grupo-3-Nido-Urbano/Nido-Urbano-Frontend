@@ -7,6 +7,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatOption, MatSelect} from "@angular/material/select";
 import {CommonModule} from "@angular/common";
 import {HousesService} from "../../services/houses.service";
+import { TranslateModule } from "@ngx-translate/core";
+import {TranslateService} from "@ngx-translate/core";
 
 interface Type{
   type: string;
@@ -33,6 +35,7 @@ interface Status{
     MatSelect,
     MatOption,
     CommonModule,
+    TranslateModule
   ],
   templateUrl: './houses-adds.component.html',
   styleUrl: './houses-adds.component.css'
@@ -40,6 +43,11 @@ interface Status{
 export class HousesAddsComponent {
   private fb = inject(FormBuilder);
   private housesService = inject(HousesService);
+
+
+  constructor(private translateService: TranslateService) {
+    this.translateService.setDefaultLang('en');
+  }
 
   houseForm: FormGroup = this.fb.group({
     userPropertyIdCtrl: ['', Validators.required],

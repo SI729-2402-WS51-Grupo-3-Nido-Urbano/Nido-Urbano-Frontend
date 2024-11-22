@@ -9,7 +9,7 @@
         [placeholder]="'FORM.PLACEHOLDER_PROPERTY_ID' | translate"
         [(ngModel)]="feedback.propertyId"
         name="property_id"
-        type="int"
+        type="number"
         required>
     </mat-form-field>
 
@@ -19,7 +19,7 @@
         [placeholder]="'FORM.PLACEHOLDER_USER_ID' | translate"
         [(ngModel)]="feedback.userId"
         name="user_id"
-        type="int"
+        type="number"
         required>
     </mat-form-field>
 
@@ -29,11 +29,9 @@
         [placeholder]="'FORM.PLACEHOLDER_USER_NAME' | translate"
         [(ngModel)]="feedback.userName"
         name="user_name"
-        type="string"
         required>
     </mat-form-field>
 
-    <!-- Campo de puntuación -->
     <mat-form-field class="feedback-field">
       <input
         matInput
@@ -44,7 +42,6 @@
         required>
     </mat-form-field>
 
-    <!-- Campo de comentarios -->
     <mat-form-field class="feedback-field">
       <textarea
         matInput
@@ -54,7 +51,6 @@
       </textarea>
     </mat-form-field>
 
-    <!-- Botones de acción -->
     <div class="form-buttons">
       <button mat-raised-button type="submit">
         {{ 'BUTTONS.SAVE' | translate }}

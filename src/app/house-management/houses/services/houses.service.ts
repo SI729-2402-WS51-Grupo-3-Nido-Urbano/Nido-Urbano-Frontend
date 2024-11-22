@@ -39,4 +39,8 @@ export class HousesService extends BaseService<House>{
     return <House>this.selectedHouse;
   }
 
+  getSelectedHouseId(): number | undefined {
+    return this.selectedHouse?.id;
+  }
+
 }

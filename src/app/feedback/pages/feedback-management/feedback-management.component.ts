@@ -1,6 +1,7 @@
 import { CommonModule  } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FeedbackService } from '../../services/feedback.service';
+import {HousesService} from "../../../house-management/houses/services/houses.service";
 import { Feedback } from '../../model/feedback.entity';
 import {
   MatCell,
@@ -47,8 +48,9 @@ export class FeedbackManagementComponent implements OnInit {
   feedbacks: Feedback[] = [];
   selectedFeedback: Feedback | null = null;
   editMode: boolean = false;
+  propertyId  = 0;
 
-  constructor(private feedbackService: FeedbackService) {}
+  constructor(private feedbackService: FeedbackService, private houseService: HousesService) {}
 
   ngOnInit(): void {
     this.loadFeedbacks();
@@ -56,10 +58,19 @@ export class FeedbackManagementComponent implements OnInit {
 
   // Cargar feedbacks desde el servicio
   loadFeedbacks(): void {
-    this.feedbackService.getAll().subscribe((response: any) => {
-      console.log(response);
-      this.feedbacks = response;
-    });
+
+    let selectedHouse = this.houseService.getSelectedHouse();
+    if (selectedHouse && selectedHouse.id)
+    {
+      let propertyId = selectedHouse.id;
+      console.log('Fetching feedbacks for propertyId:', propertyId);
+      this.feedbackService.getFeedbacksByPropertyId(propertyId).subscribe( (response: any) =>
+      { console.log(response); this.feedbacks = response; }, error =>
+      {
+        console.error('Error fetching feedbacks:', error);
+      } );
+    } else { console.error('Selected house is not defined or does not have an id.'); }
+
   }
 
   // Crear nuevo feedback

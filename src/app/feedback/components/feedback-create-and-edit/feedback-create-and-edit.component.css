@@ -1,32 +1,79 @@
 .feedback-form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
+  margin: 1rem auto;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: #fff8e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #5d4037;
 }
 
 .feedback-form-title {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 20px;
+  font-size: 1.6rem;
+  font-weight: bold;
   text-align: center;
+  margin-bottom: 1rem;
+  color: #e65100;
 }
 
 .feedback-form {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  gap: 20px;
+  gap: 1rem;
 }
 
 .feedback-field {
   width: 100%;
 }
 
+.feedback-field mat-form-field {
+  background-color: #ffe0b2;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.feedback-field mat-form-field input,
+.feedback-field mat-form-field textarea {
+  color: #5d4037;
+}
+
+.feedback-field mat-form-field.mat-focused .mat-form-field-label {
+  color: #e65100;
+}
+
+.feedback-field mat-form-field.mat-focused .mat-input-element {
+  border-color: #e65100;
+}
+
+.feedback-field mat-form-field.mat-form-field-appearance-outline {
+  border-radius: 4px;
+}
+
+.feedback-field textarea {
+  resize: vertical;
+}
+
 .form-buttons {
   display: flex;
-  justify-content: flex-end;
-  gap: 10px;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.form-buttons button {
+  background-color: #fb8c00;
+  color: white;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.form-buttons button:hover {
+  background-color: #e65100;
+}
+
+button[mat-button] {
+  color: #5d4037;
+}
+
+button[mat-button]:hover {
+  color: #6d4c41;
 }

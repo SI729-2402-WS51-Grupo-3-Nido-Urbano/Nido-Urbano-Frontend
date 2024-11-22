@@ -29,6 +29,7 @@ export const routes: Routes = [
   { path: 'reserve-appointments', component: ReservationManagementComponent},
   { path: 'view-available-dates', component: CalendarManagementComponent},
   { path: 'feedbacks', component: FeedbackManagementComponent },
-  { path: 'feedbacks/${Id}', component: FeedbackCreateAndEditComponent },
+  { path: 'properties/:houseId/feedbacks', component: FeedbackManagementComponent },
+  //{ path: 'properties/:houseId/feedbacks', component: FeedbackCreateAndEditComponent },
   { path: '**', component: PageNotFoundComponent }
 ];

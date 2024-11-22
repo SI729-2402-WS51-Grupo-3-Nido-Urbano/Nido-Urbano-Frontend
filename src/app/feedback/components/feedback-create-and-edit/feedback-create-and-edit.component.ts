@@ -55,12 +55,22 @@ export class FeedbackCreateAndEditComponent {
   // Event handler for form submission
   onSubmit(): void {
     if (this.feedbackForm.form.valid) {
+      if (!this.isScoreValid()) {
+        alert('The score must be between 1 and 5. Please correct it before saving.');
+        return; // Detener la ejecución si el score no es válido
+      }
+
       let emitter: EventEmitter<Feedback> = this.editMode ? this.feedbackUpdated : this.feedbackAdded;
       emitter.emit(this.feedback);
       this.resetEditState();
+      console.log('Feedback saved successfully.');
     } else {
       console.error('Invalid data in form');
     }
+  }
+
+  private isScoreValid(): boolean {
+    return this.feedback.score >= 1 && this.feedback.score <= 5;
   }
 
   // Event handler for cancel button

@@ -41,5 +41,11 @@
     "photo": "Photo",
     "video": "Video",
     "termsConditions": "Terms & Conditions"
+  },
+  "RESOURCES": {
+    "Home" : "Home",
+    "Propertys": "Propertys",
+    "PropertyTools": "PropertyTools",
+    "Pays": "Pays"
   }
 }

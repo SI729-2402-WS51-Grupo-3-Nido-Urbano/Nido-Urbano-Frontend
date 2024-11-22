@@ -3,7 +3,7 @@
     <mat-vertical-stepper [linear]="isLinear" #stepper>
       <!-- Step 1: User Property Id -->
       <mat-step [stepControl]="houseForm.get('userPropertyIdCtrl')!" class="form-container">
-        <ng-template matStepLabel>User Property Id</ng-template>
+        <ng-template matStepLabel>{{"HOMES.userPropertyId" | translate}}</ng-template>
         <mat-form-field appearance="fill">
           <mat-label>User ID</mat-label>
           <input matInput formControlName="userPropertyIdCtrl" required />
@@ -15,7 +15,7 @@
       </mat-step>
       <!-- Step : House Name -->
       <mat-step [stepControl]="houseForm.get('houseNameCtrl')!">
-        <ng-template matStepLabel>Name house</ng-template>
+        <ng-template matStepLabel>{{"HOMES.houseName" | translate}}</ng-template>
 
         <mat-form-field appearance="fill">
           <mat-label>Nombre de la propiedad</mat-label>
@@ -29,7 +29,7 @@
       </mat-step>
       <!-- Step : House Address -->
       <mat-step [stepControl]="houseForm.get('houseAddressCtrl')!">
-        <ng-template matStepLabel>Address house</ng-template>
+        <ng-template matStepLabel>{{"HOMES.address" | translate}}</ng-template>
 
         <mat-form-field appearance="fill">
           <mat-label>Address</mat-label>
@@ -42,7 +42,7 @@
       </mat-step>
       <!-- Step : Tipo y Modalidad de la propiedad -->
       <mat-step [stepControl]="houseForm.get('houseTypeControl')!">
-        <ng-template matStepLabel>House Type</ng-template>
+        <ng-template matStepLabel>{{"HOMES.houseType" | translate}}</ng-template>
         <mat-form-field appearance="fill">
           <mat-label>Type</mat-label>
           <mat-select formControlName="houseTypeControl" required>
@@ -58,7 +58,7 @@
       </mat-step>
       <!--Step: House Modal-->
       <mat-step [stepControl]="houseForm.get('houseModalControl')!">
-        <ng-template matStepLabel>House Modal</ng-template>
+        <ng-template matStepLabel>{{"HOMES.houseModal" | translate}}</ng-template>
         <mat-form-field appearance="fill">
           <mat-label>Modal</mat-label>
           <mat-select formControlName="houseModalControl" required>
@@ -74,7 +74,7 @@
       </mat-step>
       <!-- Step : House Price -->
       <mat-step [stepControl]="houseForm.get('housePriceCtrl')!">
-        <ng-template matStepLabel>House price</ng-template>
+        <ng-template matStepLabel>{{"HOMES.price" | translate}}</ng-template>
 
         <mat-form-field appearance="fill">
           <mat-label>Price</mat-label>
@@ -87,7 +87,7 @@
       </mat-step>
       <!-- Step : House Size -->
       <mat-step [stepControl]="houseForm.get('houseSizeCtrl')!">
-        <ng-template matStepLabel>House size</ng-template>
+        <ng-template matStepLabel>{{"HOMES.size" | translate}}</ng-template>
 
         <mat-form-field appearance="fill">
           <mat-label>Size</mat-label>
@@ -100,7 +100,7 @@
       </mat-step>
       <!-- Step : House Description -->
       <mat-step [stepControl]="houseForm.get('houseDescriptionCtrl')!">
-        <ng-template matStepLabel>House Description</ng-template>
+        <ng-template matStepLabel>{{"HOMES.description" | translate}}</ng-template>
 
         <mat-form-field appearance="fill">
           <mat-label>Description</mat-label>
@@ -114,7 +114,7 @@
       </mat-step>
       <!-- Step : Calificación -->
       <mat-step [stepControl]="houseForm.get('startsCalificationControl')!">
-        <ng-template matStepLabel>Starts Calification</ng-template>
+        <ng-template matStepLabel>{{"HOMES.publication_date" | translate}}</ng-template>
 
         <mat-form-field appearance="fill">
           <mat-label>N° Starts</mat-label>
@@ -132,7 +132,7 @@
       </mat-step>
       <!-- Step : Status Landlord -->
       <mat-step [stepControl]="houseForm.get('statusLandlordControl')!">
-        <ng-template matStepLabel>Status Landlord</ng-template>
+        <ng-template matStepLabel>{{"HOMES.statusLandlord" | translate}}</ng-template>
 
         <mat-form-field appearance="fill">
           <mat-label>Status</mat-label>
@@ -149,7 +149,7 @@
       </mat-step>
       <!-- Step : House Image -->
       <mat-step [stepControl]="houseForm.get('houseImageCtrl')!">
-        <ng-template matStepLabel>House Image</ng-template>
+        <ng-template matStepLabel>{{"HOMES.photo" | translate}}</ng-template>
 
         <mat-form-field appearance="fill">
           <mat-label>Image (URL)</mat-label>
@@ -162,7 +162,7 @@
       </mat-step>
       <!-- Step : House Video -->
       <mat-step [stepControl]="houseForm.get('houseVideoCtrl')!">
-        <ng-template matStepLabel>House Video</ng-template>
+        <ng-template matStepLabel>{{"HOMES.video" | translate}}</ng-template>
 
         <mat-form-field appearance="fill">
           <mat-label>Video (URL)</mat-label>
@@ -175,7 +175,7 @@
       </mat-step>
       <!-- Step : Verification ID -->
       <mat-step [stepControl]="houseForm.get('termsConditionsCtrl')!">
-        <ng-template matStepLabel>Terms and Conditions</ng-template>
+        <ng-template matStepLabel>{{"HOMES.termsConditions" | translate}}</ng-template>
 
         <mat-form-field appearance="fill">
           <mat-label>Terms and conditions</mat-label>

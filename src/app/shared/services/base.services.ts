@@ -9,10 +9,7 @@ import {House} from "../../payments/model/house.entity";
   providedIn: 'root'
 })
 export class BaseService<T> {
-  constructor(http: HttpClient) {
-
-  }
-
+  constructor(http: HttpClient) {}
 
   basePath: string = `${environment.serverBasePath}`;
   resourceEndpoint: string = '/resources';
